@@ -9,15 +9,12 @@ import DefaultButton from "@/app/UI/buttons/DefaultButton";
 import { size, stroke } from "@/constants/elements/icons";
 import { FeaturedCard } from "@/interfaces/Cards";
 
-function Featured({
-  image,
-  href,
-  title,
-  description,
-  pricing,
-}: Omit<FeaturedCard, "badge">) {
+function Featured({ image, href, title, description, pricing }: FeaturedCard) {
   const style = {
     backgroundImage: `url(${image})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
   };
   return (
     <Container

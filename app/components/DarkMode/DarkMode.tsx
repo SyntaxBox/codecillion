@@ -8,12 +8,13 @@ function DarkMode() {
   const [mounted, setMounted] = useState(false);
   const [isRotated, setIsRotated] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
   useEffect(() => {
     setMounted(true);
   }, []);
   if (!mounted) return null;
   const handelToggle = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
     setIsRotated(!isRotated);
   };
 
@@ -25,7 +26,7 @@ function DarkMode() {
       }`}
       onClick={handelToggle}
     >
-      {theme === "dark" ? (
+      {resolvedTheme === "dark" ? (
         <IconMoon stroke={stroke} size={size} />
       ) : (
         <IconSun stroke={stroke} size={size} />

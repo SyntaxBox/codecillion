@@ -2,18 +2,22 @@
 import { socialIcons } from "@/data/elements/social";
 import React from "react";
 
-function SocialIcons() {
+function SocialIcons({ alt }: { alt?: boolean }) {
   return (
-    <div className="flex items-center ">
+    <div className={`flex items-center ${alt ? "gap-6" : ""}`}>
       {socialIcons.map(({ title, href, Icon, stroke, size }, i) => {
         return (
           <a
             href={href}
             title={title}
             key={i}
-            className="cursor-pointer hover:text-primary-600 dark:hover:text-primary-alt-600 px-1"
+            className={`cursor-pointer flex items-center justify-between ${
+              alt
+                ? " text-primary-600 p-2 bg-primary-op1 dark:text-primary-alt-500 dark:bg-primary-alt-op1 rounded-lg hover:scale-105"
+                : "hover:text-primary-600 dark:hover:text-primary-alt-600 px-1"
+            }`}
           >
-            <Icon stroke={stroke} size={size} />
+            <Icon stroke={stroke + 0.1} size={size} />
           </a>
         );
       })}

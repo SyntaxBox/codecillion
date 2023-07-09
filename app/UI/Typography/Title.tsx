@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-function H3({
+function Title({
   children,
   className,
   ...rest
@@ -8,11 +8,11 @@ function H3({
   return (
     <h3
       {...rest}
-      className={`text-4xl font-bold text-sky-900 dark:text-white ${className}`}
+      className={`text-2xl font-bold text-sky-900 dark:text-white ${className}`}
     >
       {children}
     </h3>
   );
 }
 
-export default H3;
+export default Title;

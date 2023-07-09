@@ -3,6 +3,7 @@ import Image from "next/image";
 import Title from "./Title";
 import { PRIMARY_COLOR_ALT, PRIMARY_COLOR } from "@/constants/styles/colors";
 import Link from "next/link";
+import { TITLE } from "@/constants/other/title";
 
 function Logo({
   width,
@@ -21,7 +22,7 @@ function Logo({
         {width && height ? (
           <Image
             src="svg/logo.svg"
-            alt="codelighthouse logo"
+            alt={TITLE + "logo"}
             width={width}
             height={height}
           />
@@ -30,7 +31,7 @@ function Logo({
         )}
         {includeTitle ? (
           <Title
-            title="CodeLighthouse"
+            title={TITLE}
             charSplit={4}
             colorSplit={[PRIMARY_COLOR_ALT, PRIMARY_COLOR]}
           />
@@ -42,7 +43,7 @@ function Logo({
       {width && height ? (
         <Image
           src="svg/logo.svg"
-          alt="codelighthouse logo"
+          alt={TITLE + "logo"}
           width={width}
           height={height}
         />
@@ -51,7 +52,7 @@ function Logo({
       )}
       {includeTitle ? (
         <Title
-          title="CodeLighthouse"
+          title={TITLE}
           charSplit={4}
           colorSplit={[PRIMARY_COLOR_ALT, PRIMARY_COLOR]}
         />

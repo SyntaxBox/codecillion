@@ -6,7 +6,7 @@ import React from "react";
 function Owner() {
   return (
     <Link
-      href="#"
+      href="owner"
       className="flex gap-3 justify-center hover:text-primary-600 dark:hover:text-primary-alt-600"
     >
       <IconUser stroke={stroke} />

@@ -1,4 +1,5 @@
 import Providers from "./Providers";
+import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -18,11 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} dark:bg-slate-900`}>
+      <body className={`${inter.className} bg-slate-100 dark:bg-slate-900`}>
         <Providers>
           <>
-            <Navbar />
+            <header className="sticky top-0 left-0 z-50">
+              <Navbar />
+            </header>
             {children}
+            <Footer className="mt-8" />
           </>
         </Providers>
       </body>

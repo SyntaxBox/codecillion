@@ -7,7 +7,7 @@ function P({
   return (
     <p
       {...rest}
-      className="text-lg capitalize leading-3  text-slate-700 tracking-wide"
+      className="capitalize leading-6  text-slate-700 dark:text-slate-300 tracking-wider"
     >
       {children}
     </p>

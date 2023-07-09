@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      aspectRatio: {
+        card: "5 / 3",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

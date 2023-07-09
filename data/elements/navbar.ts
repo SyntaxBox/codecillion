@@ -1,6 +1,6 @@
 import { NavbarButton } from "@/interfaces/navbar";
 import {
-  IconCodeDots,
+  IconDeviceDesktopCode,
   IconFileCode,
   IconFolderCode,
 } from "@tabler/icons-react";
@@ -18,6 +18,6 @@ export const navbarButtons: NavbarButton[] = [
   {
     title: "Programming paths",
     href: "programming-paths",
-    Icon: IconCodeDots,
+    Icon: IconDeviceDesktopCode,
   },
 ];

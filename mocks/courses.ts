@@ -26,7 +26,29 @@ export const courses: LargeCard[] = [
   },
   {
     href: "#",
-    title: "The ultimate React Course",
+    title: "The ultimate Vue Course",
+    description:
+      " has gradually become the go-to framework for modern web development within the JavaScript and Typescript community.",
+    badge: "front end, react",
+    pricing: "free",
+    image: "images/react.jpeg",
+    lessons: 34,
+    videoVersion: "#",
+  },
+  {
+    href: "#",
+    title: "The ultimate Next js Course",
+    description:
+      " has gradually become the go-to framework for modern web development within the JavaScript and Typescript community.",
+    badge: "front end, react",
+    pricing: "free",
+    image: "images/react.jpeg",
+    lessons: 34,
+    videoVersion: "#",
+  },
+  {
+    href: "#",
+    title: "The ultimate Node Course",
     description:
       " has gradually become the go-to framework for modern web development within the JavaScript and Typescript community.",
     badge: "front end, react",

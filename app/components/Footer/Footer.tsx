@@ -18,7 +18,7 @@ function Footer({ className }: { className?: string }) {
   ];
   return (
     <div
-      className={`bg-gradient-to-b dark:from-slate-900 dark:to-slate-950 from-slate-100 to-white border-t dark:border-slate-800 border-slate-200 py-4 ${className}`}
+      className={`border-t dark:border-slate-800 border-slate-200 py-4 ${className}`}
     >
       <Container className="flex flex-col items-center justify-between gap-6 pb-4">
         <Logo width={48} height={48} includeTitle href="/" />

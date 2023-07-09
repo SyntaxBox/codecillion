@@ -1,12 +1,10 @@
-import { LargeCard as prop } from "@/interfaces/Cards";
+import { LargeCard as props } from "@/interfaces/Cards";
 import React from "react";
 import LargeCard from "../LargeCard/LargeCard";
 import { IconFolderCode } from "@tabler/icons-react";
 import Container from "../../UI/layout/Container";
 
-type props = prop[] | undefined;
-
-function Courses({ courses }: { courses: props }) {
+function Courses({ courses }: { courses?: props[] }) {
   if (!courses) return null;
   return (
     <Container className="flex flex-col gap-4">

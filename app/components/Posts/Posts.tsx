@@ -14,9 +14,6 @@ function Posts({ posts }: { posts: props[] }) {
           href={href}
           title={title}
           description={description}
-          BadgeIcon={IconFileCode}
-          badge={"Posts"}
-          badgeHref={"posts"}
         />
       ))}
     </Container>

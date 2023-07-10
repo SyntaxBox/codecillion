@@ -8,6 +8,7 @@ import Description from "@/app/UI/Typography/Description";
 import DefaultButton from "@/app/UI/buttons/DefaultButton";
 import { size, stroke } from "@/constants/elements/icons";
 import { FeaturedCard } from "@/interfaces/Cards";
+import P from "@/app/UI/Typography/P";
 
 function Featured({ image, href, title, description, pricing }: FeaturedCard) {
   const style = {
@@ -19,23 +20,14 @@ function Featured({ image, href, title, description, pricing }: FeaturedCard) {
   return (
     <Container
       style={style}
-      className="min-h-[480px] rounded-[16px] p-8 flex items-start justify-between flex-col border-2 border-slate-100 dark:border-slate-800 shadow-2xl shadow-slate-100 dark:shadow-slate-800"
+      className="min-h-[480px] rounded-[16px] p-4 flex items-end justify-end flex-col border border-slate-100 dark:border-slate-800 shadow-2xl shadow-slate-100 dark:shadow-slate-800"
     >
-      <div className="flex items-center justify-between w-full">
-        <IconWithTextLabel
-          Icon={IconFolderCode}
-          title="Course"
-          href="courses"
-        />
-        <TextLabel title={pricing} href="#" />
-      </div>
-      <div>
+      <div className="backdrop-blur-md bg-[#ffffff8b] dark:bg-[#20335e8b] pr-10 p-4 rounded-lg">
         <BigTitle>{title}</BigTitle>
-        <Description blur text={description} />
+        <p className="text-slate-800 dark:text-slate-200 leading-6 tracking-wider">
+          {description}
+        </p>
       </div>
-      <DefaultButton href={href}>
-        <IconArrowBigRightLines stroke={stroke} size={size} /> Start The Course
-      </DefaultButton>
     </Container>
   );
 }

@@ -2,7 +2,10 @@ import React, { ReactNode } from "react";
 
 function Badge({ children }: { children: ReactNode }) {
   return (
-    <p className="uppercase font-bold text-xl text-primary-600 dark:text-primary-alt-500">
+    <p
+      className="capitalize font-semibold py-2 px-3 rounded-lg text-xl text-black dark:text-white 
+    backdrop-blur-sm bg-[#ffffff8b] dark:bg-[#20335e8b] "
+    >
       {children}
     </p>
   );

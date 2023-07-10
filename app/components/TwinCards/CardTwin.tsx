@@ -26,14 +26,11 @@ function CardTwin({
     backgroundPosition: "center",
   };
   return (
-    <div
+    <Link
       style={style}
-      // href={href}
-      className={`w-full min-h-full flex items-start justify-between rounded-2xl p-4 shadow-2xl shadow-slate-100 dark:shadow-slate-800 ${className}`}
-    >
-      <IconWithTextLabel title={badge} Icon={Badge} href={badgeHref} />
-      <TextLabel title={pricing} href={"#"} />
-    </div>
+      href={href}
+      className={`aspect-card w-full flex items-start justify-between rounded-2xl p-4 shadow-2xl shadow-slate-100 dark:shadow-slate-800 ${className}`}
+    ></Link>
   );
 }
 

@@ -20,7 +20,7 @@ function NavButton({
       className={`rounded-lg  px-4 py-2 ${className} ${
         active
           ? "text-primary-600 bg-primary-50 dark:text-primary-alt-500 dark:bg-primary-alt-950"
-          : "hover:bg-slate-100 dark:hover:bg-slate-800"
+          : "hover:bg-[#5465813a]"
       }`}
     >
       {children}

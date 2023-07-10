@@ -4,7 +4,6 @@ export interface Card {
   title: string;
   badge: string;
   description: string;
-  pricing: string;
   lessons: number;
   featured?: boolean;
   videoVersion: string;
@@ -28,5 +27,4 @@ export interface PostCard
     | "badge"
     | "videoVersion"
     | "featured"
-    | "pricing"
   > {}

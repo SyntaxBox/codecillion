@@ -5,15 +5,16 @@ import React from "react";
 
 function Search({ placeholder }: { placeholder: string }) {
   return (
-    <div className="relative w-full flex gap-4">
-      <div className="absolute inset-y-0 -left-2 flex items-center pl-4 pointer-events-none">
-        <IconSearch stroke={stroke} size={size} />
-      </div>
+    <div className="relative">
       <input
-        type="search"
-        className="block w-full p-5 pl-10 text-gray-900 border rounded-xl bg-slate-100 focus:border-primary-500 dark:bg-slate-800 border-primary-op1 dark:border-primary-alt-op1 dark:placeholder-gray-400 dark:text-white dark:focus:border-primary-alt-500 outline-none shadow-md focus:shadow-lg shadow-slate-200 dark:shadow-slate-700"
+        type="text"
         placeholder={placeholder}
-        required
+        className="w-full pl-10 pr-4 py-2 bg-slate-200 dark:bg-slate-700  rounded-lg shadow-2xl shadow-slate-200 dark:shadow-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:ring-primary-alt-500 placeholder:text-gray-400 dark:placeholder:text-gray-300"
+      />
+      <IconSearch
+        size={size}
+        stroke={stroke}
+        className="absolute left-3 top-2.5 h-5 w-5 text-gray-400 dark:text-gray-300"
       />
     </div>
   );

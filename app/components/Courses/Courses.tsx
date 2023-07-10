@@ -7,7 +7,7 @@ import Container from "../../UI/layout/Container";
 function Courses({ courses }: { courses?: props[] }) {
   if (!courses) return null;
   return (
-    <Container className="flex flex-col gap-4">
+    <Container className="grid grid-cols-2 gap-4">
       {courses.map(
         (
           {

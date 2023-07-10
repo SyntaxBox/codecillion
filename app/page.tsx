@@ -10,7 +10,7 @@ import ExploreMore from "./components/ExploreMore/ExploreMore";
 let courses = [...sample];
 
 const featuredCourse = courses.find((course) => course.featured);
-const { description, href, image, pricing, title } = featuredCourse
+const { description, href, image, title } = featuredCourse
   ? featuredCourse
   : courses[0];
 if (featuredCourse) {
@@ -25,12 +25,11 @@ export default function Home() {
         description={description}
         href={href}
         image={image}
-        pricing={pricing}
         title={title}
       />
       <Courses courses={courses} />
       <TwinCards {...programmingPaths} />
-      <Posts posts={posts} />
+      <Posts posts={posts.slice(0, 6)} />
       <ExploreMore href="posts" />
     </main>
   );

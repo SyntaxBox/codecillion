@@ -2,6 +2,7 @@ import BigTitle from "@/app/UI/Typography/BigTitle";
 import Container from "@/app/UI/layout/Container";
 import React from "react";
 import Search from "../Search/Search";
+import P from "@/app/UI/Typography/P";
 
 function Header({
   title,
@@ -12,9 +13,13 @@ function Header({
 }) {
   return (
     <Container>
-      <section className="relative mb-12 w-full flex items-center p-2 flex-col h-[180px] bg-gradient-to-br from-primary-600 to-primary-alt-600 rounded-2xl shadow-2xl shadow-slate-200 dark:shadow-slate-700">
-        <BigTitle>{title}</BigTitle>
-        <p className="tracking-wider text-white">{description}</p>
+      <section className="relative  mb-12 mx-auto flex items-center p-2 flex-col h-[180px]">
+        <div className="flex items-center flex-col gap-3 w-[80%]">
+          <BigTitle>{title}</BigTitle>
+          <p className="tracking-wider text-slate-700 dark:text-slate-300 text-center">
+            {description}
+          </p>
+        </div>
         <div className="absolute -bottom-7 w-[480px]">
           <Search placeholder="Search courses Python, react ..." />
         </div>

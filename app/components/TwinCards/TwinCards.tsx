@@ -6,7 +6,7 @@ import Container from "../../UI/layout/Container";
 
 function TwinCards(props: TwinCard[]) {
   return (
-    <Container className="flex gap-6 items-center justify-between h-[480px]">
+    <Container className="flex gap-6 items-center justify-between">
       <CardTwin
         image={props[0].image}
         href={props[0].href}
@@ -14,7 +14,6 @@ function TwinCards(props: TwinCard[]) {
         Badge={IconDeviceDesktopCode}
         badge="Programming Paths"
         badgeHref="programming-paths"
-        className="h-[480px]"
       />
       <CardTwin
         image={props[1].image}
@@ -23,7 +22,6 @@ function TwinCards(props: TwinCard[]) {
         Badge={IconDeviceDesktopCode}
         badge="Programming Paths"
         badgeHref="programming-paths"
-        className="h-[480px]"
       />
     </Container>
   );

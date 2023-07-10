@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       aspectRatio: {
-        card: "5 / 3",
+        card: "4 / 3",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -30,6 +30,8 @@ module.exports = {
           900: "#00475B",
           950: "#00475B",
           op1: "#0085A75C",
+          op2: "#0085A74b",
+          op3: "#0085A720",
         },
         "primary-alt": {
           50: "#D9F5F2",

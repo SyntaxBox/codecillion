@@ -9,11 +9,11 @@ import NavButtons from "../NavButtons/NavButtons";
 
 function Navbar() {
   return (
-    <nav className="bg-slate-100 dark:bg-slate-900 z-50 w-full h-[64px] text-gray-700 dark:text-gray-200 border-b border-slate-200 dark:border-slate-700">
+    <nav className="backdrop-blur-md bg-[#ffffff8b] dark:bg-[#0f172a8b] z-50 w-full h-[56px] text-gray-700 dark:text-gray-200">
       <Container className="flex items-center justify-between">
         <Logo width={48} height={48} includeTitle href="/" />
         <NavButtons buttons={navbarButtons} />
-        <div className="flex gap-6">
+        <div className="flex items-center gap-6">
           <Owner />
           <SocialIcons />
           <DarkMode />

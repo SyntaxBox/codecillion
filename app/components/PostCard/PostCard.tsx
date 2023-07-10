@@ -4,20 +4,9 @@ import IconWithTextLabel from "@/app/UI/labels/IconWithTextLabel";
 import { PostCard } from "@/interfaces/Cards";
 import { TablerIconsProps } from "@tabler/icons-react";
 import React from "react";
+import Link from "next/link";
 
-function PostCard({
-  image,
-  href,
-  title,
-  description,
-  BadgeIcon,
-  badgeHref,
-  badge,
-}: PostCard & {
-  BadgeIcon: (props: TablerIconsProps) => JSX.Element;
-  badge: string;
-  badgeHref: string;
-}) {
+function PostCard({ image, href, title, description }: PostCard) {
   const style = {
     backgroundImage: `url(${image})`,
     backgroundSize: "cover",
@@ -26,15 +15,20 @@ function PostCard({
   };
 
   return (
-    <div className="flex flex-col gap-3 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl shadow-slate-100 dark:shadow-slate-800">
-      <div style={style} className="w-full aspect-video p-3 rounded-2xl">
-        <IconWithTextLabel title={badge} Icon={BadgeIcon} href={badgeHref} />
+    <Link
+      style={style}
+      href={href}
+      className="aspect-[1/1] overflow-hidden flex flex-col justify-end gap-3 bg-white dark:bg-slate-800 rounded-xl shadow-2xl shadow-slate-100 dark:shadow-slate-800"
+    >
+      <div className="flex gap-3 flex-col p-3 items-start justify-end backdrop-blur-md bg-[#ffffff8b] dark:bg-[#20335e8b] h-fit">
+        <h3 className="text-black dark:text-white font-semibold capitalize text-xl">
+          {title}
+        </h3>
+        <p className="text-slate-800 dark:text-slate-200 leading-6 tracking-wider">
+          {description.substring(0, 70)}...
+        </p>
       </div>
-      <div className="flex gap-3 flex-col p-3">
-        <Title>{title}</Title>
-        <P className="text-md">{description.substring(0, 70)}...</P>
-      </div>
-    </div>
+    </Link>
   );
 }
 

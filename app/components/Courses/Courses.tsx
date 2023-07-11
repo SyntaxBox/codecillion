@@ -1,7 +1,6 @@
 import { LargeCard as props } from "@/interfaces/Cards";
 import React from "react";
 import LargeCard from "../LargeCard/LargeCard";
-import { IconFolderCode } from "@tabler/icons-react";
 import Container from "../../UI/layout/Container";
 
 function Courses({ courses }: { courses?: props[] }) {
@@ -11,9 +10,8 @@ function Courses({ courses }: { courses?: props[] }) {
       {courses.map(
         (
           {
-            pricing,
             description,
-            href,
+            slug,
             image,
             title,
             badge,
@@ -27,14 +25,11 @@ function Courses({ courses }: { courses?: props[] }) {
           return (
             <LargeCard
               key={i}
-              pricing={pricing}
               description={description}
-              href={href}
+              href={`courses/${slug}`}
               image={image}
               title={title}
               badge={badge}
-              category="Courses"
-              Icon={IconFolderCode}
               lessons={lessons}
               videoVersion={videoVersion}
             />

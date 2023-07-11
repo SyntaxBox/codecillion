@@ -1,12 +1,11 @@
 export interface Card {
   image: string;
-  href: string;
+  slug: string;
   title: string;
   badge: string;
   description: string;
   lessons: number;
   featured?: boolean;
-  videoVersion: string;
 }
 
 export interface LargeCard extends Card {}

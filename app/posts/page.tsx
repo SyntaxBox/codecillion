@@ -4,7 +4,7 @@ import Header from "../components/Header/Header";
 import LoadMore from "../components/LoadMore/LoadMore";
 import Posts from "../components/Posts/Posts";
 import BigCard from "../components/BigCard/BigCard";
-const { title, description, image, href } = posts[0];
+const { title, description, image, slug } = posts[0];
 
 export default function Page() {
   return (
@@ -14,7 +14,7 @@ export default function Page() {
         description="Stay informed and inspired with our insightful programming posts. Enhance your skills and explore the latest trends in coding."
       />
       <BigCard
-        href={href}
+        href={`/posts/${slug}`}
         title={title}
         description={description}
         image={image}

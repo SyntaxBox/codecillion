@@ -2,54 +2,49 @@ import { LargeCard } from "@/interfaces/Cards";
 
 export const courses: LargeCard[] = [
   {
-    href: "#",
+    slug: "react-course",
     title: "The ultimate Python Course",
     description:
       "React.js is a front-end library that has gradually become the go-to React.js is a front-end library that has gradually become the go-to framework for modern web development within the JavaScript and Typescript community.",
     badge: "react",
-    image: "images/post.jpg",
+    image: "/images/post.jpg",
     lessons: 54,
     featured: true,
-    videoVersion: "#",
   },
   {
-    href: "#",
+    slug: "react-course",
     title: "The ultimate React Course",
     description:
       "Python is a high-level, general-purpose programming language. Its design f significant indentation via ...",
     badge: "python",
-    image: "images/post.jpg",
-    lessons: 94,
-    videoVersion: "#",
+    image: "/images/post.jpg",
+    lessons: 0,
   },
   {
-    href: "#",
+    slug: "react-course",
     title: "The ultimate Vue Course",
     description:
       " has gradually become the go-to framework for modern web development within the JavaScript and Typescript community.",
     badge: "front end, react",
-    image: "images/post.jpg",
-    lessons: 34,
-    videoVersion: "#",
+    image: "/images/post.jpg",
+    lessons: 0,
   },
   {
-    href: "#",
+    slug: "react-course",
     title: "The ultimate Next js Course",
     description:
       " has gradually become the go-to framework for modern web development within the JavaScript and Typescript community.",
     badge: "front end, react",
-    image: "images/post.jpg",
+    image: "/images/post.jpg",
     lessons: 34,
-    videoVersion: "#",
   },
   {
-    href: "#",
+    slug: "react-course",
     title: "The ultimate Node Course",
     description:
       " has gradually become the go-to framework for modern web development within the JavaScript and Typescript community.",
     badge: "front end, react",
-    image: "images/post.jpg",
+    image: "/images/post.jpg",
     lessons: 34,
-    videoVersion: "#",
   },
 ];

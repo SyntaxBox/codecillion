@@ -21,7 +21,7 @@ function Logo({
       <Link href={href} className="flex items-center gap-3">
         {width && height ? (
           <Image
-            src="svg/logo.svg"
+            src="/svg/logo.svg"
             alt={TITLE + "logo"}
             width={width}
             height={height}

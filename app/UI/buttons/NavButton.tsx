@@ -15,7 +15,7 @@ function NavButton({
 }) {
   return (
     <Link
-      href={href}
+      href={`/${href}`}
       {...other}
       className={`rounded-lg  px-4 py-2 ${className} ${
         active

@@ -26,7 +26,6 @@ export default function RootLayout({
               <Navbar />
             </header>
             {children}
-            <Footer className="mt-8" />
           </>
         </Providers>
       </body>

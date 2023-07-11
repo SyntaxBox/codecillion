@@ -24,7 +24,7 @@ function LargeCard({
   return (
     <Link
       href={href}
-      className="relative aspect-[5/3] overflow-hidden rounded-l-xl justify-between p-4 flex items-center flex-col gap-3 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-800 shadow-slate-100 dark:shadow-slate-800 w-full"
+      className="hover:grayscale relative aspect-[5/3] overflow-hidden rounded-l-xl justify-between p-4 flex items-center flex-col gap-3 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-800 shadow-slate-100 dark:shadow-slate-800 w-full"
     >
       <Image
         src={image}

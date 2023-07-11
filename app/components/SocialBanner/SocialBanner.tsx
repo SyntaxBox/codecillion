@@ -21,8 +21,8 @@ function SocialBanner() {
           </p>
           <p
             className="text-6xl w-fit font-bold bg-gradient-to-r from-primary-900 to-primary-800
-          dark:from-cyan-400 dark:via-emerald-300 dark:to-cyan-400 
-          drop-shadow-[1px_1px_1px_#78c7ff] 
+          dark:from-cyan-400 dark:via-emerald-300 dark:to-cyan-400
+          drop-shadow-[1px_1px_1px_#78c7ff]
           dark:drop-shadow-[1px_1px_1px_rgb(0, 255, 157)]  gradient-text py-2 "
           >
             @codelighthouse

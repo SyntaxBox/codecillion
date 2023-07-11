@@ -16,8 +16,8 @@ export const navbarButtons: NavbarButton[] = [
     Icon: IconFileCode,
   },
   {
-    title: "Programming paths",
-    href: "programming-paths",
+    title: "Programming stacks",
+    href: "programming-stacks",
     Icon: IconDeviceDesktopCode,
   },
 ];

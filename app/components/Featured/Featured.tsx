@@ -21,7 +21,7 @@ function Featured({
     <Container>
       <Link
         href={href}
-        className="relative w-full overflow-hidden aspect-[21/9] rounded-[16px] p-4 flex items-end justify-end flex-col border border-slate-100 dark:border-slate-800 shadow-2xl shadow-slate-100 dark:shadow-slate-800"
+        className="relative w-full overflow-hidden aspect-[21/9] rounded-[16px] p-4 flex items-end justify-end flex-col border border-slate-100 dark:border-slate-800 shadow-2xl shadow-slate-100 dark:shadow-slate-800 hover:grayscale"
       >
         <Image
           src={image}
@@ -30,7 +30,7 @@ function Featured({
           height={823}
           className="absolute top-0 left-0 aspect-[21/9]"
         />
-        <div className="backdrop-blur-md bg-[#ffffff8b] dark:bg-[#20335e8b] pr-10 p-4 rounded-lg">
+        <div className=" backdrop-blur-md bg-[#ffffff8b] dark:bg-[#20335e8b] pr-10 p-4 rounded-lg">
           <BigTitle>{title}</BigTitle>
           <p className="text-slate-800 dark:text-slate-200 leading-6 tracking-wider">
             {description}

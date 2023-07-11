@@ -9,7 +9,7 @@ function ExploreMore({ href }: { href: string }) {
   return (
     <Link
       href={href}
-      className={`backdrop-blur-sm w-fit flex items-center text-xl  gap-3 rounded-lg py-2 px-4 text-primary-600 bg-primary-op2 dark:text-primary-alt-500 dark:bg-primary-alt-op1`}
+      className={`hover:scale-105 backdrop-blur-sm w-fit flex items-center text-xl  gap-3 rounded-lg py-2 px-4 text-primary-600 bg-primary-op2 dark:text-primary-alt-500 dark:bg-primary-alt-op1`}
     >
       <IconTelescope size={size} stroke={stroke} /> Explore More
     </Link>

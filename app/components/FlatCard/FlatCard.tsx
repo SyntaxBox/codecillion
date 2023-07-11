@@ -24,7 +24,7 @@ function FlatCard({
     <Link
       style={style}
       href={href}
-      className={`aspect-card rounded-2xl overflow-hidden shadow-2xl shadow-slate-100 dark:shadow-slate-800 ${className}`}
+      className={`hover:grayscale aspect-card rounded-2xl overflow-hidden shadow-2xl shadow-slate-100 dark:shadow-slate-800 ${className}`}
     >
       <Image
         src={image}

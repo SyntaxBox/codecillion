@@ -27,7 +27,7 @@ function BigCard({
     backgroundPosition: "center",
   };
   return (
-    <Container>
+    <Container className="hover:grayscale">
       <Link href={href} className="flex h-[360px] w-full gap-3">
         <div style={style} className="aspect-video rounded-lg">
           {badge && <Badge>{badge}</Badge>}

@@ -13,14 +13,19 @@ function Header({
 }) {
   return (
     <Container>
-      <section className="relative  mb-12 mx-auto flex items-center p-2 flex-col h-[180px]">
-        <div className="flex items-center flex-col gap-3 w-[80%]">
-          <BigTitle>{title}</BigTitle>
-          <p className="tracking-wider text-slate-700 dark:text-slate-300 text-center">
+      <section className="relative  lg:mb-12 mx-auto flex items-center p-2 flex-col gap-8">
+        <div className="flex items-center flex-col gap-3 md:w-[80%]">
+          <h1 className="uppercase text-[40px] font-bold text-black dark:text-white">
+            {title}
+          </h1>
+          <p
+            style={{ textAlignLast: "center" }}
+            className="tracking-wider text-slate-700 dark:text-slate-300 md:text-center text-justify"
+          >
             {description}
           </p>
         </div>
-        <div className="absolute -bottom-7 w-[480px]">
+        <div className=" w-full md:w-[480px]">
           <Search placeholder="Search courses Python, react ..." />
         </div>
       </section>

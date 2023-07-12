@@ -33,7 +33,7 @@ export default function Home() {
       />
       <Courses courses={courses} />
       <SocialBanner />
-      <Container className="flex gap-6 items-center justify-between">
+      <Container className="flex flex-col mdlg:flex-row gap-3 lg:gap-6 items-center justify-between">
         <FlatCard image={pp[0].image} href={`programming-paths${pp[0].slug}`} />
         <FlatCard image={pp[1].image} href={`programming-paths${pp[1].slug}`} />
       </Container>

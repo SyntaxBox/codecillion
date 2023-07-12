@@ -4,6 +4,7 @@ import Header from "../components/Header/Header";
 import LoadMore from "../components/LoadMore/LoadMore";
 import Posts from "../components/Posts/Posts";
 import BigCard from "../components/BigCard/BigCard";
+import Footer from "../components/Footer/Footer";
 const { title, description, image, slug } = posts[0];
 
 export default function Page() {
@@ -21,6 +22,7 @@ export default function Page() {
       />
       <Posts posts={posts} />
       <LoadMore text="Load More" loadingText="Loading..." />
+      <Footer />
     </main>
   );
 }

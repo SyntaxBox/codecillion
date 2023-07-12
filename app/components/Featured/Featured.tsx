@@ -4,6 +4,7 @@ import BigTitle from "@/app/UI/Typography/BigTitle";
 import { FeaturedCard } from "@/interfaces/Cards";
 import Link from "next/link";
 import Image from "next/image";
+import P from "@/app/UI/Typography/P";
 
 function Featured({
   image,
@@ -21,20 +22,20 @@ function Featured({
     <Container>
       <Link
         href={href}
-        className="relative w-full overflow-hidden h-[60vh] lg:aspect-[21/9] rounded-[16px] p-1 md:p-2 lg:p-4 flex items-end justify-end flex-col border border-slate-100 dark:border-slate-800 shadow-2xl shadow-slate-100 dark:shadow-slate-800 hover:grayscale-[0.7]"
+        className="relative w-full overflow-hidden h-[80vh] md:h-[70vh] lg:h-auto  lg:aspect-[21/9] rounded-[16px] p-1 md:p-2 lg:p-4 flex items-end justify-end flex-col border border-slate-100 dark:border-slate-800 shadow-2xl shadow-slate-100 dark:shadow-slate-800 hover:grayscale-[0.7]"
       >
         <Image
           src={image}
           alt={`${title} thumbnail`}
           width={1920}
           height={823}
-          className="absolute top-0 left-0 lg:aspect-[21/9]"
+          className="absolute h-full top-0 left-0 object-cover aspect-[21/9]"
         />
-        <div className=" backdrop-blur-md bg-[#ffffff8b] dark:bg-[#20335e8b] pr-10 p-4 rounded-lg">
+        <div className=" backdrop-blur-md bg-[#ffffff8b] dark:bg-[#20335e8b] p-2 md:p-4 rounded-lg flex flex-col gap-3">
           <BigTitle>{title}</BigTitle>
-          <p className="text-slate-800 dark:text-slate-200 md:leading-6 md:tracking-wider text-sm">
+          <P className="text-slate-800 dark:text-slate-200 md:leading-6 md:tracking-wider text-sm">
             {description}
-          </p>
+          </P>
         </div>
       </Link>
     </Container>

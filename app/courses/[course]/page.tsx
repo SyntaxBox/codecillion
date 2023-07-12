@@ -1,5 +1,4 @@
 "use client";
-import Container from "@/app/UI/layout/Container";
 import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
 import React from "react";
 

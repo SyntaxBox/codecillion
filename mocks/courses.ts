@@ -7,7 +7,7 @@ export const courses: LargeCard[] = [
     description:
       "React.js is a front-end library that has gradually become the go-to React.js is a front-end library that has gradually become the go-to framework for modern web development within the JavaScript and Typescript community.",
     badge: "react",
-    image: "/images/post.jpg",
+    image: "/images/bg.png",
     lessons: 54,
     featured: true,
   },

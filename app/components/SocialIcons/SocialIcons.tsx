@@ -1,5 +1,6 @@
 "use client";
 import { socialIcons } from "@/data/elements/social";
+import Link from "next/link";
 import React from "react";
 
 function SocialIcons({
@@ -13,7 +14,7 @@ function SocialIcons({
     <div className={`flex items-center ${alt ? "gap-6" : ""} ${className}`}>
       {socialIcons.map(({ title, href, Icon, stroke, size }, i) => {
         return (
-          <a
+          <Link
             href={href}
             title={title}
             key={i}
@@ -24,7 +25,7 @@ function SocialIcons({
             }`}
           >
             <Icon stroke={stroke + 0.1} size={size} />
-          </a>
+          </Link>
         );
       })}
     </div>

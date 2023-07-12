@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "mdlg": "800px",
+        "mdl": "970px",
+      },
       aspectRatio: {
         card: "4 / 3",
       },

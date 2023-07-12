@@ -8,7 +8,7 @@ function H3({
   return (
     <h3
       {...rest}
-      className={`text-4xl font-bold text-slate-900 dark:text-white ${className}`}
+      className={`text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white ${className}`}
     >
       {children}
     </h3>

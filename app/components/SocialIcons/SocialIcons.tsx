@@ -2,9 +2,15 @@
 import { socialIcons } from "@/data/elements/social";
 import React from "react";
 
-function SocialIcons({ alt }: { alt?: boolean }) {
+function SocialIcons({
+  alt,
+  className,
+}: {
+  alt?: boolean;
+  className?: string;
+}) {
   return (
-    <div className={`flex items-center ${alt ? "gap-6" : ""}`}>
+    <div className={`flex items-center ${alt ? "gap-6" : ""} ${className}`}>
       {socialIcons.map(({ title, href, Icon, stroke, size }, i) => {
         return (
           <a

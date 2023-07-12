@@ -10,15 +10,17 @@ function Logo({
   height,
   includeTitle,
   href,
+  className,
 }: {
   width?: number;
   height?: number;
   includeTitle?: boolean;
   href?: string;
+  className?: string;
 }): React.ReactElement {
   if (href)
     return (
-      <Link href={href} className="flex items-center gap-3">
+      <Link href={href} className={`flex items-center gap-3 ${className}`}>
         {width && height ? (
           <Image
             src="/svg/logo.svg"
@@ -27,7 +29,7 @@ function Logo({
             height={height}
           />
         ) : (
-          <Image src="svg/logo.svg" alt="Codelighthouse logo" fill />
+          <Image src="/svg/logo.svg" alt="Codelighthouse logo" fill />
         )}
         {includeTitle ? (
           <Title
@@ -48,7 +50,7 @@ function Logo({
           height={height}
         />
       ) : (
-        <Image src="svg/logo.svg" alt="Codelighthouse logo" fill />
+        <Image src="/svg/logo.svg" alt="Codelighthouse logo" fill />
       )}
       {includeTitle ? (
         <Title

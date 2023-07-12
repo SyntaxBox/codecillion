@@ -3,14 +3,20 @@ import { IconUser } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
 
-function Owner() {
+function Owner({
+  className,
+  excludeTitle,
+}: {
+  className?: string;
+  excludeTitle?: boolean;
+}) {
   return (
     <Link
       href="owner"
-      className="flex gap-3 justify-center hover:text-primary-600 dark:hover:text-primary-alt-600"
+      className={`flex gap-3 justify-center hover:text-primary-600 dark:hover:text-primary-alt-600 ${className}`}
     >
       <IconUser stroke={stroke} />
-      <span>Owner</span>
+      {!excludeTitle && <span>Owner</span>}
     </Link>
   );
 }

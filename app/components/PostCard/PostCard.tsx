@@ -24,7 +24,7 @@ function PostCard({
     <Link
       style={style}
       href={href}
-      className="hover:grayscale overflow-hidden flex flex-col justify-end rounded-xl shadow-2xl shadow-slate-100 dark:shadow-slate-800"
+      className="hover:grayscale-[0.7] overflow-hidden flex flex-col justify-end rounded-xl shadow-2xl shadow-slate-100 dark:shadow-slate-800"
     >
       <Image
         src={image}

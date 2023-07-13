@@ -14,7 +14,7 @@ export default function Page() {
       />
       <Courses courses={courses} />
       <LoadMore text="Load More" loadingText="Loading" />
-      <Footer/>
+      <Footer />
     </main>
   );
 }

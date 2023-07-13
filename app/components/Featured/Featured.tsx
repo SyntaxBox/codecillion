@@ -29,7 +29,7 @@ function Featured({
           alt={`${title} thumbnail`}
           width={1920}
           height={823}
-          className="absolute h-full top-0 left-0 object-cover aspect-[21/9]"
+          className="absolute h-full top-0 left-0 object-cover object-left aspect-[21/9]"
         />
         <div className=" backdrop-blur-md bg-[#ffffff8b] dark:bg-[#20335e8b] p-2 md:p-4 rounded-lg flex flex-col gap-3">
           <BigTitle>{title}</BigTitle>

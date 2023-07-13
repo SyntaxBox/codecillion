@@ -1,6 +1,5 @@
 import React from "react";
 import Badge from "@/app/UI/Typography/Badge";
-import H3 from "@/app/UI/Typography/H3";
 import P from "@/app/UI/Typography/P";
 import { LargeCard as LargeCardBase } from "@/interfaces/Cards";
 import Image from "next/image";
@@ -15,7 +14,7 @@ function LargeCard({
   description,
   lessons,
   className,
-}: Omit<LargeCardBase, "slug"> & { href: string, className?:string }) {
+}: Omit<LargeCardBase, "slug"> & { href: string; className?: string }) {
   return (
     <Link
       href={href}
@@ -25,8 +24,8 @@ function LargeCard({
         src={image}
         alt={`${title} thumbnail`}
         width={1080}
-        height={864}
-        className="aspect-[5/3] absolute top-0 left-0"
+        height={648}
+        className="aspect-[5/3] absolute top-0 left-0 object-cover object-left"
       />
       <div className="flex items-center w-full justify-between">
         <Badge>{badge}</Badge>

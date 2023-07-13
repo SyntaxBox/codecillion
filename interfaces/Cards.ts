@@ -11,10 +11,10 @@ export interface Card {
 export interface LargeCard extends Card {}
 export interface FeaturedCard
   extends Omit<Card, "badge" | "lessons" | "videoVersion"> {}
-export interface TwinCard
+export interface FlatCard
   extends Omit<
     Card,
-    "title" | "description" | "lessons" | "featured" | "videoVersion" | "badge"
+     "description" | "lessons" | "featured" | "videoVersion" | "badge"
   > {}
 
 export interface PostCard

@@ -1,8 +1,7 @@
 import Featured from "./components/Featured/Featured";
 import { courses as sample } from "@/mocks/courses";
 import Courses from "./components/Courses/Courses";
-import TwinCards from "./components/FlatCard/FlatCard";
-import { programmingPaths as pp } from "@/mocks/programmingPaths";
+import { stacks } from "@/mocks/stacks";
 import Posts from "./components/Posts/Posts";
 import { posts } from "@/mocks/posts";
 import ExploreMore from "./components/ExploreMore/ExploreMore";
@@ -34,8 +33,8 @@ export default function Home() {
       <Courses courses={courses} />
       <SocialBanner />
       <Container className="flex flex-col mdlg:flex-row gap-3 lg:gap-6 items-center justify-between">
-        <FlatCard image={pp[0].image} href={`programming-paths${pp[0].slug}`} />
-        <FlatCard image={pp[1].image} href={`programming-paths${pp[1].slug}`} />
+        <FlatCard image={stacks[0].image} href={`programming-paths${stacks[0].slug}`} title={stacks[0].title} />
+        <FlatCard image={stacks[1].image} href={`programming-paths${stacks[1].slug}`} title={stacks[1].title}/>
       </Container>
       <Posts posts={posts.slice(0, 6)} />
       <ExploreMore href="posts" />

@@ -1,6 +1,6 @@
 import IconWithTextLabel from "@/app/UI/labels/IconWithTextLabel";
 import TextLabel from "@/app/UI/labels/TextLabel";
-import { TwinCard } from "@/interfaces/Cards";
+import { FlatCard } from "@/interfaces/Cards";
 import { TablerIconsProps } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,29 +9,23 @@ import React from "react";
 function FlatCard({
   href,
   image,
+  title,
   className,
-}: Omit<TwinCard, "slug"> & {
+}: Omit<FlatCard, "slug"> & {
   href: string;
   className?: string;
 }) {
-  const style = {
-    backgroundImage: `url(${image})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-  };
   return (
     <Link
-      style={style}
       href={href}
       className={`hover:grayscale-[0.7] aspect-card rounded-xl overflow-hidden shadow-2xl shadow-slate-100 dark:shadow-slate-800 ${className}`}
     >
       <Image
         src={image}
-        alt="programming path"
+        alt={`${title} thumbnail`}
         width={1080}
         height={810}
-        className="aspect-card"
+        className="aspect-card object-cover"
       />
     </Link>
   );

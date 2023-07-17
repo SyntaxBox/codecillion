@@ -18,3 +18,22 @@ export default function Page() {
     </main>
   );
 }
+
+function wordsCounter(phrase: string) {
+  var count = 0;
+  var ws = false;
+  for (var i = 0; i < phrase.length; i++) {
+    var currentChar = phrase[i];
+    if (currentChar !== " ") {
+      if (!ws) {
+        count++;
+        ws = true;
+      }
+    } else ws = false;
+  }
+  return count;
+}
+console.log(1, wordsCounter("hello world"));
+console.log(2, wordsCounter(" this is a string "));
+console.log(2, wordsCounter(" there  is  many  words  here  "));
+console.log(4, wordsCounter("    word"));

@@ -1,0 +1,58 @@
+import { defineType } from "sanity";
+
+export default defineType({
+  name: "course",
+  title: "Courses",
+  type: "document",
+  fields: [
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 200,
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "thumbnail",
+      title: "Thumbnail",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: "description",
+      title: "Description",
+      type: "text",
+      rows: 3,
+      validation: (Rule) => Rule.required().max(160),
+    },
+    {
+      name: "lessons",
+      title: "Lessons",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "lesson",
+              title: "Lesson",
+              type: "reference",
+              to: [{ type: "lesson" }],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+});

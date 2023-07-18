@@ -13,7 +13,7 @@ function Title({
   color?: string;
 }) {
   return (
-    <p className="font-semibold text-lg">
+    <p className="font-semibold text-2xl">
       {colorSplit && charSplit ? (
         <>
           <span style={{ color: colorSplit[0] }}>

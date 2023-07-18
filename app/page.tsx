@@ -13,7 +13,7 @@ import Footer from "./components/Footer/Footer";
 let courses = [...sample];
 
 const featuredCourse = courses.find((course) => course.featured);
-const { description, slug, image, title } = featuredCourse
+const { description, slug, title, featured } = featuredCourse
   ? featuredCourse
   : courses[0];
 if (featuredCourse) {
@@ -26,15 +26,23 @@ export default function Home() {
     <main className="flex flex-col gap-6 items-center">
       <Featured
         description={description}
-        href={`courses/${slug}`}
-        image={image}
+        href={`/courses/${slug}`}
+        image={`${featured}`}
         title={title}
       />
       <Courses courses={courses} />
       <SocialBanner />
       <Container className="flex flex-col mdlg:flex-row gap-3 lg:gap-6 items-center justify-between">
-        <FlatCard image={stacks[0].image} href={`programming-paths${stacks[0].slug}`} title={stacks[0].title} />
-        <FlatCard image={stacks[1].image} href={`programming-paths${stacks[1].slug}`} title={stacks[1].title}/>
+        <FlatCard
+          image={stacks[0].image}
+          href={`programming-paths${stacks[0].slug}`}
+          title={stacks[0].title}
+        />
+        <FlatCard
+          image={stacks[1].image}
+          href={`programming-paths${stacks[1].slug}`}
+          title={stacks[1].title}
+        />
       </Container>
       <Posts posts={posts.slice(0, 6)} />
       <ExploreMore href="posts" />

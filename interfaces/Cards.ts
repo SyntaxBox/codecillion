@@ -2,28 +2,20 @@ export interface Card {
   image: string;
   slug: string;
   title: string;
-  badge: string;
   description: string;
   lessons: number;
-  featured?: boolean;
+  featured?: string;
 }
 
 export interface LargeCard extends Card {}
-export interface FeaturedCard
-  extends Omit<Card, "badge" | "lessons" | "videoVersion"> {}
+export interface FeaturedCard extends Omit<Card, "lessons" | "videoVersion"> {}
 export interface FlatCard
-  extends Omit<
-    Card,
-     "description" | "lessons" | "featured" | "videoVersion" | "badge"
-  > {}
+  extends Omit<Card, "description" | "lessons" | "featured" | "videoVersion"> {}
 
 export interface PostCard
   extends Omit<
     Card,
-    | "lessons"
-    | "featured"
-    | "videoVersion"
-    | "badge"
-    | "videoVersion"
-    | "featured"
-  > {}
+    "lessons" | "featured" | "videoVersion" | "videoVersion" | "featured"
+  > {
+  featured?: boolean;
+}

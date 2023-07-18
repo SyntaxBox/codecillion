@@ -28,6 +28,15 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "featured",
+      title: "Featured",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: "description",

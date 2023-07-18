@@ -1,1 +1,1 @@
-export const TITLE = "Code Lighthouse";
+export const TITLE = "codexpand";

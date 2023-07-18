@@ -1,7 +1,4 @@
-import IconWithTextLabel from "@/app/UI/labels/IconWithTextLabel";
-import TextLabel from "@/app/UI/labels/TextLabel";
 import { FlatCard } from "@/interfaces/Cards";
-import { TablerIconsProps } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -17,8 +14,9 @@ function FlatCard({
 }) {
   return (
     <Link
+      title={title}
       href={href}
-      className={`hover:grayscale-[0.7] aspect-card rounded-xl overflow-hidden shadow-2xl shadow-slate-100 dark:shadow-slate-800 ${className}`}
+      className={` bg-gradient-radial from-primary-400 dark:from-cyan-600 dark:to-primary-700 to-primary-alt-500 hover:grayscale-[0.7] aspect-card rounded-xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-slate-800 ${className}`}
     >
       <Image
         src={image}

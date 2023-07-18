@@ -10,7 +10,6 @@ function LargeCard({
   image,
   href,
   title,
-  badge,
   description,
   lessons,
   className,
@@ -27,8 +26,7 @@ function LargeCard({
         height={648}
         className="aspect-[5/3] absolute top-0 left-0 object-cover object-left"
       />
-      <div className="flex items-center w-full justify-between">
-        <Badge>{badge}</Badge>
+      <div className="flex items-center w-full justify-end">
         <LessonsCount lessons={lessons} />
       </div>
       <div className="backdrop-blur-md w-full bg-[#ffffff8b] dark:bg-[#20335e8b] p-2 sm:p-4 rounded-lg">

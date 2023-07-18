@@ -1,5 +1,6 @@
 import { NavbarButton } from "@/interfaces/navbar";
 import {
+  IconCodeDots,
   IconDeviceDesktopCode,
   IconFileCode,
   IconFolderCode,
@@ -16,7 +17,7 @@ export const navbarButtons: NavbarButton[] = [
     Icon: IconFileCode,
   },
   {
-    title: "stacks",
+    title: "Stacks",
     href: "stacks",
     Icon: IconDeviceDesktopCode,
   },

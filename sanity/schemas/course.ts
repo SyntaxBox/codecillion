@@ -43,7 +43,7 @@ export default defineType({
       title: "Description",
       type: "text",
       rows: 3,
-      validation: (Rule) => Rule.required().max(160),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "lessons",

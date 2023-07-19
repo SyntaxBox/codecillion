@@ -1,14 +1,14 @@
-import Featured from "./components/Featured/Featured";
+import Featured from "@/app/components/Featured/Featured";
 import { courses as sample } from "@/mocks/courses";
-import Courses from "./components/Courses/Courses";
+import Courses from "@/app/components/Courses/Courses";
 import { stacks } from "@/mocks/stacks";
-import Posts from "./components/Posts/Posts";
+import Posts from "@/app/components/Posts/Posts";
 import { posts } from "@/mocks/posts";
-import ExploreMore from "./components/ExploreMore/ExploreMore";
-import SocialBanner from "./components/SocialBanner/SocialBanner";
-import Container from "./UI/layout/Container";
-import FlatCard from "./components/FlatCard/FlatCard";
-import Footer from "./components/Footer/Footer";
+import ExploreMore from "@/app/components/ExploreMore/ExploreMore";
+import SocialBanner from "@/app/components/SocialBanner/SocialBanner";
+import Container from "@/app/UI/layout/Container";
+import FlatCard from "@/app/components/FlatCard/FlatCard";
+import Footer from "@/app/components/Footer/Footer";
 
 let courses = [...sample];
 

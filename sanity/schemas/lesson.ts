@@ -46,7 +46,30 @@ export default defineType({
       name: "content",
       title: "Content",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          marks: {
+            annotations: [
+              { name: "color", title: "Color", type: "color" },
+              {
+                title: "URL",
+                name: "link",
+                type: "object",
+                fields: [
+                  {
+                    title: "URL",
+                    name: "href",
+                    type: "url",
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        { type: "imageBlock" }, // Custom block for images
+        { type: "codeBlock" }, // Custom block for code text
+      ],
       validation: (Rule) => Rule.required(),
     },
     {

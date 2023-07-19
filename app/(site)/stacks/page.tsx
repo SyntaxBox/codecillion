@@ -1,7 +1,7 @@
 "use client";
 import Container from "@/app/UI/layout/Container";
 import React from "react";
-import ComingSoon from "../components/ComingSoon/ComingSoon";
+import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
 
 function page() {
   return (

@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { courses as sample } from "@/mocks/courses";
-import Courses from "../components/Courses/Courses";
-import Header from "../components/Header/Header";
-import LoadMore from "../components/LoadMore/LoadMore";
-import Footer from "../components/Footer/Footer";
-import BigCard from "../components/BigCard/BigCard";
+import Courses from "@/app/components/Courses/Courses";
+import Header from "@/app/components/Header/Header";
+import LoadMore from "@/app/components/LoadMore/LoadMore";
+import Footer from "@/app/components/Footer/Footer";
+import BigCard from "@/app/components/BigCard/BigCard";
 
 let courses = [...sample];
 

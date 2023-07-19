@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { posts as sample } from "@/mocks/posts";
-import Header from "../components/Header/Header";
-import LoadMore from "../components/LoadMore/LoadMore";
-import Posts from "../components/Posts/Posts";
-import BigCard from "../components/BigCard/BigCard";
-import Footer from "../components/Footer/Footer";
+import Header from "@/app/components/Header/Header";
+import LoadMore from "@/app/components/LoadMore/LoadMore";
+import Posts from "@/app/components/Posts/Posts";
+import BigCard from "@/app/components/BigCard/BigCard";
+import Footer from "@/app/components/Footer/Footer";
 let posts = [...sample];
 
 const featuredPost = posts.find((post) => post.featured);

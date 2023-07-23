@@ -15,20 +15,18 @@
     filter 0.2s ease-in-out;
 }
 
-::selection ,
+::selection,
 ::-moz-selection {
   color: #ffffff;
-  background-color: #0097B6;
+  background-color: #0097b6;
   -webkit-text-fill-color: #ffffff;
 }
-
 
 .dark ::selection,
 .dark ::-moz-selection {
   color: #ffffff;
-  background-color: #00B8AA;
+  background-color: #00b8aa;
   -webkit-text-fill-color: #ffffff;
-
 }
 
 ::-webkit-scrollbar {

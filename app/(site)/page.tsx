@@ -50,3 +50,13 @@ export default function Home() {
     </main>
   );
 }
+
+interface food {
+  [key: string]: string | number;
+}
+
+const fruits: food = {
+  orange: 2,
+  apple: 3,
+  banana: "empty",
+};

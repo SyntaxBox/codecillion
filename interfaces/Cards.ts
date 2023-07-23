@@ -12,10 +12,11 @@ export interface FeaturedCard extends Omit<Card, "lessons" | "videoVersion"> {}
 export interface FlatCard
   extends Omit<Card, "description" | "lessons" | "featured" | "videoVersion"> {}
 
-export interface PostCard
-  extends Omit<
-    Card,
-    "lessons" | "featured" | "videoVersion" | "videoVersion" | "featured"
-  > {
+export interface PostCard extends Omit<Card, "lessons" | "featured"> {
   featured?: boolean;
 }
+
+export type GeneralCard = PostCard | FlatCard | FeaturedCard | LargeCard | Card;
+
+export interface SearchCard
+  extends Omit<Card, "description" | "lessons" | "featured"> {}

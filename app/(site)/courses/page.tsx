@@ -32,6 +32,8 @@ export default function Page() {
       <Header
         title="Courses"
         description="Master coding with our diverse range of courses. From beginners to experts, unleash your programming potential."
+        searchObjectsType="courses"
+        searchPlaceholder="Search courses Python, react ..."
       />
       <BigCard
         description={description}

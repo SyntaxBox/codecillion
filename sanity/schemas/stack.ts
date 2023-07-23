@@ -48,5 +48,12 @@ export default defineType({
       ],
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "string" }],
+      validation: (Rule) => Rule.required(),
+    },
   ],
 });

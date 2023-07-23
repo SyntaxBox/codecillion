@@ -7,9 +7,13 @@ import P from "@/app/UI/Typography/P";
 function Header({
   title,
   description,
+  searchPlaceholder,
+  searchObjectsType,
 }: {
   title: string;
   description: string;
+  searchPlaceholder: string;
+  searchObjectsType: string;
 }) {
   return (
     <Container>
@@ -26,7 +30,10 @@ function Header({
           </p>
         </div>
         <div className=" w-full md:w-[480px]">
-          <Search placeholder="Search courses Python, react ..." />
+          <Search
+            placeholder={searchPlaceholder}
+            objectsType={searchObjectsType}
+          />
         </div>
       </section>
     </Container>

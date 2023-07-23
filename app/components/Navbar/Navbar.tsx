@@ -3,7 +3,6 @@ import Logo from "../Logo/Logo";
 import Container from "../../UI/layout/Container";
 import { navbarButtons } from "@/data/elements/navbar";
 import SocialIcons from "../SocialIcons/SocialIcons";
-import Owner from "../Owner/Owner";
 import DarkMode from "../DarkMode/DarkMode";
 import NavButtons from "../NavButtons/NavButtons";
 import SlideMenu from "../SlideMenu/SlideMenu";
@@ -23,23 +22,11 @@ function Navbar() {
         <Logo className="lg:hidden" width={48} height={48} href="/" />
         <NavButtons className="hidden md:flex" buttons={navbarButtons} />
         <div className="flex items-center gap-6">
-          <Owner className="hidden lg:flex" />
-          <Owner className="hidden md:flex lg:hidden " excludeTitle />
           <SocialIcons className="hidden md:flex" />
           <DarkMode />
           <SlideMenu title="The Menu" className="md:hidden">
             <div className="flex flex-col justify-between">
-              <NavButtons
-                className="flex-col w-full"
-                buttons={[
-                  ...navbarButtons,
-                  {
-                    href: "owner",
-                    title: "Owner",
-                    Icon: IconUser,
-                  },
-                ]}
-              />
+              <NavButtons className="flex-col w-full" buttons={navbarButtons} />
               <SocialIcons className="gap-4 p-2" />
             </div>
           </SlideMenu>

@@ -1,5 +1,6 @@
 import BigTitle from "@/app/UI/Typography/BigTitle";
 import Container from "@/app/UI/layout/Container";
+import { TITLE } from "@/constants/other/title";
 import Image from "next/image";
 import React from "react";
 
@@ -25,7 +26,7 @@ function SocialBanner() {
           drop-shadow-[0_1px_1px_#78c7ff]
           dark:drop-shadow-[0px_1px_1px_rgb(0, 255, 157)]  gradient-text py-2 "
           >
-            @codelighthouse
+            @{TITLE}
           </p>
         </div>
       </div>

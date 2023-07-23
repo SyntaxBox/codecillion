@@ -28,13 +28,13 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "description",
       title: "Description",
       type: "text",
-      rows: 3,
-      validation: (Rule) => Rule.required().max(160),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "content",
@@ -69,6 +69,12 @@ export default defineType({
     {
       name: "tags",
       title: "Tags",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
+      name: "keywords",
+      title: "Keywords",
       type: "array",
       of: [{ type: "string" }],
     },

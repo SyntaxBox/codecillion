@@ -31,6 +31,8 @@ export default function Page() {
       <Header
         title="Posts"
         description="Stay informed and inspired with our insightful programming posts. Enhance your skills and explore the latest trends in coding."
+        searchObjectsType="posts"
+        searchPlaceholder="Search posts and topics ..."
       />
       <BigCard
         href={`/posts/${slug}`}

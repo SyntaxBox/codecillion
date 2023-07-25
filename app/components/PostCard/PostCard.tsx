@@ -13,40 +13,27 @@ function PostCard({
   title,
   description,
 }: Omit<PostCard, "slug"> & { href: string }) {
-  const style = {
-    backgroundImage: `url(${image})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-  };
-
   return (
     <Link
-      style={style}
       href={href}
-      className="hover:grayscale-[0.7] overflow-hidden flex flex-col justify-end rounded-xl shadow-2xl shadow-slate-100 dark:shadow-slate-800"
+      className="hover:grayscale-[0.7] flex md:h-[120px] flex-col md:flex-row justify-end rounded-xl shadow-slate-100 dark:shadow-slate-800 max-w-[520px] md:max-w-full mx-auto"
     >
-      <Image
-        src={image}
-        alt={`${title} thumbnail`}
-        width={1280}
-        height={720}
-        className="w-full aspect-video"
-      ></Image>
-      <div className="h-fit w-full relative">
+      <div className="relative aspect-video h-full">
         <Image
           src={image}
           alt={`${title} thumbnail`}
-          width={1280}
-          height={720}
-          className="absolute top-0 left-0"
-        ></Image>
-        <div className="flex min-h-full gap-3 flex-col p-3 items-start justify-between backdrop-blur-md bg-[#ffffff8b] dark:bg-[#20335e8b]">
-          <h3 className="text-black dark:text-white font-semibold capitalize text-xl">
+          width={720}
+          height={360}
+          className="aspect-video rounded-lg"
+        />
+      </div>
+      <div className="h-fit w-full relative">
+        <div className="flex min-h-full gap-3 flex-col p-3 items-start justify-between">
+          <h3 className="text-primary-600 dark:text-primary-alt-500 font-semibold capitalize sm:text-xl">
             {title}
           </h3>
-          <p className="text-slate-800 dark:text-slate-200 leading-6 tracking-wider">
-            {description.substring(0, 70)}...
+          <p className="text-slate-800 dark:text-slate-200 text-sm leading-6 sm:text-base line-clamp-2 text-ellipsis">
+            {description}...
           </p>
         </div>
       </div>

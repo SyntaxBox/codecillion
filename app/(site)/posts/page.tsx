@@ -27,7 +27,7 @@ export default function Page() {
     }, 1000);
   };
   return (
-    <main className="flex items-center gap-6 flex-col">
+    <main className="flex items-center justify-center mx-auto gap-6 flex-col max-w-[520px] md:max-w-[820px] lg:max-w-[1024px]">
       <Header
         title="Posts"
         description="Stay informed and inspired with our insightful programming posts. Enhance your skills and explore the latest trends in coding."
@@ -39,6 +39,7 @@ export default function Page() {
         title={title}
         description={description}
         image={image}
+        reduced
       />
       <Posts posts={posts.slice(0, count)} />
       {count < posts.length && (

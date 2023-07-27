@@ -50,7 +50,6 @@ export default function Page() {
           onClick={handleClick}
         />
       )}
-      <Footer />
     </main>
   );
 }

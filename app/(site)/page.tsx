@@ -1,17 +1,18 @@
 import Featured from "@/app/components/Featured/Featured";
-import { courses as Csample } from "@/mocks/courses";
+import { courses as c } from "@/mocks/courses";
 import Courses from "@/app/components/Courses/Courses";
 import { stacks } from "@/mocks/stacks";
 import Posts from "@/app/components/Posts/Posts";
-import { posts as Psample } from "@/mocks/posts";
+import { posts as p } from "@/mocks/posts";
 import ExploreMore from "@/app/components/ExploreMore/ExploreMore";
 import SocialBanner from "@/app/components/SocialBanner/SocialBanner";
 import Container from "@/app/UI/layout/Container";
 import FlatCard from "@/app/components/FlatCard/FlatCard";
-import Footer from "@/app/components/Footer/Footer";
 import BigCard from "../components/BigCard/BigCard";
+import { TITLE } from "@/constants/other/title";
+import { Metadata } from "next";
 
-let posts = [...Psample];
+let posts = [...p];
 
 const fPost = posts.find((post) => post.featured);
 const featuredPost = fPost || posts[0];
@@ -19,7 +20,7 @@ if (featuredPost) {
   posts = posts.filter((post) => post.slug !== featuredPost.slug);
 } else posts.shift();
 
-let courses = [...Csample];
+let courses = [...c];
 
 const fCourse = courses.find((course) => course.featured);
 const featuredCourse = fCourse || courses[0];
@@ -27,6 +28,13 @@ if (featuredCourse) {
   courses = courses.filter((course) => !course.featured);
   courses = courses.splice(0, 2);
 } else courses.shift();
+
+export const metadata: Metadata = {
+  title: TITLE,
+  description:
+    "Unlock your coding potential at Codelighthouse. Explore our programming courses, insightful posts, and curated stacks for a brighter programming journey.",
+  robots: "index, follow",
+};
 
 export default function Home() {
   return (
@@ -59,7 +67,6 @@ export default function Home() {
       />
       <Posts posts={posts.slice(0, 6)} />
       <ExploreMore href="posts" />
-      <Footer />
     </main>
   );
 }

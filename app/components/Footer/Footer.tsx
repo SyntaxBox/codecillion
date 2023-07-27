@@ -22,7 +22,11 @@ function Footer({ className }: { className?: string }) {
     >
       <Container className="flex flex-col items-center justify-between gap-6 pb-4">
         <Logo width={48} height={48} includeTitle href="/" />
-        <NavButtons buttons={owner} excludeIcons />
+        <NavButtons
+          buttons={owner}
+          excludeIcons
+          className="flex-wrap items-center justify-center"
+        />
         <SocialIcons alt />
         <span>
           Copyright &copy;{new Date().getFullYear()}{" "}

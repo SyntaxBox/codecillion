@@ -50,7 +50,6 @@ export default function Page() {
           loading={loading}
         />
       )}
-      <Footer />
     </main>
   );
 }

@@ -2,14 +2,9 @@ import Providers from "./Providers";
 import Navbar from "@/app/components/Navbar/Navbar";
 import "../globals.css";
 import { Inter } from "next/font/google";
+import Footer from "../components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "codelighthouse",
-  description:
-    "Unlock your coding potential at Codelighthouse. Explore our programming courses, insightful posts, and curated stacks for a brighter programming journey.",
-};
 
 export default function RootLayout({
   children,
@@ -25,6 +20,7 @@ export default function RootLayout({
               <Navbar />
             </header>
             {children}
+            <Footer className="mt-5" />
           </>
         </Providers>
       </body>

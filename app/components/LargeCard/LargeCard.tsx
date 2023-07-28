@@ -1,39 +1,41 @@
 import React from "react";
 import Badge from "@/app/UI/Typography/Badge";
 import P from "@/app/UI/Typography/P";
-import { LargeCard as LargeCardBase } from "@/interfaces/Cards";
+import { LargeCard } from "@/interfaces/Cards";
 import Image from "next/image";
 import Link from "next/link";
 import LessonsCount from "../LessonsCount/LessonsCount";
 
 function LargeCard({
-  image,
-  href,
+  thumbnail,
+  slug,
   title,
   description,
   lessons,
   className,
-}: Omit<LargeCardBase, "slug"> & { href: string; className?: string }) {
+}: LargeCard & { className?: string }) {
   return (
     <Link
-      href={href}
+      href={slug}
       className={`hover:grayscale-[0.7] relative aspect-[5/3] overflow-hidden rounded-l-xl justify-between flex items-center flex-col gap-3 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-800 shadow-slate-100 dark:shadow-slate-800 w-full ${className}`}
     >
       <Image
-        src={image}
+        src={thumbnail}
         alt={`${title} thumbnail`}
         width={1080}
         height={648}
         className="aspect-[5/3] absolute top-0 left-0 object-cover object-left"
       />
-      <div className="flex items-center w-full justify-end">
+      <div className="flex items-center w-full justify-end ">
         <LessonsCount lessons={lessons} />
       </div>
       <div className="backdrop-blur-md w-full bg-[#ffffff8b] dark:bg-[#20335e8b] p-2 sm:p-4 rounded-lg">
         <h3 className="text-2xl text-slate-900 dark:text-white capitalize font-semibold">
           {title}
         </h3>
-        <P>{description.substring(0, 60)}...</P>
+        <p className="text-ellipsis line-clamp-2 capitalize text-sm sm:text-base leading-6  text-slate-700 dark:text-slate-300 tracking-wider">
+          {description}
+        </p>
       </div>
     </Link>
   );

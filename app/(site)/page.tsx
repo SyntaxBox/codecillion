@@ -1,71 +1,54 @@
+import { Metadata } from "next";
 import Featured from "@/app/components/Featured/Featured";
 import { courses as c } from "@/mocks/courses";
 import Courses from "@/app/components/Courses/Courses";
 import { stacks } from "@/mocks/stacks";
 import Posts from "@/app/components/Posts/Posts";
-import { posts as p } from "@/mocks/posts";
 import ExploreMore from "@/app/components/ExploreMore/ExploreMore";
 import SocialBanner from "@/app/components/SocialBanner/SocialBanner";
 import Container from "@/app/UI/layout/Container";
 import FlatCard from "@/app/components/FlatCard/FlatCard";
 import BigCard from "../components/BigCard/BigCard";
-import { TITLE } from "@/constants/other/title";
-import { Metadata } from "next";
-
-let posts = [...p];
-
-const fPost = posts.find((post) => post.featured);
-const featuredPost = fPost || posts[0];
-if (featuredPost) {
-  posts = posts.filter((post) => post.slug !== featuredPost.slug);
-} else posts.shift();
-
-let courses = [...c];
-
-const fCourse = courses.find((course) => course.featured);
-const featuredCourse = fCourse || courses[0];
-if (featuredCourse) {
-  courses = courses.filter((course) => !course.featured);
-  courses = courses.splice(0, 2);
-} else courses.shift();
+import { metadata as homePageMetadata } from "@/data/meta/pages/indexPage";
+import { getAllPosts, getAllCourses, getFeaturedCourse } from "@/sanity/utils";
 
 export const metadata: Metadata = {
-  title: TITLE,
-  description:
-    "Unlock your coding potential at Codelighthouse. Explore our programming courses, insightful posts, and curated stacks for a brighter programming journey.",
-  robots: "index, follow",
+  ...homePageMetadata,
 };
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllPosts({ max: 6 });
+  const featuredCourse = await getFeaturedCourse();
+  const courses = await getAllCourses({ max: 2 });
   return (
-    <main className="flex flex-col gap-6 items-center">
+    <main className="flex flex-col gap-6 items-center md:max-w-[820px] lg:max-w-full mx-auto">
       <Featured
         description={featuredCourse.description}
         href={`/courses/${featuredCourse.slug}`}
-        image={`${featuredCourse.featured}`}
+        thumbnail={`${featuredCourse.featured}`}
         title={featuredCourse.title}
       />
       <Courses courses={courses} />
       <SocialBanner />
       <Container className="flex flex-col mdlg:flex-row gap-3 lg:gap-6 items-center justify-between">
         <FlatCard
-          image={stacks[0].image}
+          thumbnail={stacks[0].thumbnail}
           href={`programming-paths${stacks[0].slug}`}
           title={stacks[0].title}
         />
         <FlatCard
-          image={stacks[1].image}
+          thumbnail={stacks[1].thumbnail}
           href={`programming-paths${stacks[1].slug}`}
           title={stacks[1].title}
         />
       </Container>
       <BigCard
-        image={featuredPost.image}
-        title={featuredPost.title}
-        description={featuredPost.description}
-        href={featuredPost.slug}
+        thumbnail={posts[0].thumbnail}
+        title={posts[0].title}
+        description={posts[0].description}
+        slug={posts[0].slug}
       />
-      <Posts posts={posts.slice(0, 6)} />
+      <Posts posts={posts.splice(1, posts.length)} />
       <ExploreMore href="posts" />
     </main>
   );

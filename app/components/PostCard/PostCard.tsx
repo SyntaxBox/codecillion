@@ -8,7 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 function PostCard({
-  image,
+  thumbnail,
   href,
   title,
   description,
@@ -20,7 +20,7 @@ function PostCard({
     >
       <div className="relative aspect-video h-full">
         <Image
-          src={image}
+          src={thumbnail}
           alt={`${title} thumbnail`}
           width={720}
           height={360}

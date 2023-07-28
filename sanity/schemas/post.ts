@@ -78,12 +78,5 @@ export default defineType({
       type: "array",
       of: [{ type: "string" }],
     },
-    // Add any other desired post properties below
-    // {
-    //   name: 'author',
-    //   title: 'Author',
-    //   type: 'reference',
-    //   to: [{ type: 'author' }],
-    // },
   ],
 });

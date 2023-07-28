@@ -7,17 +7,11 @@ import Image from "next/image";
 import P from "@/app/UI/Typography/P";
 
 function Featured({
-  image,
+  thumbnail,
   href,
   title,
   description,
 }: Omit<FeaturedCard, "slug"> & { href: string }) {
-  const style = {
-    backgroundImage: `url(${image})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-  };
   return (
     <Container>
       <Link
@@ -25,7 +19,7 @@ function Featured({
         className="relative w-full overflow-hidden h-[80vh] md:h-[70vh] lg:h-auto  lg:aspect-[21/9] rounded-[16px] p-1 md:p-2 lg:p-4 flex items-end justify-end flex-col border border-slate-100 dark:border-slate-800 shadow-2xl shadow-slate-100 dark:shadow-slate-800 hover:grayscale-[0.7]"
       >
         <Image
-          src={image}
+          src={thumbnail}
           alt={`${title} thumbnail`}
           width={1920}
           height={823}

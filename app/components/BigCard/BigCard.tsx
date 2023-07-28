@@ -5,35 +5,32 @@ import H3 from "@/app/UI/Typography/H3";
 import Container from "@/app/UI/layout/Container";
 import Link from "next/link";
 import Image from "next/image";
+import { Card } from "@/interfaces/Cards";
 
 function BigCard({
-  image,
+  thumbnail,
   lessons,
   badge,
   title,
   description,
-  href,
+  slug,
   reduced,
-}: {
-  image: string;
-  title: string;
-  description: string;
+}: Omit<Card, "lessons"> & {
   lessons?: number;
   badge?: string;
-  href: string;
   reduced?: boolean;
 }) {
   return (
     <Container className="hover:grayscale">
       <Link
-        href={href}
-        className={`flex flex-col mdl:h-[300px] mdl:flex-row w-full gap-3 ${
-          reduced ? "xl:h-[300px]" : "xl:h-[360px]"
+        href={slug}
+        className={`flex flex-col lg:flex-row w-full gap-3 ${
+          reduced ? "xl:h-[302px]" : "xl:h-[360px]"
         }`}
       >
         <div className="relative aspect-video h-full">
           <Image
-            src={image}
+            src={thumbnail}
             alt={`${title} thumbnail`}
             width={1080}
             height={608}

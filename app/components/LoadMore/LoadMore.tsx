@@ -1,31 +1,27 @@
-"use client";
-import { IconDots, IconFidgetSpinner } from "@tabler/icons-react";
-import React, { useState } from "react";
+import React from "react";
+import LoadMorePosts from "./LoadMorePosts";
+import LoadMoreCourses from "./LoadMoreCourses";
 
-type props = {
-  text: string;
-  loading: boolean;
-  loadingText?: string;
-} & JSX.IntrinsicElements["button"];
-
-function LoadMore({ text, loading, loadingText, ...rest }: props) {
+function LoadMore({
+  buttonText,
+  data,
+}: {
+  buttonText: string;
+  data: {
+    from: "posts" | "courses";
+    start: number;
+    step: number;
+  };
+}) {
+  const { from, start, step } = data;
   return (
-    <button
-      {...rest}
-      className="flex gap-3 items-center bg-primary-op1 text-primary-600 dark:bg-primary-alt-op1 dark:text-primary-alt-500 rounded-lg px-4 py-3 focus:shadow-lg hover:scale-105"
-    >
-      {loading === false ? (
-        <>
-          <IconDots />
-          {text}
-        </>
-      ) : (
-        <>
-          <IconFidgetSpinner className="animate-spin" />
-          {loadingText ? loadingText : text}
-        </>
-      )}{" "}
-    </button>
+    <div>
+      {from === "posts" ? (
+        <LoadMorePosts buttonText={buttonText} start={start} step={step} />
+      ) : from === "courses" ? (
+        <LoadMoreCourses buttonText={buttonText} start={start} step={step} />
+      ) : null}
+    </div>
   );
 }
 

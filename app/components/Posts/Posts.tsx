@@ -6,10 +6,10 @@ import PostCard from "../PostCard/PostCard";
 function Posts({ posts }: { posts: props[] }) {
   return (
     <Container className="grid gap-6 grid-cols-1">
-      {posts.map(({ description, title, slug, image }, i) => (
+      {posts.map(({ description, title, slug, thumbnail }, i) => (
         <PostCard
           key={i}
-          image={image}
+          thumbnail={thumbnail}
           href={`posts/${slug}`}
           title={title}
           description={description}

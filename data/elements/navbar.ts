@@ -21,4 +21,9 @@ export const navbarButtons: NavbarButton[] = [
     href: "stacks",
     Icon: IconDeviceDesktopCode,
   },
+  {
+    title: "Projects",
+    href: "projects",
+    Icon: IconCodeDots,
+  },
 ];

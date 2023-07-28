@@ -1,5 +1,5 @@
 export interface Card {
-  image: string;
+  thumbnail: string;
   slug: string;
   title: string;
   description: string;

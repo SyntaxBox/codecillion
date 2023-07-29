@@ -29,7 +29,7 @@ function LoadMorePosts({
     await fetchPosts().then(() => setLoading(false));
   };
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-3">
       <Posts posts={posts} />
       {loadMore && (
         <LoadMoreButton

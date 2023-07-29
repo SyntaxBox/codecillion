@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "sanity";
+
 export interface Query {
   id: string;
   slug: string;
@@ -5,7 +7,7 @@ export interface Query {
   description: string;
   thumbnail: string;
   keywords: string[];
-  content: any;
+  content: PortableTextBlock[];
   tags: string[];
   featured?: string;
   lessons: number;
@@ -17,3 +19,12 @@ export interface FeaturedCourseQuery
   extends Omit<CourseQuery, "thumbnail" | "keywords" | "content" | "lessons"> {
   featured: string;
 }
+
+export interface StackQuery
+  extends Omit<Query, "keywords" | "content" | "featured" | "lessons"> {}
+
+export interface SearchQuery
+  extends Omit<
+    Query,
+    "featured" | "lessons" | "description" | "keywords" | "content" | "tags"
+  > {}

@@ -1,8 +1,6 @@
-import { clientConfig } from "@/config/sanity.client";
 import { CourseQuery, FeaturedCourseQuery } from "@/interfaces/queries";
-import { createClient, groq } from "next-sanity";
-
-const client = createClient(clientConfig);
+import { groq } from "next-sanity";
+import { client } from "./index";
 
 export async function getFeaturedCourse(): Promise<FeaturedCourseQuery> {
   return client.fetch(
@@ -12,7 +10,6 @@ export async function getFeaturedCourse(): Promise<FeaturedCourseQuery> {
       "slug": slug.current,
       "featured": featured.asset->url,
       description,
-      tags,
       "lessons": count(lessons)
     }`
   );
@@ -26,11 +23,10 @@ export async function getAllCourses({
   max?: number;
 }): Promise<Omit<CourseQuery, "keywords">[]> {
   return client.fetch(
-    groq`*[_type == "course"][$start...$end] {
+    groq`*[_type == "course"][$start...$end] | order(_createdAt asc) {
       _id,
       title,
       description,
-      tags,
       "thumbnail": thumbnail.asset->url,
       "slug": slug.current,
       "lessons": count(lessons),

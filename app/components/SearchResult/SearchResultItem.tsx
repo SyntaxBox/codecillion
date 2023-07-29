@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 function SearchResultItem({
-  image,
+  thumbnail,
   title,
   slug,
   pageName,
@@ -37,7 +37,7 @@ function SearchResultItem({
       className="w-full flex items-center px-2 gap-3"
     >
       <Image
-        src={image}
+        src={thumbnail}
         width={80}
         height={40}
         alt={`${title} thumbnail`}

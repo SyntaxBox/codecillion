@@ -1,6 +1,7 @@
+"use client";
 import { SearchCard } from "@/interfaces/Cards";
 import { search } from "@/logic/search";
-import React from "react";
+import React, { useState } from "react";
 import SearchResult from "../SearchResult/SearchResult";
 
 function SearchModel({

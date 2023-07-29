@@ -3,7 +3,7 @@ import React from "react";
 
 function LessonsCount({ lessons }: { lessons: number | null }) {
   return (
-    <span className="flex items-center backdrop-blur-sm bg-[#ffffff8b] dark:bg-[#20335e8b] rounded-lg text-slate-900 p-1 px-2 md:py-2 md:px-3 dark:text-slate-300 gap-3 text-xl">
+    <span className=" px-3 py-1 w-fit rounded-full bg-primary-op3 text-primary-500 text-lg dark:text-primary-alt-500">
       {typeof lessons !== "number" || lessons === 0 ? (
         "Coming Soon"
       ) : (

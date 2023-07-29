@@ -30,7 +30,7 @@ function LoadMoreCourses({
     await fetchCourses().then(() => setLoading(false));
   };
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-3">
       <Courses courses={courses} />
       {loadMore && (
         <LoadMoreButton

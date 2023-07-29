@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import Featured from "@/app/components/Featured/Featured";
-import { courses as c } from "@/mocks/courses";
 import Courses from "@/app/components/Courses/Courses";
-import { stacks } from "@/mocks/stacks";
 import Posts from "@/app/components/Posts/Posts";
 import ExploreMore from "@/app/components/ExploreMore/ExploreMore";
 import SocialBanner from "@/app/components/SocialBanner/SocialBanner";
@@ -10,7 +8,12 @@ import Container from "@/app/UI/layout/Container";
 import FlatCard from "@/app/components/FlatCard/FlatCard";
 import BigCard from "../components/BigCard/BigCard";
 import { metadata as homePageMetadata } from "@/data/meta/pages/indexPage";
-import { getAllPosts, getAllCourses, getFeaturedCourse } from "@/sanity/utils";
+import {
+  getAllPosts,
+  getAllCourses,
+  getFeaturedCourse,
+  getAllStacks,
+} from "@/sanity/utils";
 
 export const metadata: Metadata = {
   ...homePageMetadata,
@@ -20,6 +23,7 @@ export default async function Home() {
   const posts = await getAllPosts({ max: 6 });
   const featuredCourse = await getFeaturedCourse();
   const courses = await getAllCourses({ max: 2 });
+  const stacks = await getAllStacks({});
   return (
     <main className="flex flex-col gap-6 items-center md:max-w-[820px] lg:max-w-full mx-auto">
       <Featured

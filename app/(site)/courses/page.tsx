@@ -5,7 +5,8 @@ import Header from "@/app/components/Header/Header";
 import BigCard from "@/app/components/BigCard/BigCard";
 import { getAllCourses } from "@/sanity/utils";
 import LoadMore from "@/app/components/LoadMore/LoadMore";
-export const metadata = { ...coursesMetadata };
+import { Metadata } from "next";
+export const metadata: Metadata = { ...coursesMetadata };
 
 export default async function Page() {
   const courses = await getAllCourses({ max: 5 });
@@ -14,14 +15,14 @@ export default async function Page() {
       <Header
         title="Courses"
         description="Master coding with our diverse range of courses. From beginners to experts, unleash your programming potential."
-        searchObjectsType="courses"
+        searchObjectsType="course"
         searchPlaceholder="Search courses Python, react ..."
       />
       <BigCard
         description={courses[0].description}
         thumbnail={courses[0].thumbnail}
         title={courses[0].title}
-        slug={courses[0].slug}
+        slug={`courses/${courses[0].slug}`}
       />
       <Courses courses={courses.splice(1, courses.length)} />
       <LoadMore

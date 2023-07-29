@@ -1,9 +1,12 @@
 "use client";
-import Container from "@/app/UI/layout/Container";
 import React from "react";
 import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
+import { stacksMetadata } from "@/data/meta/pages";
+import { Metadata } from "next";
 
-function page() {
+export const metadata: Metadata = { ...stacksMetadata };
+
+export default function stacks() {
   return (
     <ComingSoon
       description="We apologize for any inconvenience caused, but please note that the
@@ -13,5 +16,3 @@ function page() {
     />
   );
 }
-
-export default page;

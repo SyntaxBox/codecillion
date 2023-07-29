@@ -3,6 +3,13 @@ import Header from "@/app/components/Header/Header";
 import Posts from "@/app/components/Posts/Posts";
 import BigCard from "@/app/components/BigCard/BigCard";
 import { getAllPosts } from "@/sanity/utils";
+import { Metadata } from "next";
+import { postsMetadata } from "@/data/meta/pages";
+import LoadMore from "@/app/components/LoadMore/LoadMore";
+
+export const metadata: Metadata = {
+  ...postsMetadata,
+};
 
 export default async function Page() {
   const posts = await getAllPosts({});
@@ -11,7 +18,7 @@ export default async function Page() {
       <Header
         title="Posts"
         description="Stay informed and inspired with our insightful programming posts. Enhance your skills and explore the latest trends in coding."
-        searchObjectsType="posts"
+        searchObjectsType="post"
         searchPlaceholder="Search posts and topics ..."
       />
       <BigCard
@@ -22,6 +29,10 @@ export default async function Page() {
         reduced
       />
       <Posts posts={posts.splice(1, posts.length)} />
+      <LoadMore
+        buttonText="Load More"
+        data={{ from: "posts", start: 10, step: 5 }}
+      />
     </main>
   );
 }

@@ -16,9 +16,9 @@ function LoadMorePosts({
 }) {
   const [loadMore, setLoadMore] = useState(true);
   const [loading, setLoading] = useState(false);
-  const [posts, setPosts] = useState<Omit<PostQuery, "content" | "keywords">[]>(
-    []
-  );
+  const [posts, setPosts] = useState<
+    Omit<PostQuery, "content" | "keywords" | "tags">[]
+  >([]);
   const fetchPosts = async () => {
     const res = await getAllPosts({ start: start + posts.length, max: step });
     if (res.length < step) setLoadMore(false);

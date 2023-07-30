@@ -13,7 +13,7 @@ function Header({
   title: string;
   description: string;
   searchPlaceholder: string;
-  searchObjectsType: string;
+  searchObjectsType: "post" | "course";
 }) {
   return (
     <Container>

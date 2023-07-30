@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import dynamicMetadata from "@/logic/dynamicMetadata";
 import { getPostBySlug, getPostMetadataBySlug } from "@/sanity/utils";
 import { Metadata } from "next";
 import React from "react";
-import H1 from "@/app/UI/Typography/H1";
 import PostHeader from "@/app/components/PostHeader/PostHeader";
 import PostContent from "@/app/components/PostContent/PostContent";
 
@@ -40,7 +38,7 @@ async function page({ params }: Props) {
         thumbnail={thumbnail}
         title={title}
       />
-      <PostContent content={content} />
+      <PostContent className="content" content={content} />
     </main>
   );
 }

@@ -9,9 +9,15 @@ const components = {
   },
 };
 
-function PostContent({ content }: { content: PortableTextBlock[] }) {
+function PostContent({
+  content,
+  className,
+}: {
+  content: PortableTextBlock[];
+  className?: string;
+}) {
   return (
-    <section className="w-full border-r border-l border-slate-200 dark:border-slate-700 shadow-2xl shadow-slate-200 dark:shadow-slate-700 p-2 sm:p-4">
+    <section className={`w-full ${className}`}>
       <PortableText value={content} components={components} />
     </section>
   );

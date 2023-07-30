@@ -50,7 +50,7 @@ export default async function Home() {
         thumbnail={posts[0].thumbnail}
         title={posts[0].title}
         description={posts[0].description}
-        slug={posts[0].slug}
+        slug={`posts/${posts[0].slug}`}
       />
       <Posts posts={posts.splice(1, posts.length)} />
       <ExploreMore href="posts" />

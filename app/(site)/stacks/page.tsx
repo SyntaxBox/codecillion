@@ -1,10 +1,5 @@
-"use client";
 import React from "react";
 import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
-import { stacksMetadata } from "@/data/meta/pages";
-import { Metadata } from "next";
-
-export const metadata: Metadata = { ...stacksMetadata };
 
 export default function stacks() {
   return (

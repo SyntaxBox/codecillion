@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
 import { projectsMetadata } from "@/data/meta/pages";

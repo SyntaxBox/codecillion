@@ -38,7 +38,7 @@ async function page({ params }: Props) {
         thumbnail={thumbnail}
         title={title}
       />
-      <PostContent className="content" content={content} />
+      <PostContent content={content} />
     </main>
   );
 }

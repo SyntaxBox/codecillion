@@ -1,17 +1,4 @@
-import {
-  DESCRIPTION,
-  COURSES_DESCRIPTION,
-  POSTS_DESCRIPTION,
-} from "./description";
-import { TITLE, COURSES_TITLE, POSTS_TITLE } from "./title";
-import { THUMBNAIL } from "./Images";
-
-export {
-  DESCRIPTION,
-  TITLE,
-  COURSES_DESCRIPTION,
-  THUMBNAIL,
-  COURSES_TITLE,
-  POSTS_TITLE,
-  POSTS_DESCRIPTION,
-};
+export * from "./description";
+export * from "./title";
+export * from "./Images";
+export * from "./socialMedia";

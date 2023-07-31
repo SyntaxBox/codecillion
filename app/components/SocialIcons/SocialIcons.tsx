@@ -16,6 +16,7 @@ function SocialIcons({
         return (
           <Link
             href={href}
+            target="_blank"
             title={title}
             key={i}
             className={`cursor-pointer flex items-center justify-between ${

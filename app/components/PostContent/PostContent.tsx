@@ -55,21 +55,14 @@ const components = {
     },
     link: ({ children, value }: any) => {
       const { href } = value;
-      if (href.startsWith("http"))
-        return (
-          <a className="text-primary-600 dark:text-primary-alt-500 hover:text-primary-alt-500 hover:dark:text-primary-600">
-            {children}
-          </a>
-        );
-      else
-        return (
-          <Link
-            href={href}
-            className="text-primary-600 dark:text-primary-alt-500 hover:text-primary-alt-500 hover:dark:text-primary-600"
-          >
-            {children}
-          </Link>
-        );
+      return (
+        <Link
+          href={href}
+          className="text-primary-600 dark:text-primary-alt-500 hover:text-primary-alt-500 hover:dark:text-primary-600"
+        >
+          {children}
+        </Link>
+      );
     },
     strong: ({ children }: any) => {
       return <strong className="text-lg">{children}</strong>;

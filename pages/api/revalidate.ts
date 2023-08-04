@@ -32,7 +32,7 @@ export default async function handler(
   }
 
   try {
-    const pathToRevalidate = req.body.slug.current;
+    const pathToRevalidate = req.body.slug.current as string;
 
     console.log(`===== Revalidating: ${pathToRevalidate}`);
 
@@ -40,6 +40,7 @@ export default async function handler(
 
     return res.json({ revalidated: true });
   } catch (err) {
+    console.log(err);
     // Could not revalidate. The stale page will continue to be shown until
     // this issue is fixed.
     return res.status(500).send("Error while revalidating");

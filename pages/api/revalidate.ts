@@ -7,9 +7,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  console.log({ body: req.body });
   if (!SANITY_WEBHOOK_SECRET) return res.status(500).send("No secrete found");
 
   let signature = req.headers[SIGNATURE_HEADER_NAME];
+  console.log(signature);
   if (!signature) {
     {
       res.status(403).json({ success: false, message: "no signature" });
@@ -38,7 +40,6 @@ export default async function handler(
     await res.revalidate(
       `${type === "stacks" ? type : `${type}s`}/${pathToRevalidate}`
     );
-    console.log({ body: req.body });
 
     return res.json({ revalidated: true });
   } catch (err) {

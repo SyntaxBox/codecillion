@@ -6,6 +6,13 @@ import Link from "next/link";
 
 const components = {
   types: {
+    paragraph: ({ children }: any) => {
+      return (
+        <p className="text-[32px] text-slate-800 dark:text-slate-200  my-2">
+          {children}
+        </p>
+      );
+    },
     codeBlock: Code,
   },
   block: {
@@ -46,13 +53,6 @@ const components = {
     },
   },
   marks: {
-    p: ({ children }: any) => {
-      return (
-        <p className="text-lg text-slate-800 dark:text-slate-200  my-2">
-          {children}
-        </p>
-      );
-    },
     link: ({ children, value }: any) => {
       const { href } = value;
       return (
@@ -72,18 +72,10 @@ const components = {
     // Ex. 1: customizing common list types
     bullet: ({ children }: any) => <ul className="mt-xl">{children}</ul>,
     number: ({ children }: any) => <ol className="mt-lg">{children}</ol>,
-
-    // Ex. 2: rendering custom lists
-    checkmarks: ({ children }: any) => (
-      <ol className="m-auto text-lg">{children}</ol>
-    ),
   },
   listItem: {
     // Ex. 1: customizing common list types
     bullet: ({ children }: any) => <li className="list-disc">{children}</li>,
-
-    // Ex. 2: rendering custom list items
-    checkmarks: ({ children }: any) => <li>✅ {children}</li>,
   },
 };
 

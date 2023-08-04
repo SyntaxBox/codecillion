@@ -1,0 +1,83 @@
+{
+  "name": "codecillion",
+  "short_name": "codecillion",
+  "theme_color": "#0097B6",
+  "background_color": "#fff",
+  "display": "browser",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "shortcuts": [
+    {
+      "name": "Courses",
+      "short_name": "Courses",
+      "description": "See The great courses we offer for free",
+      "url": "/courses",
+      "icons": [{ "src": "/icons/courses.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Posts",
+      "short_name": "Posts",
+      "description": "stay updated with the latest new in the programming industry",
+      "url": "/posts",
+      "icons": [{ "src": "/icons/posts.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Stacks",
+      "short_name": "Stacks",
+      "description": "Become an expert developer with our expert development stacks",
+      "url": "/stacks",
+      "icons": [{ "src": "/icons/stacks.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "Become an expert with comprehensive projects",
+      "url": "/projects",
+      "icons": [{ "src": "/icons/projects.png", "sizes": "192x192" }]
+    }
+  ],
+  "description": "codecillion: great programming platform",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

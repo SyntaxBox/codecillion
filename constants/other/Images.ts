@@ -1,1 +1,1 @@
-export const THUMBNAIL = "/images/website.png";
+export const THUMBNAIL = "/images/thumbnail.png";

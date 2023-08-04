@@ -38,7 +38,7 @@ export default async function handler(
     await res.revalidate(
       `${type === "stacks" ? type : `${type}s`}/${pathToRevalidate}`
     );
-    console.log(req.body);
+    console.log({ body: req.body });
 
     return res.json({ revalidated: true });
   } catch (err) {

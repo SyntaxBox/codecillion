@@ -40,7 +40,7 @@ export default async function handler(
     await res.revalidate(`/`);
     await res.revalidate(`/${type === "stacks" ? type : `${type}s`}/${path}`);
 
-    return res.json({ message: "Revalidated" });
+    return res.json({ revalidated: true });
   } catch (err) {
     console.log(err);
     return res.status(500).send("Error while revalidating");

@@ -1,5 +1,13 @@
-import { PRIMARY_COLOR } from "@/constants/styles/colors";
 import { Metadata } from "next";
 export const themeColorMetadata: Metadata = {
-  themeColor: PRIMARY_COLOR,
+  themeColor: [
+    {
+      color: "#fff",
+      media: "(prefers-color-scheme: light)",
+    },
+    {
+      color: "#0f172a",
+      media: "(prefers-color-scheme: dark)",
+    },
+  ],
 };

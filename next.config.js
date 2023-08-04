@@ -5,6 +5,10 @@ const nextConfig = {
     dest: "public",
     register: true,
     skipWaiting: true,
+    themeColor: {
+      light: "#fff",
+      dark: "#0f172a",
+    },
   }),
   images: {
     remotePatterns: [

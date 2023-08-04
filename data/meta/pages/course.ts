@@ -1,21 +1,20 @@
 // import { coursesPage } from "@/constants/keywords/pages";
-import { THUMBNAIL } from "@/constants/other";
+import { THUMBNAIL, TWITTER, URL } from "@/constants/other";
 import {} from "@/constants/other";
 import { Metadata } from "next";
+import {
+  manifestMetadata,
+  openGraphMetadata,
+  themeColorMetadata,
+  twitterMetadata,
+} from "../global";
 
 export const metadata: Metadata = {
   robots: "noindex",
   title: "Coming Soon",
   description: "Coming Soon",
-  twitter: {
-    title: "Coming Soon",
-    description: "Coming Soon",
-    images: [THUMBNAIL],
-  },
-
-  openGraph: {
-    title: "Coming Soon",
-    description: "Coming Soon",
-    images: [THUMBNAIL],
-  },
+  ...twitterMetadata("Coming Soon", "Coming Soon", THUMBNAIL, `@${TWITTER}`),
+  ...openGraphMetadata("Coming Soon", "Coming Soon", THUMBNAIL, URL),
+  ...manifestMetadata,
+  ...themeColorMetadata,
 };

@@ -5,6 +5,14 @@ import { Metadata } from "next";
 import React from "react";
 import PostHeader from "@/app/components/PostHeader/PostHeader";
 import PostContent from "@/app/components/PostContent/PostContent";
+import {
+  iconsMetadata,
+  manifestMetadata,
+  openGraphMetadata,
+  themeColorMetadata,
+  twitterMetadata,
+} from "@/data/meta/global";
+import { TWITTER } from "@/constants/other";
 
 type Props = {
   params: { slug: string };
@@ -18,7 +26,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // fetch data
   const postMetadata = await getPostMetadataBySlug(slug);
   if (postMetadata) {
-    return dynamicMetadata(postMetadata);
+    const { title, description, thumbnail } = postMetadata;
+    const metadata: Metadata = {
+      ...dynamicMetadata(postMetadata),
+      ...twitterMetadata(title, description, thumbnail, TWITTER),
+      ...openGraphMetadata(title, description, thumbnail, `${URL}/${slug}`),
+      ...themeColorMetadata,
+      ...manifestMetadata,
+      ...iconsMetadata,
+    };
+    return metadata;
   } else {
     return {
       title: "Not Found",

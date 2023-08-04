@@ -3,23 +3,33 @@ import {
   COURSES_DESCRIPTION,
   COURSES_TITLE,
   THUMBNAIL,
+  URL,
+  TWITTER,
 } from "@/constants/other";
-import {} from "@/constants/other";
 import { Metadata } from "next";
+import {
+  manifestMetadata,
+  openGraphMetadata,
+  themeColorMetadata,
+  twitterMetadata,
+} from "../global";
 
 export const metadata: Metadata = {
   title: COURSES_TITLE,
   description: COURSES_DESCRIPTION,
   keywords: coursesPage,
-  twitter: {
-    title: COURSES_TITLE,
-    description: COURSES_DESCRIPTION,
-    images: [THUMBNAIL],
-  },
-
-  openGraph: {
-    title: COURSES_TITLE,
-    description: COURSES_DESCRIPTION,
-    images: [THUMBNAIL],
-  },
+  ...twitterMetadata(
+    COURSES_TITLE,
+    COURSES_DESCRIPTION,
+    THUMBNAIL,
+    `@${TWITTER}`
+  ),
+  ...openGraphMetadata(
+    COURSES_TITLE,
+    COURSES_DESCRIPTION,
+    THUMBNAIL,
+    `${URL}/courses`
+  ),
+  ...manifestMetadata,
+  ...themeColorMetadata,
 };

@@ -1,59 +1,47 @@
-import { isValidRequest } from "@sanity/webhook";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { isValidSignature, SIGNATURE_HEADER_NAME } from "@sanity/webhook";
+import { NextApiRequest, NextApiResponse } from "next";
 
-type Data = {
-  message: string;
-};
-
-const secret = process.env.SANITY_WEBHOOK_SECRET;
+const SANITY_WEBHOOK_SECRET = process.env.SANITY_WEBHOOK_SECRET;
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
-  if (req.method !== "POST") {
-    console.error("Must be a POST request");
-    return res.status(401).json({ message: "Must be a POST request" });
+  if (!SANITY_WEBHOOK_SECRET) return res.status(500).send("No secrete found");
+
+  let signature = req.headers[SIGNATURE_HEADER_NAME];
+  if (!signature) {
+    {
+      res.status(403).json({ success: false, message: "no signature" });
+      return;
+    }
   }
-  if (!secret) {
-    res.status(500).json({ message: "No secret Found" });
-    return;
-  }
-  if (!isValidRequest(req, secret)) {
-    res.status(401).json({ message: "Invalid signature" });
+  if (typeof signature !== "string") signature = signature[0];
+  const isValid = isValidSignature(
+    JSON.stringify(req.body),
+    signature,
+    SANITY_WEBHOOK_SECRET
+  );
+
+  console.log(`===== Is the webhook request valid? ${isValid}`);
+
+  // Validate signature
+  if (!isValid) {
+    res.status(401).json({ success: false, message: "Invalid signature" });
     return;
   }
 
   try {
-    const {
-      body: { type, slug },
-    } = req;
+    const pathToRevalidate = req.body.slug.current;
 
-    switch (type) {
-      case "post":
-        await res.revalidate(`/posts/${slug}`);
-        return res.json({
-          message: `Revalidated "${type}" with slug "${slug}"`,
-        });
-      case "course":
-        await res.revalidate(`/courses/${slug}`);
-        return res.json({
-          message: `Revalidated "${type}" with slug "${slug}"`,
-        });
-      case "stacks":
-        await res.revalidate(`/stacks/${slug}`);
-        return res.json({
-          message: `Revalidated "${type}" with slug "${slug}"`,
-        });
-      case "project":
-        await res.revalidate(`/projects/${slug}`);
-        return res.json({
-          message: `Revalidated "${type}" with slug "${slug}"`,
-        });
-    }
+    console.log(`===== Revalidating: ${pathToRevalidate}`);
 
-    return res.json({ message: "No managed type" });
+    await res.revalidate(pathToRevalidate);
+
+    return res.json({ revalidated: true });
   } catch (err) {
-    return res.status(500).send({ message: "Error revalidating" });
+    // Could not revalidate. The stale page will continue to be shown until
+    // this issue is fixed.
+    return res.status(500).send("Error while revalidating");
   }
 }

@@ -38,7 +38,7 @@ export default async function handler(
     const type = req.body._type;
     console.log(`===== Revalidating: ${type} -- ${pathToRevalidate}`);
     await res.revalidate(
-      `${type === "stacks" ? type : `${type}s`}/${pathToRevalidate}`
+      `/${type === "stacks" ? type : `${type}s`}/${pathToRevalidate}`
     );
 
     return res.json({ revalidated: true });

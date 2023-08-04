@@ -1,51 +1,36 @@
-import { isValidSignature, SIGNATURE_HEADER_NAME } from "@sanity/webhook";
+import { isValidRequest } from "@sanity/webhook";
 import { NextApiRequest, NextApiResponse } from "next";
 
-const SANITY_WEBHOOK_SECRET = process.env.SANITY_WEBHOOK_SECRET;
+const secret = process.env.SANITY_WEBHOOK_SECRET;
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log({ body: req.body });
-  if (!SANITY_WEBHOOK_SECRET) return res.status(500).send("No secrete found");
-
-  let signature = req.headers[SIGNATURE_HEADER_NAME];
-  console.log(signature);
-  if (!signature) {
-    {
-      res.status(403).json({ success: false, message: "no signature" });
-      return;
-    }
+  if (!secret) {
+    console.error("no secret");
+    return res.status(500).json({ message: "no secret found" });
   }
-  if (typeof signature !== "string") signature = signature[0];
-  const isValid = isValidSignature(
-    JSON.stringify(req.body),
-    signature,
-    SANITY_WEBHOOK_SECRET
-  );
 
-  console.log(`===== Is the webhook request valid? ${isValid}`);
+  if (req.method !== "POST") {
+    console.error("Must be a POST request");
+    return res.status(401).json({ message: "Must be a POST request" });
+  }
 
-  // Validate signature
-  if (!isValid) {
-    res.status(401).json({ success: false, message: "Invalid signature" });
+  if (!isValidRequest(req, secret)) {
+    res.status(401).json({ message: "Invalid signature" });
     return;
   }
 
   try {
-    const pathToRevalidate = req.body.slug.current as string;
-    const type = req.body._type;
-    console.log(`===== Revalidating: ${type} -- ${pathToRevalidate}`);
-    await res.revalidate(
-      `/${type === "stacks" ? type : `${type}s`}/${pathToRevalidate}`
-    );
+    const path = req.body.slug.current as string;
+    const type = req.body._type as string;
+    console.log(`Revalidating: ${type} -- ${path}`);
+    await res.revalidate(`/${type === "stacks" ? type : `${type}s`}/${path}`);
 
-    return res.json({ revalidated: true });
+    return res.json({ message: "Revalidated" });
   } catch (err) {
     console.log(err);
-    // Could not revalidate. The stale page will continue to be shown until
-    // this issue is fixed.
     return res.status(500).send("Error while revalidating");
   }
 }

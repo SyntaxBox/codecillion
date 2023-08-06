@@ -18,21 +18,21 @@ const components = {
   block: {
     h2: ({ children }: any) => {
       return (
-        <h2 className="font-bold mt-8 text-primary-600 dark:text-primary-alt-500 text-3xl">
+        <h2 className="font-bold mt-8 mb-2 text-primary-600 dark:text-primary-alt-500 text-3xl">
           {children}
         </h2>
       );
     },
     h3: ({ children }: any) => {
       return (
-        <h3 className="font-bold mt-8 text-primary-600 dark:text-primary-alt-500 text-2xl">
+        <h3 className="font-bold mt-8 mb-2 text-primary-600 dark:text-primary-alt-500 text-2xl">
           {children}
         </h3>
       );
     },
     h4: ({ children }: any) => {
       return (
-        <h4 className="font-bold mt-8 text-primary-600 dark:text-primary-alt-500 text-xl">
+        <h4 className="font-bold mt-8 mb-2 text-primary-600 dark:text-primary-alt-500 text-xl">
           {children}
         </h4>
       );
@@ -75,7 +75,9 @@ const components = {
   },
   listItem: {
     // Ex. 1: customizing common list types
-    bullet: ({ children }: any) => <li className="list-disc">{children}</li>,
+    bullet: ({ children }: any) => (
+      <li className="list-disc ml-8">{children}</li>
+    ),
   },
 };
 

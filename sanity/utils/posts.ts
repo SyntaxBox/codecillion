@@ -10,7 +10,7 @@ export async function getAllPosts({
   max?: number;
 }): Promise<Omit<PostQuery, "content" | "keywords" | "tags">[]> {
   return client.fetch(
-    groq`*[_type == "post"][$start...$end] {
+    groq`*[_type == "post"][$start...$end] | order(_createdAt desc) {
       _id,
       title,
       description,

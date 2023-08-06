@@ -46,9 +46,14 @@ function BigCard({
           <H3 className="capitalize font-semibold mdl:text-3xl xl:text-4xl">
             {title}
           </H3>
-          <p className="bg-slate-100 text-sm xl:text-base tracking-wider dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md p-3 line-clamp-5 overflow-ellipsis">
-            {description}
+          <p className="text-slate-800 dark:text-slate-200 text-sm leading-6 rounded-md xl:text-base line-clamp-5 text-ellipsis">
+            {description}...
           </p>
+          <div className="bg-slate-100 dark:bg-slate-800 rounded-md p-3">
+            <p className="text-sm xl:text-base tracking-wider text-slate-700 dark:text-slate-300 line-clamp-5 overflow-ellipsis">
+              {description}
+            </p>
+          </div>
         </div>
       </Link>
     </Container>

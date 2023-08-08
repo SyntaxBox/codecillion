@@ -39,4 +39,4 @@ next-env.d.ts
 
 # robots & sitemap files
 /public/robots.txt
-/public/*sitemap.xml
+/public/*sitemap*.xml

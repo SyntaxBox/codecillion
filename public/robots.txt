@@ -1,3 +1,0 @@
-# Block all crawlers for /admin
-User-agent: *
-Disallow: /admin

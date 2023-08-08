@@ -29,7 +29,7 @@ function Search({
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
         onFocus={() => setShowModal(true)}
-        onBlur={() => setTimeout(() => setShowModal(false), 100)}
+        onBlur={() => setTimeout(() => setShowModal(false), 3000)}
       />
       <div className="absolute top-12 left-0 z-10 w-full">
         {searchText.length > 2 && showModal && (

@@ -36,3 +36,7 @@ next-env.d.ts
 
 #mock files
 /mocks
+
+# robots & sitemap files
+/public/robots.txt
+/public/*sitemap.xml

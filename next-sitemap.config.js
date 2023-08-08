@@ -1,9 +1,14 @@
 /** @type {import('next-sitemap').IConfig} */
+
+siteUrl = "https://codecillion.com";
+
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://codecillion.com",
+  siteUrl,
   generateRobotsTxt: true, // (optional)
-  exclude: ["/admin", "/posts-sitemap.xml"],
+  exclude: ["/admin"],
+  additionalSitemaps: [`${siteUrl}/posts-sitemap.xml`],
   robotsTxtOptions: {
+    additionalSitemaps: [`${siteUrl}/posts-sitemap.xml`],
     policies: [
       {
         userAgent: "*",
@@ -15,8 +20,4 @@ module.exports = {
       },
     ],
   },
-  additionalSitemaps: [
-    "https://codecillion/sitemap.xml",
-    "https://codecillion/posts-sitemap.xml",
-  ],
 };

@@ -10,9 +10,8 @@ export async function GET(request: Request) {
       return {
         loc: `${URL}/posts/${slug}`,
         lastmod: new Date(updatedAt).toISOString(),
-        // changefreq
-        // priority
         changefreq: "daily",
+        priority: 0.7,
       };
     })
   );

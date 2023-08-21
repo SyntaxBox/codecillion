@@ -10,11 +10,11 @@ import { TITLE } from "@/constants/other/title";
 function Footer({ className }: { className?: string }) {
   const owner = [
     ...navbarButtons,
-    {
-      href: "owner",
-      title: "Owner",
-      Icon: IconUser,
-    },
+    // {
+    //   href: "owner",
+    //   title: "Owner",
+    //   Icon: IconUser,
+    // },
   ];
   return (
     <div

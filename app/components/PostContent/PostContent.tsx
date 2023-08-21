@@ -67,6 +67,13 @@ const components = {
     strong: ({ children }: any) => {
       return <strong className="text-lg">{children}</strong>;
     },
+    em: ({ children }: any) => {
+      return (
+        <em className="bg-slate-200 dark:bg-slate-700 p-1 rounded mt-2 monospace not-italic">
+          {children}
+        </em>
+      );
+    },
   },
   list: {
     // Ex. 1: customizing common list types

@@ -17,7 +17,7 @@ function Header({
 }) {
   return (
     <Container>
-      <section className="relative  lg:mb-12 mx-auto flex items-center p-2 flex-col gap-8">
+      <section className="lg:mb-12 mx-auto flex items-center p-2 flex-col gap-8">
         <div className="flex items-center flex-col gap-3 md:w-[80%]">
           <h1 className="uppercase text-[40px] font-bold text-black dark:text-white">
             {title}

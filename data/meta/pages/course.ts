@@ -8,8 +8,10 @@ import {
   themeColorMetadata,
   twitterMetadata,
 } from "../global";
+import { CourseQuery } from "@/interfaces/queries";
+import { coursePage } from "@/constants/keywords/pages";
 
-export const metadata: Metadata = {
+export const comingCourseMetaData: Metadata = {
   robots: "noindex",
   title: "Coming Soon",
   description: "Coming Soon",
@@ -18,3 +20,18 @@ export const metadata: Metadata = {
   ...manifestMetadata,
   ...themeColorMetadata,
 };
+
+export function metadata(
+  data: Omit<CourseQuery, "slug" | "content">
+): Metadata {
+  const { title, thumbnail, description, keywords, tags } = data;
+  return {
+    title,
+    description,
+    keywords: [...coursePage, ...tags, ...keywords],
+    ...twitterMetadata(title, description, thumbnail, `@${TWITTER}`),
+    ...openGraphMetadata(title, description, thumbnail, URL),
+    ...manifestMetadata,
+    ...themeColorMetadata,
+  };
+}

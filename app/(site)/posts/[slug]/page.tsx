@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import dynamicMetadata from "@/logic/dynamicMetadata";
 import { getPostBySlug, getPostMetadataBySlug } from "@/sanity/utils";
 import { Metadata } from "next";
+import dynamicMetadata from "@/data/meta/pages/post";
 import React from "react";
 import PostHeader from "@/app/components/PostHeader/PostHeader";
 import PostContent from "@/app/components/PostContent/PostContent";

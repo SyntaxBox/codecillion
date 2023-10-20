@@ -1,6 +1,4 @@
 import React from "react";
-import Badge from "@/app/UI/Typography/Badge";
-import P from "@/app/UI/Typography/P";
 import { LargeCard } from "@/interfaces/Cards";
 import Image from "next/image";
 import Link from "next/link";

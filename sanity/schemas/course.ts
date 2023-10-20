@@ -100,5 +100,11 @@ export default defineType({
         },
       ],
     },
+    {
+      name: "keywords",
+      title: "Keywords",
+      type: "array",
+      of: [{ type: "string" }],
+    },
   ],
 });

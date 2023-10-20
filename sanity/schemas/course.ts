@@ -1,5 +1,4 @@
 import { defineType } from "sanity";
-
 export default defineType({
   name: "course",
   title: "Courses",
@@ -53,18 +52,49 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "lessons",
-      title: "Lessons",
+      name: "content",
+      title: "Content",
       type: "array",
       of: [
         {
+          name: "courseLesson",
+          title: "Lesson",
           type: "object",
           fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
             {
               name: "lesson",
               title: "Lesson",
               type: "reference",
               to: [{ type: "lesson" }],
+            },
+          ],
+        },
+        {
+          name: "chapter",
+          title: "Chapter",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "module",
+          title: "Module",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
             },
           ],
         },

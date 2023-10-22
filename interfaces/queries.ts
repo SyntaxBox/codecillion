@@ -14,7 +14,9 @@ export interface Query {
 }
 
 export interface PostQuery extends Omit<Query, "featured" | "lessons"> {}
-export interface CourseQuery extends Omit<Query, "featured" | "content"> {}
+export interface CourseQuery extends Omit<Query, "featured" | "content"> {
+  content: Array<Object>;
+}
 export interface FeaturedCourseQuery
   extends Omit<CourseQuery, "thumbnail" | "keywords" | "content" | "lessons"> {
   featured: string;

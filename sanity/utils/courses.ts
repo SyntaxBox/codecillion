@@ -34,3 +34,46 @@ export async function getAllCourses({
     { start, end: start + max }
   );
 }
+
+export async function getCourseBySlug({
+  slug,
+}: {
+  slug: string;
+}): Promise<Omit<CourseQuery, "keywords" | "slug" | "lessons">[]> {
+  return client.fetch(
+    groq`*[_type == "course" slug.current == $slug][0]{
+      _id,
+      title,
+      description,
+      "thumbnail": thumbnail.asset->url,
+    }`,
+    { slug }
+  );
+}
+
+export async function getCourseMetadataBySlug(
+  slug: string
+): Promise<Omit<CourseQuery, "slug" | "content"> | null> {
+  return client.fetch(
+    groq`*[_type == "course" && slug.current == $slug][0] {
+      _id,
+      title,
+      keywords,
+      description,
+      tags,
+      "thumbnail": thumbnail.asset->url,
+    }`,
+    { slug }
+  );
+}
+
+export async function getCourseContentBySlug(
+  slug: string
+): Promise<Pick<CourseQuery, "content">> {
+  return client.fetch(
+    groq`*[_type == "course" && slug.current == $slug][0] {
+      content
+    }`,
+    { slug }
+  );
+}

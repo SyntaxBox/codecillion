@@ -5,6 +5,7 @@ import dynamicMetadata from "@/data/meta/pages/post";
 import React from "react";
 import PostHeader from "@/app/components/PostHeader/PostHeader";
 import PostContent from "@/app/components/PostContent/PostContent";
+import { URL } from "@/constants/other";
 import {
   iconsMetadata,
   manifestMetadata,
@@ -22,6 +23,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // read route params
   const { slug } = params;
+  console.log(params);
 
   // fetch data
   const postMetadata = await getPostMetadataBySlug(slug);

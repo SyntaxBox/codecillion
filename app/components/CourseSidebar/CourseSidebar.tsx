@@ -1,10 +1,11 @@
-import { CourseContent } from "@/interfaces/queries";
+import { CourseContentMap } from "@/interfaces/queries";
 import React from "react";
 
-function CourseSidebar({ mapContent }: { mapContent: CourseContent[] }) {
+function CourseSidebar({ mapContent }: { mapContent: CourseContentMap[] }) {
   return (
     <aside>
-      {mapContent.map(({ key, lesson, title }, i) => {
+      {mapContent.map(({ slug, title }, i) => {
+        console.log(slug);
         return <p key={i}>{title}</p>;
       })}
     </aside>

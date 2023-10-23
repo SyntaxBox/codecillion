@@ -13,9 +13,19 @@ export interface Query {
   lessons: number;
 }
 
+export interface CourseContent {
+  _type: "module" | "chapter" | "courseLesson";
+  title: string;
+  lesson?: {
+    _ref: string;
+    _type: "reference";
+  };
+  key: string;
+}
+
 export interface PostQuery extends Omit<Query, "featured" | "lessons"> {}
 export interface CourseQuery extends Omit<Query, "featured" | "content"> {
-  content: Array<Object>;
+  content: CourseContent[];
 }
 export interface FeaturedCourseQuery
   extends Omit<CourseQuery, "thumbnail" | "keywords" | "content" | "lessons"> {

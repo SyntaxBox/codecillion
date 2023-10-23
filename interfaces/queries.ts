@@ -13,19 +13,17 @@ export interface Query {
   lessons: number;
 }
 
-export interface CourseContent {
-  _type: "module" | "chapter" | "courseLesson";
+export type CourseMapType = "module" | "chapter" | "courseLesson";
+
+export interface CourseContentMap {
+  type: CourseMapType;
   title: string;
-  lesson?: {
-    _ref: string;
-    _type: "reference";
-  };
-  key: string;
+  slug?: string;
 }
 
 export interface PostQuery extends Omit<Query, "featured" | "lessons"> {}
 export interface CourseQuery extends Omit<Query, "featured" | "content"> {
-  content: CourseContent[];
+  content: CourseContentMap[];
 }
 export interface FeaturedCourseQuery
   extends Omit<CourseQuery, "thumbnail" | "keywords" | "content" | "lessons"> {

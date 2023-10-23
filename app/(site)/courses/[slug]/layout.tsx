@@ -6,7 +6,6 @@ import {
   manifestMetadata,
   iconsMetadata,
 } from "@/data/meta/global";
-import { courseMetadata } from "@/data/meta/pages";
 import {
   getCourseContentBySlug,
   getCourseMetadataBySlug,

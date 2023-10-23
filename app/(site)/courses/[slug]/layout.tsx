@@ -15,6 +15,7 @@ import { Metadata } from "next";
 import { metadata as dynamicMetadata } from "@/data/meta/pages/course";
 import { URL } from "@/constants/other";
 import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
+import CourseSidebar from "@/app/components/CourseSidebar/CourseSidebar";
 
 type Props = {
   params: { slug: string };
@@ -62,7 +63,12 @@ export default async function RootLayout({
   children: React.ReactNode;
 } & Props) {
   const course = await getCourseContentBySlug(params.slug);
+  console.log(course);
   if (!course.content) return ComingCourse;
-  console.log(course.content);
-  return <>{children}</>;
+  return (
+    <>
+      <CourseSidebar mapContent={course.content} />
+      {children}
+    </>
+  );
 }

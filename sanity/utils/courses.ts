@@ -72,7 +72,11 @@ export async function getCourseContentBySlug(
 ): Promise<Pick<CourseQuery, "content">> {
   return client.fetch(
     groq`*[_type == "course" && slug.current == $slug][0] {
-      content
+      content[]{
+        'type': _type,
+        'title': title,
+        'slug': lesson->slug.current
+      },
     }`,
     { slug }
   );

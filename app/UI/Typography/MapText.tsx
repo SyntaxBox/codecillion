@@ -19,7 +19,7 @@ function MapText({
         </h2>
       )}
       {type === "chapter" && (
-        <h3 className="text-xl font-black dark:text-slate-300 text-slate-600">
+        <h3 className="text-xl font-bold dark:text-slate-300 text-slate-600">
           {children}
         </h3>
       )}

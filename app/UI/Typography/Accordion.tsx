@@ -8,19 +8,21 @@ import A from "./A";
 import { CourseAccordion } from "@/interfaces/queries";
 import AccordionTitle from "./AccordionTitle";
 import { size } from "@/constants/elements/icons";
+import Link from "next/link";
 
 function Accordion({
   links,
   title,
-  currentIndex,
-  isLast,
-  isFirst,
+  currentLesson,
 }: CourseAccordion & {
-  currentIndex: number;
+  currentLesson: string;
   isLast: boolean;
   isFirst: boolean;
 }) {
-  const [show, setShow] = useState(false);
+  const currentLessonIndex = 0;
+  const currentChapter = true;
+  const [show, setShow] = useState(currentChapter);
+  console.log(links);
   return (
     <>
       <span>
@@ -28,7 +30,7 @@ function Accordion({
           onClick={() => setShow(!show)}
           type="button"
           className={`flex items-center w-full justify-between font-medium text-left text-slate-500
-          `}
+          ${currentChapter ? "text-green-400" : ""}`}
         >
           <AccordionTitle>{title}</AccordionTitle>
           <IconArrowBadgeUpFilled className={`${show ? "rotate-180" : ""}`} />
@@ -38,15 +40,15 @@ function Accordion({
         <div className="p-2 flex items-start justify-start flex-col gap-1">
           {links.map(({ title, slug }, i) => {
             return (
-              <A
-                className={`flex gap-1 items-center ${
-                  currentIndex === i ? "font-bold" : ""
+              <Link
+                className={`flex gap-1 items-center text-white ${
+                  currentLessonIndex === i ? "font-bold" : ""
                 }`}
                 key={i}
                 href={slug}
               >
                 {title}
-              </A>
+              </Link>
             );
           })}
         </div>

@@ -23,7 +23,6 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // read route params
   const { slug } = params;
-  console.log(params);
 
   // fetch data
   const postMetadata = await getPostMetadataBySlug(slug);

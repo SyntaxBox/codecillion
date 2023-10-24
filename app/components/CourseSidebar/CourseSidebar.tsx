@@ -1,19 +1,43 @@
+"use client";
 import Accordion from "@/app/UI/Typography/Accordion";
-import MapText from "@/app/UI/Typography/MapText";
 import { CourseContentMap } from "@/interfaces/queries";
-import React from "react";
+import { transformToAccordion } from "@/logic/transform";
+import { getCourseContentBySlug } from "@/sanity/utils";
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
-function CourseSidebar({ mapContent }: { mapContent: CourseContentMap[] }) {
+function CourseSidebar() {
+  const params = useParams();
+  const [course, setCourse] = useState<CourseContentMap[]>([]);
+  console.log(params);
+  useEffect(() => {
+    async () => {
+      if (!params?.slug || !params?.lesson)
+        console.log("fatal at CourseSidebar");
+      else {
+        const course = await getCourseContentBySlug(
+          Array.isArray(params.slug) ? params.slug[0] : params.slug
+        );
+        setCourse(course);
+      }
+    };
+  });
+  if (!params?.slug || !params?.lesson) return null;
+
   return (
     <aside>
-      {mapContent.map(({ slug, title, type }, i) => {
+      {/* {accordion.map(({ title, links }, i) => {
         return (
-          <MapText key={i} to={`${slug}`} type={type}>
-            {title}
-          </MapText>
+          <Accordion
+            title={title}
+            links={links}
+            currentIndex={0}
+            key={i}
+            isFirst={i === 0}
+            isLast={i === accordion.length - 1}
+          />
         );
-      })}
-      <Accordion />
+      })} */}
     </aside>
   );
 }

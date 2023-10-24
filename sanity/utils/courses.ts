@@ -1,4 +1,8 @@
-import { CourseQuery, FeaturedCourseQuery } from "@/interfaces/queries";
+import {
+  CourseContentMap,
+  CourseQuery,
+  FeaturedCourseQuery,
+} from "@/interfaces/queries";
 import { groq } from "next-sanity";
 import { client } from "./index";
 
@@ -69,7 +73,7 @@ export async function getCourseMetadataBySlug(
 
 export async function getCourseContentBySlug(
   slug: string
-): Promise<Pick<CourseQuery, "content">> {
+): Promise<CourseContentMap[]> {
   return client.fetch(
     groq`*[_type == "course" && slug.current == $slug][0] {
       content[]{

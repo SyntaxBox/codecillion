@@ -6,15 +6,10 @@ import {
   manifestMetadata,
   iconsMetadata,
 } from "@/data/meta/global";
-import {
-  getCourseContentBySlug,
-  getCourseMetadataBySlug,
-} from "@/sanity/utils";
+import { getCourseMetadataBySlug } from "@/sanity/utils";
 import { Metadata } from "next";
 import { metadata as dynamicMetadata } from "@/data/meta/pages/course";
 import { URL } from "@/constants/other";
-import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
-import CourseSidebar from "@/app/components/CourseSidebar/CourseSidebar";
 
 type Props = {
   params: { slug: string };
@@ -46,28 +41,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const ComingCourse = (
-  <ComingSoon
-    description="We apologize for any inconvenience caused, but please note that the
-        recording and documentation of this section are currently in progress
-        and will be completed soon. Thank you for your understanding and
-        patience."
-  />
-);
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode;
-} & Props) {
-  const course = await getCourseContentBySlug(params.slug);
-  console.log(course);
-  if (!course.content) return ComingCourse;
-  return (
-    <>
-      <CourseSidebar mapContent={course.content} />
-      {children}
-    </>
-  );
+}) {
+  return <>{children}</>;
 }

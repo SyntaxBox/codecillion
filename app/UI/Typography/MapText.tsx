@@ -4,11 +4,13 @@ import React from "react";
 
 function MapText({
   children,
+  className,
   type,
   to,
 }: {
   children: React.ReactNode;
   type: CourseMapType;
+  className?: string;
   to: string;
 }) {
   return (

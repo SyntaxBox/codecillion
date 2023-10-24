@@ -21,6 +21,11 @@ export interface CourseContentMap {
   slug?: string;
 }
 
+export interface CourseAccordion {
+  title: string;
+  links: { title: string; slug: string }[];
+}
+
 export interface PostQuery extends Omit<Query, "featured" | "lessons"> {}
 export interface CourseQuery extends Omit<Query, "featured" | "content"> {
   content: CourseContentMap[];

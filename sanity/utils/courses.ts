@@ -1,4 +1,9 @@
-import { CourseQuery, FeaturedCourseQuery } from "@/interfaces/queries";
+import {
+  CourseContentMap,
+  CourseInfo,
+  CourseQuery,
+  FeaturedCourseQuery,
+} from "@/interfaces/queries";
 import { groq } from "next-sanity";
 import { client } from "./index";
 
@@ -77,6 +82,19 @@ export async function getCourseContentBySlug(
         'title': title,
         'slug': lesson->slug.current
       },
+    }`,
+    { slug }
+  );
+}
+
+export async function getCourseInfoBySlug(slug: string): Promise<CourseInfo> {
+  return client.fetch(
+    groq`*[_type == "course" && slug.current == $slug][0] {
+
+      'firstLessonSlug': content[_type == 'courseLesson'][0].lesson->slug.current,
+      title,
+      description,
+      'thumbnail': thumbnail.asset->url,
     }`,
     { slug }
   );

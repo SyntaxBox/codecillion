@@ -1,7 +1,8 @@
 import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
-import CourseSidebar from "@/app/components/CourseSidebar/CourseSidebar";
-import { transformToAccordion } from "@/logic/transform";
-import { getCourseContentBySlug } from "@/sanity/utils";
+import CourseWelcome from "@/app/components/CourseWelcome/CourseWelcome";
+import { getCourseInfoBySlug } from "@/sanity/utils";
+import { notFound } from "next/navigation";
+import Container from "@/app/UI/layout/Container";
 import React from "react";
 type Props = {
   params: { slug: string };
@@ -18,7 +19,18 @@ const ComingCourse = (
 );
 
 export default async function page({ params }: Props) {
-  const course = await getCourseContentBySlug(params.slug);
-  if (!course.content) return ComingCourse;
-  return <>Please Wait</>;
+  const courseInfo = await getCourseInfoBySlug(params.slug);
+  if (!courseInfo) notFound();
+  if (!courseInfo.firstLessonSlug) return ComingCourse;
+  return (
+    <Container>
+      <CourseWelcome
+        course={params.slug}
+        thumbnail={courseInfo.thumbnail}
+        title={courseInfo.title}
+        firstLessonSlug={courseInfo.firstLessonSlug}
+        description={courseInfo.description}
+      />
+    </Container>
+  );
 }

@@ -6,5 +6,6 @@ type Props = {
 };
 
 export default function page({ params }: Props) {
+  console.log(params.lesson);
   return <div>page</div>;
 }

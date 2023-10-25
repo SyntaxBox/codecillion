@@ -1,3 +1,8 @@
+import H1 from "@/app/UI/Typography/H1";
+import PostContent from "@/app/components/PostContent/PostContent";
+import PostHeader from "@/app/components/PostHeader/PostHeader";
+import { getLessonBySlug } from "@/sanity/utils/lesson";
+import { notFound } from "next/navigation";
 import React from "react";
 
 type Props = {
@@ -5,7 +10,19 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export default function page({ params }: Props) {
-  console.log(params.lesson);
-  return <div>page</div>;
+export default async function page({ params }: Props) {
+  const lesson = await getLessonBySlug(params.lesson);
+  if (!lesson) notFound();
+  const { description, title, content } = lesson;
+  return (
+    <section className="flex flex-col gap-6 w-full max-w-3xl mx-auto px-4">
+      <H1>{title}</H1>
+      <div className="backdrop-blur-md w-full bg-slate-100 dark:bg-slate-800 flex flex-col gap-3 p-2 sm:p-4 rounded-lg">
+        <p className="capitalize text-sm sm:text-base leading-6  text-slate-700 dark:text-slate-300 tracking-wider">
+          {description}
+        </p>
+      </div>
+      <PostContent content={content} />
+    </section>
+  );
 }

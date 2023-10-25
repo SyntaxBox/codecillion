@@ -31,14 +31,16 @@ function CourseSidebar() {
   }, [course]);
   if (!params?.slug || !params?.lesson) return null;
   return (
-    <aside>
+    <aside className="w-72">
       {courseAccordion &&
         courseAccordion.map(({ title, links }, i) => {
           return (
             <Accordion
               title={title}
               links={links}
-              currentIndex={0}
+              currentLesson={
+                Array.isArray(params.lesson) ? params.lesson[0] : params.lesson
+              }
               key={i}
               isFirst={i === 0}
               isLast={i === courseAccordion.length - 1}

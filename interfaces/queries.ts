@@ -13,6 +13,9 @@ export interface Query {
   lessons: number;
 }
 
+export interface LessonQuery
+  extends Omit<Query, "slug" | "thumbnail" | "id" | "features"> {}
+
 export type CourseMapType = "module" | "chapter" | "courseLesson";
 
 export interface CourseContentMap {
@@ -21,9 +24,21 @@ export interface CourseContentMap {
   slug?: string;
 }
 
+export interface CourseAccordionLink {
+  title: string;
+  slug: string;
+}
+
 export interface CourseAccordion {
   title: string;
-  links: { title: string; slug: string }[];
+  links: CourseAccordionLink[];
+}
+
+export interface CourseInfo {
+  title: string;
+  description: string;
+  thumbnail: string;
+  firstLessonSlug: string;
 }
 
 export interface PostQuery extends Omit<Query, "featured" | "lessons"> {}

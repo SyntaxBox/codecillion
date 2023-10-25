@@ -11,6 +11,7 @@
 // import { metadata as dynamicMetadata } from "@/data/meta/pages/course";
 // import { URL } from "@/constants/other";
 
+import Container from "@/app/UI/layout/Container";
 import CourseSidebar from "@/app/components/CourseSidebar/CourseSidebar";
 import { ReactNode } from "react";
 
@@ -47,9 +48,11 @@ type Props = {
 
 export default function page({ children }: { children: ReactNode }) {
   return (
-    <>
-      <CourseSidebar />
-      {children}
-    </>
+    <main>
+      <Container className="flex gap-2">
+        <CourseSidebar />
+        {children}
+      </Container>
+    </main>
   );
 }

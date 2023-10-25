@@ -24,20 +24,15 @@ function Accordion({
   isFirst: boolean;
 }) {
   const currentLessonIndex = findSlugIndex(links, currentLesson);
-  const currentChapter = currentLessonIndex !== -1;
-  const [show, setShow] = useState(currentChapter);
+  const [show, setShow] = useState(true);
   return (
     <>
       <span>
         <button
           onClick={() => setShow(!show)}
           type="button"
-          className={`flex items-center w-full justify-between font-medium text-left
-          ${
-            currentChapter
-              ? "text-primary-600 font-bold dark:text-primary-alt-600"
-              : "text-slate-500"
-          }`}
+          className="flex items-center w-full justify-between text-left text-primary-600 font-bold dark:text-primary-alt-600
+          }"
         >
           <AccordionTitle>{title}</AccordionTitle>
           <IconChevronRight

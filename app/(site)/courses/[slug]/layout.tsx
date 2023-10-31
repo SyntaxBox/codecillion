@@ -10,6 +10,7 @@ import { getCourseMetadataBySlug } from "@/sanity/utils";
 import { Metadata } from "next";
 import { metadata as dynamicMetadata } from "@/data/meta/pages/course";
 import { URL } from "@/constants/other";
+import CourseNavbar from "@/app/components/CourseNavbar/CourseNavbar";
 
 type Props = {
   params: { slug: string };
@@ -41,10 +42,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <header className="sticky top-0 left-0 z-50">
+        <CourseNavbar />
+      </header>
+      {children}
+    </>
+  );
 }

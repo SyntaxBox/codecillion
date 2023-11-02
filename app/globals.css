@@ -107,3 +107,7 @@ p {
 .hide-scrollbar::-webkit-scrollbar {
   width: 0 !important; /* Hide scrollbar in Firefox */
 }
+
+.show-scrollbar::-webkit-scrollbar {
+  width: 6px !important;
+}

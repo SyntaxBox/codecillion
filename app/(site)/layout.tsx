@@ -1,10 +1,10 @@
 import Providers from "./Providers";
 import "../globals.css";
-import { Ubuntu } from "next/font/google";
+import { Barlow } from "next/font/google";
 import Footer from "../components/Footer/Footer";
 
-const font = Ubuntu({
-  weight: ["400", "700"],
+const font = Barlow({
+  weight: ["400", "700", "300"],
   subsets: ["latin"],
 });
 

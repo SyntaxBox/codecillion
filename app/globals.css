@@ -104,10 +104,10 @@ p {
   font-size: large;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  width: 0 !important; /* Hide scrollbar in Firefox */
+.auto-hide-scrollbar::-webkit-scrollbar-thumb {
+  background: #00000000;
 }
 
-.show-scrollbar::-webkit-scrollbar {
-  width: 6px !important;
+.auto-hide-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.3);
 }

@@ -1,6 +1,5 @@
 import H1 from "@/app/UI/Typography/H1";
 import PostContent from "@/app/components/PostContent/PostContent";
-import PostHeader from "@/app/components/PostHeader/PostHeader";
 import { getLessonBySlug } from "@/sanity/utils/lesson";
 import { notFound } from "next/navigation";
 import React from "react";

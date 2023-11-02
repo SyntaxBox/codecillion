@@ -1,4 +1,5 @@
 "use client";
+import Sidebar from "./SideBar";
 import Accordion from "@/app/UI/Typography/Accordion";
 import { CourseAccordion, CourseContentMap } from "@/interfaces/queries";
 import { transformToAccordion } from "@/logic/transform";
@@ -30,85 +31,13 @@ function CourseSidebar() {
   }, [course]);
   if (!params?.slug || !params?.lesson) return null;
   return (
-    <aside
-      style={{ height: "calc(100vh - 60px)" }}
-      className={`w-72 top-16 sticky overflow-scroll ${
-        showScrollbar ? "show-scrollbar" : "hide-scrollbar"
-      }`}
-      onMouseEnter={() => setShowScrollbar(true)}
-      onMouseLeave={() => setShowScrollbar(false)}
-    >
-      <div>
-        {courseAccordion &&
-          courseAccordion.map(({ title, links }, i) => {
-            return (
-              <Accordion
-                title={title}
-                links={links}
-                currentLesson={
-                  Array.isArray(params.lesson)
-                    ? params.lesson[0]
-                    : params.lesson
-                }
-                key={i}
-                isFirst={i === 0}
-                isLast={i === courseAccordion.length - 1}
-              />
-            );
-          })}
-        {courseAccordion &&
-          courseAccordion.map(({ title, links }, i) => {
-            return (
-              <Accordion
-                title={title}
-                links={links}
-                currentLesson={
-                  Array.isArray(params.lesson)
-                    ? params.lesson[0]
-                    : params.lesson
-                }
-                key={i}
-                isFirst={i === 0}
-                isLast={i === courseAccordion.length - 1}
-              />
-            );
-          })}
-        {courseAccordion &&
-          courseAccordion.map(({ title, links }, i) => {
-            return (
-              <Accordion
-                title={title}
-                links={links}
-                currentLesson={
-                  Array.isArray(params.lesson)
-                    ? params.lesson[0]
-                    : params.lesson
-                }
-                key={i}
-                isFirst={i === 0}
-                isLast={i === courseAccordion.length - 1}
-              />
-            );
-          })}
-        {courseAccordion &&
-          courseAccordion.map(({ title, links }, i) => {
-            return (
-              <Accordion
-                title={title}
-                links={links}
-                currentLesson={
-                  Array.isArray(params.lesson)
-                    ? params.lesson[0]
-                    : params.lesson
-                }
-                key={i}
-                isFirst={i === 0}
-                isLast={i === courseAccordion.length - 1}
-              />
-            );
-          })}
-      </div>
-    </aside>
+    <Sidebar
+      className="w-72 min-w-[200px] top-[66px] sticky hidden md:block"
+      courseAccordion={courseAccordion}
+      currentLesson={
+        Array.isArray(params.lesson) ? params.lesson[0] : params.lesson
+      }
+    />
   );
 }
 

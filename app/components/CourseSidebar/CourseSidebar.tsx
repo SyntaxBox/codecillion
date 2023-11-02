@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 function CourseSidebar() {
   const params = useParams();
   const [course, setCourse] = useState<CourseContentMap[] | null>(null);
+  const [showScrollbar, setShowScrollbar] = useState(false);
   const [courseAccordion, setCourseAccordion] = useState<
     CourseAccordion[] | null
   >(null);
@@ -29,67 +30,84 @@ function CourseSidebar() {
   }, [course]);
   if (!params?.slug || !params?.lesson) return null;
   return (
-    <aside className="w-72 sticky top-0 h-full ">
-      {courseAccordion &&
-        courseAccordion.map(({ title, links }, i) => {
-          return (
-            <Accordion
-              title={title}
-              links={links}
-              currentLesson={
-                Array.isArray(params.lesson) ? params.lesson[0] : params.lesson
-              }
-              key={i}
-              isFirst={i === 0}
-              isLast={i === courseAccordion.length - 1}
-            />
-          );
-        })}
-      {courseAccordion &&
-        courseAccordion.map(({ title, links }, i) => {
-          return (
-            <Accordion
-              title={title}
-              links={links}
-              currentLesson={
-                Array.isArray(params.lesson) ? params.lesson[0] : params.lesson
-              }
-              key={i}
-              isFirst={i === 0}
-              isLast={i === courseAccordion.length - 1}
-            />
-          );
-        })}
-      {courseAccordion &&
-        courseAccordion.map(({ title, links }, i) => {
-          return (
-            <Accordion
-              title={title}
-              links={links}
-              currentLesson={
-                Array.isArray(params.lesson) ? params.lesson[0] : params.lesson
-              }
-              key={i}
-              isFirst={i === 0}
-              isLast={i === courseAccordion.length - 1}
-            />
-          );
-        })}
-      {courseAccordion &&
-        courseAccordion.map(({ title, links }, i) => {
-          return (
-            <Accordion
-              title={title}
-              links={links}
-              currentLesson={
-                Array.isArray(params.lesson) ? params.lesson[0] : params.lesson
-              }
-              key={i}
-              isFirst={i === 0}
-              isLast={i === courseAccordion.length - 1}
-            />
-          );
-        })}
+    <aside
+      style={{ height: "calc(100vh - 60px)" }}
+      className={`w-72 top-16 sticky overflow-scroll ${
+        showScrollbar ? "show-scrollbar" : "hide-scrollbar"
+      }`}
+      onMouseEnter={() => setShowScrollbar(true)}
+      onMouseLeave={() => setShowScrollbar(false)}
+    >
+      <div>
+        {courseAccordion &&
+          courseAccordion.map(({ title, links }, i) => {
+            return (
+              <Accordion
+                title={title}
+                links={links}
+                currentLesson={
+                  Array.isArray(params.lesson)
+                    ? params.lesson[0]
+                    : params.lesson
+                }
+                key={i}
+                isFirst={i === 0}
+                isLast={i === courseAccordion.length - 1}
+              />
+            );
+          })}
+        {courseAccordion &&
+          courseAccordion.map(({ title, links }, i) => {
+            return (
+              <Accordion
+                title={title}
+                links={links}
+                currentLesson={
+                  Array.isArray(params.lesson)
+                    ? params.lesson[0]
+                    : params.lesson
+                }
+                key={i}
+                isFirst={i === 0}
+                isLast={i === courseAccordion.length - 1}
+              />
+            );
+          })}
+        {courseAccordion &&
+          courseAccordion.map(({ title, links }, i) => {
+            return (
+              <Accordion
+                title={title}
+                links={links}
+                currentLesson={
+                  Array.isArray(params.lesson)
+                    ? params.lesson[0]
+                    : params.lesson
+                }
+                key={i}
+                isFirst={i === 0}
+                isLast={i === courseAccordion.length - 1}
+              />
+            );
+          })}
+        {courseAccordion &&
+          courseAccordion.map(({ title, links }, i) => {
+            return (
+              <Accordion
+                title={title}
+                links={links}
+                currentLesson={
+                  Array.isArray(params.lesson)
+                    ? params.lesson[0]
+                    : params.lesson
+                }
+                key={i}
+                isFirst={i === 0}
+                isLast={i === courseAccordion.length - 1}
+              />
+            );
+          })}
+      </div>
     </aside>
   );
 }

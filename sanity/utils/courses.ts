@@ -99,3 +99,18 @@ export async function getCourseInfoBySlug(slug: string): Promise<CourseInfo> {
     { slug }
   );
 }
+
+export async function getCourseNavInfoBySlug(slug: string): Promise<{
+  title: string;
+  youtubePlaylist?: string;
+  githubRepo?: string;
+}> {
+  return client.fetch(
+    groq`*[_type == "course" && slug.current == $slug][0] {
+      title,
+      youtubePlaylist,
+      githubRepo,
+    }`,
+    { slug }
+  );
+}

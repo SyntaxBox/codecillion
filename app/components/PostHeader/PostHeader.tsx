@@ -1,5 +1,4 @@
 import React from "react";
-import LargeCard from "../LargeCard/LargeCard";
 import Image from "next/image";
 import H1 from "@/app/UI/Typography/H1";
 

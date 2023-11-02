@@ -46,7 +46,7 @@ type Props = {
 //   }
 // }
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default async function Layout({ children }: { children: ReactNode }) {
   return (
     <main className="relative">
       <Container className="flex gap-2">

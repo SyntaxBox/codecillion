@@ -6,6 +6,7 @@ import { transformToAccordion } from "@/logic/transform";
 import { getCourseContentBySlug } from "@/sanity/utils";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import CurrentLesson from "./CurrentLesson";
 
 function CourseSidebar() {
   const params = useParams();
@@ -31,13 +32,21 @@ function CourseSidebar() {
   }, [course]);
   if (!params?.slug || !params?.lesson) return null;
   return (
-    <Sidebar
-      className="w-72 min-w-[200px] top-[66px] sticky hidden md:block"
-      courseAccordion={courseAccordion}
-      currentLesson={
-        Array.isArray(params.lesson) ? params.lesson[0] : params.lesson
-      }
-    />
+    <>
+      <CurrentLesson
+        courseAccordion={courseAccordion}
+        currentLesson={
+          Array.isArray(params.lesson) ? params.lesson[0] : params.lesson
+        }
+      />
+      <Sidebar
+        className="w-72 min-w-[200px] top-[66px] sticky hidden md:block"
+        courseAccordion={courseAccordion}
+        currentLesson={
+          Array.isArray(params.lesson) ? params.lesson[0] : params.lesson
+        }
+      />
+    </>
   );
 }
 

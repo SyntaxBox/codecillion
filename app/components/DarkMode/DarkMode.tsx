@@ -4,7 +4,7 @@ import { IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 
-function DarkMode() {
+function DarkMode({ whiteMoon }: { whiteMoon?: boolean }) {
   const [mounted, setMounted] = useState(false);
   const [isRotated, setIsRotated] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -23,7 +23,7 @@ function DarkMode() {
       title="toggle dark mode"
       className={`cursor-pointer social-icon-container ${
         isRotated && "rotate"
-      }`}
+      } ${whiteMoon ? "text-white" : ""}`}
       onClick={handelToggle}
     >
       {resolvedTheme === "dark" ? (

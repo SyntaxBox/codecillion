@@ -20,8 +20,6 @@ function Accordion({
   currentLesson,
 }: CourseAccordion & {
   currentLesson: string;
-  isLast: boolean;
-  isFirst: boolean;
 }) {
   const currentLessonIndex = findSlugIndex(links, currentLesson);
   const [show, setShow] = useState(true);

@@ -11,6 +11,16 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "youtubePlaylist",
+      title: "Youtube PlayList",
+      type: "url",
+    },
+    {
+      name: "githubRepo",
+      title: "Github Repo",
+      type: "url",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",

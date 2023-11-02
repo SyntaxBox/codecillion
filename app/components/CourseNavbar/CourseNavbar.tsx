@@ -22,7 +22,7 @@ function CourseNavbar({
           <Logo width={40} height={40} href="/" />
           <p className="text-white font-bold hidden sm:inline">{title}</p>
         </div>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 md:gap-6">
           {youtubeLink && (
             <IconButton
               title={"YouTube Playlist"}

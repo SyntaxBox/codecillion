@@ -6,7 +6,10 @@ import {
   manifestMetadata,
   iconsMetadata,
 } from "@/data/meta/global";
-import { getCourseMetadataBySlug } from "@/sanity/utils";
+import {
+  getCourseMetadataBySlug,
+  getCourseNavInfoBySlug,
+} from "@/sanity/utils";
 import { Metadata } from "next";
 import { metadata as dynamicMetadata } from "@/data/meta/pages/course";
 import { URL } from "@/constants/other";
@@ -42,11 +45,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({
+  children,
+  params,
+}: { children: React.ReactNode } & Props) {
+  const { slug } = params;
+  const navInfo = await getCourseNavInfoBySlug(slug);
   return (
     <>
       <header className="sticky top-0 left-0 z-50">
-        <CourseNavbar />
+        <CourseNavbar
+          title={navInfo.title}
+          githubLink={navInfo.githubRepo}
+          youtubeLink={navInfo.youtubePlaylist}
+        />
       </header>
       {children}
     </>

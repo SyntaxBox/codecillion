@@ -49,7 +49,7 @@ type Props = {
 export default async function Layout({ children }: { children: ReactNode }) {
   return (
     <main className="relative">
-      <Container className="flex gap-2">
+      <Container className="flex w-screen">
         <CourseSidebar />
         {children}
       </Container>

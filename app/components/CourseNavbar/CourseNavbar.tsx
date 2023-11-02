@@ -1,34 +1,43 @@
-import { navbarButtons } from "@/data/elements/navbar";
 import Container from "@/app/UI/layout/Container";
 import React from "react";
 import DarkMode from "../DarkMode/DarkMode";
 import Logo from "../Logo/Logo";
-import NavButtons from "../NavButtons/NavButtons";
-import SlideMenu from "../SlideMenu/SlideMenu";
-import SocialIcons from "../SocialIcons/SocialIcons";
+import IconWithTextLabel from "@/app/UI/labels/IconWithTextLabel";
+import { IconBrandGithub, IconBrandYoutube } from "@tabler/icons-react";
+import IconButton from "@/app/UI/buttons/IconButton";
 
-function CourseNavbar() {
+function CourseNavbar({
+  title,
+  youtubeLink,
+  githubLink,
+}: {
+  title: string;
+  youtubeLink?: string;
+  githubLink?: string;
+}) {
   return (
-    <nav className="backdrop-blur-md bg-[#ffffff8b] dark:bg-[#0f172a8b] z-50 w-full h-[56px] text-gray-700 dark:text-gray-200 relative">
+    <nav className="backdrop-blur-md bg-slate-900 z-50 w-full h-[56px] text-gray-700 relative dark:border-slate-600 dark:border-b shadow-[0px_0px_10px_0px_#0f172a]">
       <Container className="flex items-center justify-between">
-        <Logo
-          className="hidden lg:flex"
-          width={48}
-          height={48}
-          includeTitle
-          href="/"
-        />
-        <Logo className="lg:hidden" width={48} height={48} href="/" />
-        <NavButtons className="hidden md:flex" buttons={navbarButtons} />
+        <div className="flex gap-3 items-center justify-center">
+          <Logo width={40} height={40} href="/" />
+          <p className="text-white font-bold hidden sm:inline">{title}</p>
+        </div>
         <div className="flex items-center gap-6">
-          <SocialIcons className="hidden md:flex" />
-          <DarkMode />
-          <SlideMenu title="The Menu" className="md:hidden">
-            <div className="flex flex-col justify-between">
-              <NavButtons className="flex-col w-full" buttons={navbarButtons} />
-              <SocialIcons className="gap-4 p-2" />
-            </div>
-          </SlideMenu>
+          {youtubeLink && (
+            <IconButton
+              title={"YouTube Playlist"}
+              Icon={IconBrandYoutube}
+              href={youtubeLink}
+            />
+          )}
+          {githubLink && (
+            <IconButton
+              title={"Github Repo"}
+              Icon={IconBrandGithub}
+              href={githubLink}
+            />
+          )}
+          <DarkMode whiteMoon />
         </div>
       </Container>
     </nav>

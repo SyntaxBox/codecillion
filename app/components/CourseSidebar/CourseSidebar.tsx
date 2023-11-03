@@ -52,7 +52,7 @@ function CourseSidebar() {
         rotateChevron={showSidebarOnSmallScreen}
       />
       <Sidebar
-        className={`w-full pr-8 pl-2 pb-12 top-24 md:w-72 md:min-w-[200px] md:top-[66px] fixed md:sticky md:p-0 ${
+        className={`w-full pr-8 pl-2 pb-10 top-24 md:w-72 md:min-w-[200px] md:top-[66px] fixed md:sticky md:p-0 ${
           showSidebarOnSmallScreen ? "block" : "hidden md:block"
         }`}
         courseAccordion={courseAccordion}

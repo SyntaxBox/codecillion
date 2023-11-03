@@ -26,28 +26,6 @@ function Sidebar({
             />
           );
         })}
-      {courseAccordion &&
-        courseAccordion.map(({ title, links }, i) => {
-          return (
-            <Accordion
-              title={title}
-              links={links}
-              currentLesson={currentLesson}
-              key={i}
-            />
-          );
-        })}
-      {courseAccordion &&
-        courseAccordion.map(({ title, links }, i) => {
-          return (
-            <Accordion
-              title={title}
-              links={links}
-              currentLesson={currentLesson}
-              key={i}
-            />
-          );
-        })}
     </aside>
   );
 }

@@ -1,4 +1,9 @@
-import { CourseQuery, FeaturedCourseQuery } from "@/interfaces/queries";
+import {
+  CourseContentMap,
+  CourseInfo,
+  CourseQuery,
+  FeaturedCourseQuery,
+} from "@/interfaces/queries";
 import { groq } from "next-sanity";
 import { client } from "./index";
 
@@ -32,5 +37,80 @@ export async function getAllCourses({
       "lessons": count(lessons),
     }`,
     { start, end: start + max }
+  );
+}
+
+export async function getCourseBySlug({
+  slug,
+}: {
+  slug: string;
+}): Promise<Omit<CourseQuery, "keywords" | "slug" | "lessons">[]> {
+  return client.fetch(
+    groq`*[_type == "course" slug.current == $slug][0]{
+      _id,
+      title,
+      description,
+      "thumbnail": thumbnail.asset->url,
+    }`,
+    { slug }
+  );
+}
+
+export async function getCourseMetadataBySlug(
+  slug: string
+): Promise<Omit<CourseQuery, "slug" | "content"> | null> {
+  return client.fetch(
+    groq`*[_type == "course" && slug.current == $slug][0] {
+      _id,
+      title,
+      keywords,
+      description,
+      tags,
+      "thumbnail": thumbnail.asset->url,
+    }`,
+    { slug }
+  );
+}
+
+export async function getCourseContentBySlug(
+  slug: string
+): Promise<Pick<CourseQuery, "content">> {
+  return client.fetch(
+    groq`*[_type == "course" && slug.current == $slug][0] {
+      content[]{
+        'type': _type,
+        'title': title,
+        'slug': lesson->slug.current
+      },
+    }`,
+    { slug }
+  );
+}
+
+export async function getCourseInfoBySlug(slug: string): Promise<CourseInfo> {
+  return client.fetch(
+    groq`*[_type == "course" && slug.current == $slug][0] {
+
+      'firstLessonSlug': content[_type == 'courseLesson'][0].lesson->slug.current,
+      title,
+      description,
+      'thumbnail': thumbnail.asset->url,
+    }`,
+    { slug }
+  );
+}
+
+export async function getCourseNavInfoBySlug(slug: string): Promise<{
+  title: string;
+  youtubePlaylist?: string;
+  githubRepo?: string;
+}> {
+  return client.fetch(
+    groq`*[_type == "course" && slug.current == $slug][0] {
+      title,
+      youtubePlaylist,
+      githubRepo,
+    }`,
+    { slug }
   );
 }

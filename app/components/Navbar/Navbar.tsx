@@ -6,7 +6,6 @@ import SocialIcons from "../SocialIcons/SocialIcons";
 import DarkMode from "../DarkMode/DarkMode";
 import NavButtons from "../NavButtons/NavButtons";
 import SlideMenu from "../SlideMenu/SlideMenu";
-import { IconUser } from "@tabler/icons-react";
 
 function Navbar() {
   return (

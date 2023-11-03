@@ -5,6 +5,7 @@ import dynamicMetadata from "@/data/meta/pages/post";
 import React from "react";
 import PostHeader from "@/app/components/PostHeader/PostHeader";
 import PostContent from "@/app/components/PostContent/PostContent";
+import { URL } from "@/constants/other";
 import {
   iconsMetadata,
   manifestMetadata,
@@ -49,7 +50,7 @@ async function page({ params }: Props) {
   if (!post) notFound();
   const { title, content, description, thumbnail } = post;
   return (
-    <main className="flex flex-col items-center justify-center gap-6 max-w-3xl mx-auto px-4">
+    <main className="flex flex-col items-center justify-center gap-6 max-w-3xl mx-auto">
       <PostHeader
         description={description}
         thumbnail={thumbnail}

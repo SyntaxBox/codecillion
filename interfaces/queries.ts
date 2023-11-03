@@ -13,8 +13,38 @@ export interface Query {
   lessons: number;
 }
 
+export interface LessonQuery
+  extends Omit<Query, "slug" | "thumbnail" | "id" | "features"> {}
+
+export type CourseMapType = "module" | "chapter" | "courseLesson";
+
+export interface CourseContentMap {
+  type: CourseMapType;
+  title: string;
+  slug?: string;
+}
+
+export interface CourseAccordionLink {
+  title: string;
+  slug: string;
+}
+
+export interface CourseAccordion {
+  title: string;
+  links: CourseAccordionLink[];
+}
+
+export interface CourseInfo {
+  title: string;
+  description: string;
+  thumbnail: string;
+  firstLessonSlug: string;
+}
+
 export interface PostQuery extends Omit<Query, "featured" | "lessons"> {}
-export interface CourseQuery extends Omit<Query, "featured" | "content"> {}
+export interface CourseQuery extends Omit<Query, "featured" | "content"> {
+  content: CourseContentMap[];
+}
 export interface FeaturedCourseQuery
   extends Omit<CourseQuery, "thumbnail" | "keywords" | "content" | "lessons"> {
   featured: string;

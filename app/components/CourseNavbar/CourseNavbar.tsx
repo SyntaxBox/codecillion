@@ -16,11 +16,13 @@ function CourseNavbar({
   githubLink?: string;
 }) {
   return (
-    <nav className="backdrop-blur-md bg-slate-900 z-50 w-full h-[56px] text-gray-700 relative dark:border-slate-600 dark:border-b shadow-[0px_0px_10px_0px_#0f172a]">
+    <nav className="backdrop-blur-md bg-slate-900 z-[51] w-full h-[56px] text-gray-700 relative dark:border-slate-600 dark:border-b shadow-[0px_0px_10px_0px_#0f172a]">
       <Container className="flex items-center justify-between">
         <div className="flex gap-3 items-center justify-center">
           <Logo width={40} height={40} href="/" />
-          <p className="text-white font-bold hidden sm:inline">{title}</p>
+          <p className="text-white font-bold line-clamp-1 text-ellipsis overflow-hidden">
+            {title}
+          </p>
         </div>
         <div className="flex items-center gap-3 md:gap-6">
           {youtubeLink && (

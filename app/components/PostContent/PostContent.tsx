@@ -1,21 +1,28 @@
 import React from "react";
 import { PortableTextBlock } from "sanity";
-import { PortableText, PortableTextReactComponents } from "@portabletext/react";
+import { PortableText } from "@portabletext/react";
 import Code from "../Code/Code";
 import Link from "next/link";
 
-const components: Partial<PortableTextReactComponents> = {
+const components = {
   types: {
-    paragraph: ({ children }: any) => {
-      console.log(children);
-      return <h1>Hello</h1>;
-    },
     codeBlock: Code,
   },
   block: {
-    paragraph: ({ children }: any) => {
+    normal: ({ children }: any) => {
       console.log(children);
-      return <h1>Hello</h1>;
+      return (
+        <p className="text-slate-800 text-justify dark:text-slate-200  my-2">
+          {children}
+        </p>
+      );
+    },
+    h1: ({ children }: any) => {
+      return (
+        <h2 className="font-bold mt-8 mb-2 text-primary-600 dark:text-primary-alt-500 text-3xl">
+          {children}
+        </h2>
+      );
     },
     h2: ({ children }: any) => {
       return (
@@ -90,7 +97,6 @@ const components: Partial<PortableTextReactComponents> = {
 };
 
 function PostContent({ content }: { content: PortableTextBlock[] }) {
-  console.log(content[0]);
   return (
     <section className="w-full" id="page-content">
       <PortableText value={content} components={components} />

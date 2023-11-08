@@ -10,7 +10,13 @@ const components = {
   },
   block: {
     normal: ({ children }: any) => {
-      console.log(children);
+      if (
+        children.length === 1 &&
+        typeof children[0] === "string" &&
+        (children[0] === "" || children[0] === "<br>")
+      ) {
+        return <br />;
+      }
       return (
         <p className="text-slate-800 text-justify dark:text-slate-200  my-2">
           {children}

@@ -50,14 +50,14 @@ async function page({ params }: Props) {
   if (!post) notFound();
   const { title, content, description, thumbnail } = post;
   return (
-    <main className="flex flex-col items-center justify-center gap-6 max-w-3xl mx-auto">
+    <>
       <PostHeader
         description={description}
         thumbnail={thumbnail}
         title={title}
       />
       <PostContent content={content} />
-    </main>
+    </>
   );
 }
 

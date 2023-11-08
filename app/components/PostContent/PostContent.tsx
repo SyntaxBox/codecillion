@@ -6,16 +6,30 @@ import Link from "next/link";
 
 const components = {
   types: {
-    paragraph: ({ children }: any) => {
+    codeBlock: Code,
+  },
+  block: {
+    normal: ({ children }: any) => {
+      if (
+        children.length === 1 &&
+        typeof children[0] === "string" &&
+        (children[0] === "" || children[0] === "<br>")
+      ) {
+        return <br />;
+      }
       return (
-        <p className="text-[32px] text-slate-800 dark:text-slate-200  my-2">
+        <p className="text-slate-800 text-justify dark:text-slate-200  my-2">
           {children}
         </p>
       );
     },
-    codeBlock: Code,
-  },
-  block: {
+    h1: ({ children }: any) => {
+      return (
+        <h2 className="font-bold mt-8 mb-2 text-primary-600 dark:text-primary-alt-500 text-3xl">
+          {children}
+        </h2>
+      );
+    },
     h2: ({ children }: any) => {
       return (
         <h2 className="font-bold mt-8 mb-2 text-primary-600 dark:text-primary-alt-500 text-3xl">

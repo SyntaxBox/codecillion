@@ -1,3 +1,4 @@
+import Container from "@/app/UI/layout/Container";
 import "../../../typography.css";
 
 export default function RootLayout({
@@ -5,5 +6,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <main className="flex flex-col items-center justify-center gap-6 max-w-3xl mx-auto">
+      <Container>{children}</Container>;
+    </main>
+  );
 }

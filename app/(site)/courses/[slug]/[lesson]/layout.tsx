@@ -17,8 +17,6 @@ import { ReactNode } from "react";
 
 type Props = {
   params: { lesson: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-  router: any;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

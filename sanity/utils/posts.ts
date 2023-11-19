@@ -53,7 +53,9 @@ export async function getPostMetadataBySlug(
   );
 }
 
-export async function sitemap(): Promise<{ slug: string; updatedAt: Date }[]> {
+export async function postsSitemap(): Promise<
+  { slug: string; updatedAt: Date }[]
+> {
   return client.fetch(
     groq`*[_type == "post"]{
       "slug": slug.current,

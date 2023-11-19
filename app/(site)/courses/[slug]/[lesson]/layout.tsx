@@ -6,9 +6,9 @@ import {
   manifestMetadata,
   iconsMetadata,
 } from "@/data/meta/global";
-import { getCourseMetadataBySlug } from "@/sanity/utils";
+import { getLessonMetadataBySlug } from "@/sanity/utils";
 import { Metadata } from "next";
-import { metadata as dynamicMetadata } from "@/data/meta/pages/course";
+import { metadata as dynamicMetadata } from "@/data/meta/pages/lesson";
 import { URL } from "@/constants/other";
 
 import Container from "@/app/UI/layout/Container";
@@ -26,14 +26,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lesson } = params;
 
   // fetch data
-  const courseMetadata = await getCourseMetadataBySlug(slug);
-  if (courseMetadata?.keywords === null) courseMetadata.keywords = [];
-  if (courseMetadata) {
-    const { title, description, thumbnail } = courseMetadata;
+  const lessonMetaData = await getLessonMetadataBySlug(lesson);
+  if (lessonMetaData?.keywords === null) lessonMetaData.keywords = [];
+  if (lessonMetaData) {
+    const { title, description, thumbnail } = lessonMetaData;
     const metadata: Metadata = {
-      ...dynamicMetadata(courseMetadata),
+      ...dynamicMetadata(lessonMetaData),
       ...twitterMetadata(title, description, thumbnail, TWITTER),
-      ...openGraphMetadata(title, description, thumbnail, `${URL}/${slug}`),
+      ...openGraphMetadata(title, description, thumbnail, `${URL}/${lesson}`),
       ...themeColorMetadata,
       ...manifestMetadata,
       ...iconsMetadata,

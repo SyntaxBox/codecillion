@@ -25,3 +25,4 @@ export const stacksPage: string[] = [...general, "stacks", "paths"];
 export const postPage: string[] = [...general, "post"];
 export const coursePage: string[] = [...general, "course", "crash course"];
 export const stackPage: string[] = [...general, "stack"];
+export const lessonPage: string[] = [...general, "lesson"];

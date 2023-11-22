@@ -116,12 +116,23 @@ export async function getCourseNavInfoBySlug(slug: string): Promise<{
 }
 
 export async function coursesSitemap(): Promise<
-  { slug: string; updatedAt: Date }[]
+  {
+    slug: string;
+    updatedAt: Date;
+    lessons?: {
+      slug: string;
+      updatedAt: string;
+    }[];
+  }[]
 > {
   return client.fetch(
-    groq`*[_type == "course"]{
+    groq`*[_type == "course"] {
       "slug": slug.current,
-      "updatedAt": _updatedAt
+      "updatedAt": _updatedAt,
+      "lessons": content[] {
+      'slug': lesson->slug.current,
+      'updatedAt': lesson->_updatedAt,
+      },
     }`
   );
 }

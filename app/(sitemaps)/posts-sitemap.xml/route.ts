@@ -1,10 +1,10 @@
 // app/server-sitemap.xml/route.ts
 import { URL } from "@/constants/other";
-import { sitemap } from "@/sanity/utils";
+import { postsSitemap } from "@/sanity/utils";
 import { getServerSideSitemap } from "next-sitemap";
 
 export async function GET(request: Request) {
-  const posts = await sitemap();
+  const posts = await postsSitemap();
   return getServerSideSitemap(
     posts.map(({ slug, updatedAt }) => {
       return {

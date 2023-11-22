@@ -28,7 +28,7 @@ export async function getAllCourses({
   max?: number;
 }): Promise<Omit<CourseQuery, "keywords">[]> {
   return client.fetch(
-    groq`*[_type == "course"][$start...$end] | order(_createdAt asc) {
+    groq`*[_type == "course"][$start...$end] | order(_createdAt desc) {
       _id,
       title,
       description,
@@ -112,5 +112,27 @@ export async function getCourseNavInfoBySlug(slug: string): Promise<{
       githubRepo,
     }`,
     { slug }
+  );
+}
+
+export async function coursesSitemap(): Promise<
+  {
+    slug: string;
+    updatedAt: Date;
+    lessons?: {
+      slug: string;
+      updatedAt: string;
+    }[];
+  }[]
+> {
+  return client.fetch(
+    groq`*[_type == "course"] {
+      "slug": slug.current,
+      "updatedAt": _updatedAt,
+      "lessons": content[] {
+      'slug': lesson->slug.current,
+      'updatedAt': lesson->_updatedAt,
+      },
+    }`
   );
 }

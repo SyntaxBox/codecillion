@@ -13,8 +13,7 @@ export interface Query {
   lessons: number;
 }
 
-export interface LessonQuery
-  extends Omit<Query, "slug" | "thumbnail" | "id" | "features"> {}
+export interface LessonQuery extends Omit<Query, "slug" | "id" | "features"> {}
 
 export type CourseMapType = "module" | "chapter" | "courseLesson";
 

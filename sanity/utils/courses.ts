@@ -28,7 +28,7 @@ export async function getAllCourses({
   max?: number;
 }): Promise<Omit<CourseQuery, "keywords">[]> {
   return client.fetch(
-    groq`*[_type == "course"][$start...$end] | order(_createdAt asc) {
+    groq`*[_type == "course"][$start...$end] | order(_createdAt desc) {
       _id,
       title,
       description,

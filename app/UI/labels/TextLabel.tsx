@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { TextLabel as props } from "@/interfaces/labels";
 
-function TextLabel({ href, title, ...rest }: props) {
+export function TextLabel({ href, title, ...rest }: props) {
   return (
     <Link
       href={href}
@@ -13,5 +13,3 @@ function TextLabel({ href, title, ...rest }: props) {
     </Link>
   );
 }
-
-export default TextLabel;

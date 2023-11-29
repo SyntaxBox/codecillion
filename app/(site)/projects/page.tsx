@@ -1,6 +1,6 @@
 import React from "react";
 import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
-import { projectsMetadata } from "@/data/meta/pages";
+import { projectsMetadata } from "@/data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = { ...projectsMetadata };

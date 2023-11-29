@@ -1,3 +1,3 @@
-import { stroke as s } from "./icons";
-export const stroke = s;
-export const size = 28;
+import { iconStroke } from ".";
+export const socialIconStroke = iconStroke;
+export const socialIconSize = 28;

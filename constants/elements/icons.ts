@@ -1,2 +1,2 @@
-export const stroke = 1.2;
-export const size = 28;
+export const iconStroke = 1.2;
+export const iconSize = 28;

@@ -2,9 +2,9 @@ import React from "react";
 import Header from "@/app/components/Header/Header";
 import Posts from "@/app/components/Posts/Posts";
 import BigCard from "@/app/components/BigCard/BigCard";
-import { getAllPosts } from "@/sanity/utils";
+import { getAllPosts } from "@/sanity";
 import { Metadata } from "next";
-import { postsMetadata } from "@/data/meta/pages";
+import { postsMetadata } from "@/data";
 import LoadMore from "@/app/components/LoadMore/LoadMore";
 
 export const metadata: Metadata = {

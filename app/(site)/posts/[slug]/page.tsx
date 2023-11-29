@@ -1,19 +1,18 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug, getPostMetadataBySlug } from "@/sanity/utils";
 import { Metadata } from "next";
-import dynamicMetadata from "@/data/meta/pages/post";
 import React from "react";
 import PostHeader from "@/app/components/PostHeader/PostHeader";
 import PostContent from "@/app/components/PostContent/PostContent";
-import { URL } from "@/constants/other";
+import { URL, TWITTER } from "@/constants";
 import {
   iconsMetadata,
   manifestMetadata,
   openGraphMetadata,
   themeColorMetadata,
   twitterMetadata,
-} from "@/data/meta/global";
-import { TWITTER } from "@/constants/other";
+  postMetadata as dynamicMetadata,
+} from "@/data";
 
 type Props = {
   params: { slug: string };

@@ -5,5 +5,4 @@ import stack from "./stack";
 import imageBlock from "./imageBlock";
 import codeBlock from "./codeBlock";
 
-const schemas = [post, lesson, course, stack, imageBlock, codeBlock];
-export default schemas;
+export const schemas = [post, lesson, course, stack, imageBlock, codeBlock];

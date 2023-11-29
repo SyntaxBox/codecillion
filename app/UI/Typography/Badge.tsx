@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-function Badge({ children }: { children: ReactNode }) {
+export function Badge({ children }: { children: ReactNode }) {
   return (
     <p
       className="capitalize font-semibold py-1 px-2 md:py-2 md:px-3 rounded-lg text-xl w-fit text-black dark:text-white 
@@ -10,5 +10,3 @@ function Badge({ children }: { children: ReactNode }) {
     </p>
   );
 }
-
-export default Badge;

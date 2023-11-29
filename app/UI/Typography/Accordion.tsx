@@ -6,15 +6,13 @@ import {
   IconChevronRight,
 } from "@tabler/icons-react";
 import React, { useState } from "react";
-import A from "./A";
+import { A, AccordionTitle, AccordionLink } from ".";
 import { CourseAccordion } from "@/interfaces/queries";
-import AccordionTitle from "./AccordionTitle";
 import { size, stroke } from "@/constants/elements/icons";
 import Link from "next/link";
-import AccordionLink from "./AccordionLink";
 import { findSlugIndex } from "@/logic/accordion";
 
-function Accordion({
+export function Accordion({
   links,
   title,
   currentLesson,
@@ -62,5 +60,3 @@ function Accordion({
     </>
   );
 }
-
-export default Accordion;

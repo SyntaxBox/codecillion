@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-function P({
+export function P({
   children,
   ...rest
 }: { children: ReactNode } & JSX.IntrinsicElements["h3"]) {
@@ -13,5 +13,3 @@ function P({
     </p>
   );
 }
-
-export default P;

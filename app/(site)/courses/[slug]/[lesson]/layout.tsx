@@ -1,19 +1,18 @@
-import { TWITTER } from "@/constants/other";
+import { ReactNode } from "react";
+import { Metadata } from "next";
 import {
   twitterMetadata,
   openGraphMetadata,
   themeColorMetadata,
   manifestMetadata,
   iconsMetadata,
-} from "@/data/meta/global";
-import { getLessonMetadataBySlug } from "@/sanity/utils";
-import { Metadata } from "next";
-import { metadata as dynamicMetadata } from "@/data/meta/pages/lesson";
-import { URL } from "@/constants/other";
+  lessonMetadata,
+} from "@/data";
+import { URL, TWITTER } from "@/constants";
+import { Container } from "@/app/UI";
+import { getLessonMetadataBySlug } from "@/sanity";
 
-import Container from "@/app/UI/layout/Container";
 import CourseSidebar from "@/app/components/CourseSidebar/CourseSidebar";
-import { ReactNode } from "react";
 
 type Props = {
   params: { lesson: string };
@@ -29,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (lessonMetaData) {
     const { title, description, thumbnail } = lessonMetaData;
     const metadata: Metadata = {
-      ...dynamicMetadata(lessonMetaData),
+      ...lessonMetadata(lessonMetaData),
       ...twitterMetadata(title, description, thumbnail, TWITTER),
       ...openGraphMetadata(title, description, thumbnail, `${URL}/${lesson}`),
       ...themeColorMetadata,

@@ -1,18 +1,14 @@
-import { TWITTER } from "@/constants/other";
+import { Metadata } from "next";
 import {
   twitterMetadata,
   openGraphMetadata,
   themeColorMetadata,
   manifestMetadata,
   iconsMetadata,
-} from "@/data/meta/global";
-import {
-  getCourseMetadataBySlug,
-  getCourseNavInfoBySlug,
-} from "@/sanity/utils";
-import { Metadata } from "next";
-import { metadata as dynamicMetadata } from "@/data/meta/pages/course";
-import { URL } from "@/constants/other";
+  courseMetadata as dynamicMetadata,
+} from "@/data";
+import { getCourseMetadataBySlug, getCourseNavInfoBySlug } from "@/sanity";
+import { URL, TWITTER } from "@/constants";
 import CourseNavbar from "@/app/components/CourseNavbar/CourseNavbar";
 
 type Props = {

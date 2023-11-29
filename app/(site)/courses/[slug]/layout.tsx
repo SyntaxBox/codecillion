@@ -17,7 +17,7 @@ import CourseNavbar from "@/app/components/CourseNavbar/CourseNavbar";
 
 type Props = {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: never;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

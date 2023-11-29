@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-function NavButton({
+export function NavButton({
   href,
   children,
   active,
@@ -27,5 +27,3 @@ function NavButton({
     </Link>
   );
 }
-
-export default NavButton;

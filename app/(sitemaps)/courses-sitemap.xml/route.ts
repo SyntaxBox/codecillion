@@ -1,6 +1,6 @@
 // app/server-sitemap.xml/route.ts
-import { URL } from "@/constants/other";
-import { coursesSitemap } from "@/sanity/utils";
+import { URL } from "@/constants";
+import { coursesSitemap } from "@/sanity";
 import { getServerSideSitemap, ISitemapField } from "next-sitemap";
 
 export async function GET(request: Request) {

@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         userAgent: "*",
-        disallow: ["/admin", "admin"],
+        disallow: ["/admin", "/admin/*"],
       },
     ],
   },

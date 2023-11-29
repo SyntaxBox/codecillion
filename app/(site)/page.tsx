@@ -4,20 +4,20 @@ import Courses from "@/app/components/Courses/Courses";
 import Posts from "@/app/components/Posts/Posts";
 import ExploreMore from "@/app/components/ExploreMore/ExploreMore";
 import SocialBanner from "@/app/components/SocialBanner/SocialBanner";
-import Container from "@/app/UI/layout/Container";
+import { Container } from "@/app/UI";
 import FlatCard from "@/app/components/FlatCard/FlatCard";
 import BigCard from "../components/BigCard/BigCard";
-import { metadata as homePageMetadata } from "@/data/meta/pages/indexPage";
+import { homeMetadata } from "@/data";
 import {
   getAllPosts,
   getAllCourses,
   getFeaturedCourse,
   getAllStacks,
-} from "@/sanity/utils";
+} from "@/sanity";
 import Navbar from "../components/Navbar/Navbar";
 
 export const metadata: Metadata = {
-  ...homePageMetadata,
+  ...homeMetadata,
 };
 
 export default async function Home() {

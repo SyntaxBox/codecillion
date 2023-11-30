@@ -1,10 +1,10 @@
-import { IconWithTextLabel as props } from "@/interfaces/labels";
+import { IconWithTextLabel as props } from "@/interfaces";
 import Link from "next/link";
 import React from "react";
 import {
   IconWithTextLabelSize as size,
   IconWithTextLabelStroke as stroke,
-} from "@/constants/elements/labels";
+} from "@/constants";
 
 export function IconWithTextLabel({ href, title, Icon, ...rest }: props) {
   return (

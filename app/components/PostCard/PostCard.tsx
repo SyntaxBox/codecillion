@@ -1,8 +1,4 @@
-import Title from "@/app/UI/Typography/Title";
-import P from "@/app/UI/Typography/P";
-import IconWithTextLabel from "@/app/UI/labels/IconWithTextLabel";
-import { PostCard } from "@/interfaces/Cards";
-import { TablerIconsProps } from "@tabler/icons-react";
+import { PostCard as PostCardInterface } from "@/interfaces";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,7 +8,7 @@ function PostCard({
   href,
   title,
   description,
-}: Omit<PostCard, "slug"> & { href: string }) {
+}: Omit<PostCardInterface, "slug"> & { href: string }) {
   return (
     <Link
       href={href}

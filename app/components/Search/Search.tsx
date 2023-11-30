@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import SearchModel from "../SearchModel/SearchModel";
 import SearchBox from "../SearchBox/SearchBox";
-import { SearchCard } from "@/interfaces/Cards";
-import { search } from "@/sanity/utils/search";
+import { SearchCard } from "@/interfaces";
+import { search } from "@/sanity";
 
 function Search({
   placeholder,

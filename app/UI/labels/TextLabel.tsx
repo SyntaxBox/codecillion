@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { TextLabel as props } from "@/interfaces/labels";
+import { TextLabel as props } from "@/interfaces";
 
 export function TextLabel({ href, title, ...rest }: props) {
   return (

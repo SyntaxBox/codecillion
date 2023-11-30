@@ -1,6 +1,6 @@
 "use client";
-import { PostCard as props } from "@/interfaces/Cards";
-import Container from "../../UI/layout/Container";
+import { PostCard as props } from "@/interfaces";
+import { Container } from "../../UI/";
 import React from "react";
 import PostCard from "../PostCard/PostCard";
 

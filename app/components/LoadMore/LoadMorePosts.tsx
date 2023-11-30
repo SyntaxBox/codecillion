@@ -1,6 +1,6 @@
 "use client";
-import { PostQuery } from "@/interfaces/queries";
-import { getAllPosts } from "@/sanity/utils";
+import { PostQuery } from "@/interfaces";
+import { getAllPosts } from "@/sanity";
 import React, { useState } from "react";
 import LoadMoreButton from "../LoadMoreButton/LoadMoreButton";
 import Posts from "../Posts/Posts";

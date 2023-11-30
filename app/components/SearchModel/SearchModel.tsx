@@ -1,6 +1,6 @@
 "use client";
-import { SearchCard } from "@/interfaces/Cards";
-import { search } from "@/logic/search";
+import { SearchCard } from "@/interfaces";
+import { search } from "@/logic";
 import React from "react";
 import SearchResult from "../SearchResult/SearchResult";
 

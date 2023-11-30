@@ -1,12 +1,10 @@
-import Container from "@/app/UI/layout/Container";
 import React from "react";
+import { navbarButtons } from "@/data";
+import { Container, A } from "@/app/UI";
+import { TITLE } from "@/constants";
 import Logo from "../Logo/Logo";
 import NavButtons from "../NavButtons/NavButtons";
-import { navbarButtons } from "@/data/elements/navbar";
-import { IconUser } from "@tabler/icons-react";
 import SocialIcons from "../SocialIcons/SocialIcons";
-import A from "@/app/UI/Typography/A";
-import { TITLE } from "@/constants/other/title";
 function Footer({ className }: { className?: string }) {
   const owner = [
     ...navbarButtons,

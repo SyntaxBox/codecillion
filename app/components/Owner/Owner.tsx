@@ -1,5 +1,5 @@
-"use client"
-import { stroke } from "@/constants/elements/social";
+"use client";
+import { socialIconStroke } from "@/constants";
 import { IconUser } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
@@ -13,11 +13,11 @@ function Owner({
 }) {
   return (
     <Link
-    title="owner page"
+      title="owner page"
       href="owner"
       className={`flex gap-3 justify-center hover:text-primary-600 dark:hover:text-primary-alt-600 ${className}`}
     >
-      <IconUser stroke={stroke} />
+      <IconUser stroke={socialIconStroke} />
       {!excludeTitle && <span>Owner</span>}
     </Link>
   );

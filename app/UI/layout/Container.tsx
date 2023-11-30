@@ -1,4 +1,4 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
 type props = {
   children: React.ReactNode;

@@ -1,6 +1,6 @@
 "use client";
 import { IconDots, IconFidgetSpinner } from "@tabler/icons-react";
-import React, { useState } from "react";
+import React from "react";
 
 type props = {
   text: string;

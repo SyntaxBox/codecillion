@@ -1,15 +1,9 @@
 "use client";
-import {
-  IconArrowBadgeRightFilled,
-  IconArrowBadgeUpFilled,
-  IconChevronLeft,
-  IconChevronRight,
-} from "@tabler/icons-react";
+import { IconChevronRight } from "@tabler/icons-react";
 import React, { useState } from "react";
-import { A, AccordionTitle, AccordionLink } from ".";
+import { AccordionTitle, AccordionLink } from ".";
 import { CourseAccordion } from "@/interfaces/queries";
-import { size, stroke } from "@/constants/elements/icons";
-import Link from "next/link";
+import { iconSize, iconStroke } from "@/constants/elements/icons";
 import { findSlugIndex } from "@/logic/accordion";
 
 export function Accordion({
@@ -32,8 +26,8 @@ export function Accordion({
         >
           <AccordionTitle>{title}</AccordionTitle>
           <IconChevronRight
-            size={size - 4}
-            stroke={stroke}
+            size={iconSize - 4}
+            stroke={iconStroke}
             className={`${show ? "rotate-90" : ""}`}
           />
         </button>

@@ -1,5 +1,5 @@
 import React from "react";
-import { LargeCard } from "@/interfaces/Cards";
+import { LargeCard as LargeCardInterface } from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 import LessonsCount from "../LessonsCount/LessonsCount";
@@ -11,7 +11,7 @@ function LargeCard({
   description,
   lessons,
   className,
-}: LargeCard & { className?: string }) {
+}: LargeCardInterface & { className?: string }) {
   return (
     <Link
       href={slug}

@@ -2,7 +2,7 @@ import { PRIMARY_COLOR } from "@/constants/styles/colors";
 import React from "react";
 
 function Title({
-  title = "CodeLighthouse",
+  title = "Codecillion",
   colorSplit,
   charSplit,
   color = PRIMARY_COLOR,

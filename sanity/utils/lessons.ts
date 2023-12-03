@@ -12,6 +12,7 @@ export async function getLessonBySlug(
       description,
       content,
       tags,
+      youtubeUrl,
       "thumbnail": thumbnail.asset->url,
     }`,
     { slug }

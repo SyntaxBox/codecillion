@@ -1,12 +1,12 @@
 "use client";
 import { PostCard as props } from "@/interfaces";
-import { Container } from "../../UI/";
+import { Container } from "@/app/UI/";
 import React from "react";
 import PostCard from "../PostCard/PostCard";
 
 function Posts({ posts }: { posts: props[] }) {
   return (
-    <Container className="grid gap-6 grid-cols-1 hello">
+    <Container className="grid gap-6 grid-cols-1">
       {posts.map(({ description, title, slug, thumbnail }, i) => (
         <PostCard
           key={i}
@@ -16,13 +16,6 @@ function Posts({ posts }: { posts: props[] }) {
           description={description}
         />
       ))}
-      <style jsx>
-        {`
-          .hello {
-            color: red;
-          }
-        `}
-      </style>
     </Container>
   );
 }

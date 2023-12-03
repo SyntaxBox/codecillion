@@ -1,8 +1,8 @@
 import ComingSoon from "@/app/components/ComingSoon/ComingSoon";
 import CourseWelcome from "@/app/components/CourseWelcome/CourseWelcome";
-import { getCourseInfoBySlug } from "@/sanity/utils";
+import { getCourseInfoBySlug } from "@/sanity";
 import { notFound } from "next/navigation";
-import Container from "@/app/UI/layout/Container";
+import { Container } from "@/app/UI";
 import React from "react";
 type Props = {
   params: { slug: string };

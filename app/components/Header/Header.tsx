@@ -1,8 +1,6 @@
-import BigTitle from "@/app/UI/Typography/BigTitle";
-import Container from "@/app/UI/layout/Container";
+import { Container } from "@/app/UI";
 import React from "react";
 import Search from "../Search/Search";
-import P from "@/app/UI/Typography/P";
 
 function Header({
   title,

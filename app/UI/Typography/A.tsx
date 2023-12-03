@@ -1,7 +1,7 @@
 import Link, { LinkProps } from "next/link";
 import React, { ReactNode } from "react";
 
-function A({
+export function A({
   children,
   className,
   href,
@@ -17,5 +17,3 @@ function A({
     </Link>
   );
 }
-
-export default A;

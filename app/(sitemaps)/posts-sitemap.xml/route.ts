@@ -1,6 +1,6 @@
 // app/server-sitemap.xml/route.ts
-import { URL } from "@/constants/other";
-import { postsSitemap } from "@/sanity/utils";
+import { URL } from "@/constants";
+import { postsSitemap } from "@/sanity";
 import { getServerSideSitemap } from "next-sitemap";
 
 export async function GET(request: Request) {

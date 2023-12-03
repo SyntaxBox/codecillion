@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-function Title({
+export function Title({
   children,
   className,
   ...rest
@@ -14,5 +14,3 @@ function Title({
     </h3>
   );
 }
-
-export default Title;

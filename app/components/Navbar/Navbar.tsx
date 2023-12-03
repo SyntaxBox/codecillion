@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../Logo/Logo";
-import Container from "../../UI/layout/Container";
-import { navbarButtons } from "@/data/elements/navbar";
+import { Container } from "../../UI";
+import { navbarButtons } from "@/data";
 import SocialIcons from "../SocialIcons/SocialIcons";
 import DarkMode from "../DarkMode/DarkMode";
 import NavButtons from "../NavButtons/NavButtons";

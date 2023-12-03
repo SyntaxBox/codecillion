@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-function H3({
+export function H3({
   children,
   className,
   ...rest
@@ -14,5 +14,3 @@ function H3({
     </h3>
   );
 }
-
-export default H3;

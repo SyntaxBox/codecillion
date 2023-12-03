@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 
 type props = { children: ReactNode } & LinkProps;
 
-function DefaultButton({ href, children, ...rest }: props) {
+export function DefaultButton({ href, children, ...rest }: props) {
   return (
     <Link
       href={href}
@@ -14,5 +14,3 @@ function DefaultButton({ href, children, ...rest }: props) {
     </Link>
   );
 }
-
-export default DefaultButton;

@@ -1,4 +1,4 @@
-import { SearchCard } from "@/interfaces/Cards";
+import { SearchCard } from "@/interfaces";
 
 export function search(data: SearchCard[], search: string) {
   const searchWords = search.toLowerCase().split(" ");

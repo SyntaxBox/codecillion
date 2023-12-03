@@ -1,5 +1,5 @@
-import NavButton from "@/app/UI/buttons/NavButton";
-import { NavbarButton } from "@/interfaces/navbar";
+import { NavButton } from "@/app/UI";
+import { NavbarButton } from "@/interfaces";
 import React from "react";
 
 function NavButtons({

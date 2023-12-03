@@ -1,5 +1,5 @@
 "use client";
-import { SearchCard } from "@/interfaces/Cards";
+import { SearchCard } from "@/interfaces";
 import { usePathname } from "next/navigation";
 import React from "react";
 import SearchResultItem from "./SearchResultItem";

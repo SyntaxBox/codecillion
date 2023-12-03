@@ -1,4 +1,5 @@
-import schemas from "@/sanity/schemas";
+"use client";
+import { schemas } from "@/sanity";
 import { colorInput } from "@sanity/color-input";
 import { deskTool } from "sanity/desk";
 

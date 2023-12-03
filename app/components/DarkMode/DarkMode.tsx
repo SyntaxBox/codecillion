@@ -1,5 +1,5 @@
 "use client";
-import { stroke, size } from "@/constants/elements/social";
+import { socialIconSize, socialIconStroke } from "@/constants";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
@@ -27,9 +27,9 @@ function DarkMode({ whiteMoon }: { whiteMoon?: boolean }) {
       onClick={handelToggle}
     >
       {resolvedTheme === "dark" ? (
-        <IconMoon stroke={stroke} size={size} />
+        <IconMoon stroke={socialIconStroke} size={socialIconSize} />
       ) : (
-        <IconSun stroke={stroke} size={size} />
+        <IconSun stroke={socialIconStroke} size={socialIconSize} />
       )}
     </div>
   );

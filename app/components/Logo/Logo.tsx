@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Title from "./Title";
-import { PRIMARY_COLOR_ALT, PRIMARY_COLOR } from "@/constants/styles/colors";
+import { TITLE, PRIMARY_COLOR_ALT, PRIMARY_COLOR } from "@/constants";
 import Link from "next/link";
-import { TITLE } from "@/constants/other/title";
 
 function Logo({
   width,

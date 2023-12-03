@@ -1,7 +1,7 @@
 "use client";
-import { size, stroke } from "@/constants/elements/icons";
+import { iconSize, iconStroke } from "@/constants";
 import { IconMenu2, IconX } from "@tabler/icons-react";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 
 function SlideMenu({
   children,
@@ -24,8 +24,8 @@ function SlideMenu({
         <div className="py-2 flex items-center justify-between">
           <p className="font-semibold uppercase">{title}</p>
           <IconX
-            size={size}
-            stroke={stroke}
+            size={iconSize}
+            stroke={iconStroke}
             className="cursor-pointer"
             onClick={() => setShow(false)}
           />

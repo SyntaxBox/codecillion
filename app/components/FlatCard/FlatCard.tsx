@@ -1,4 +1,4 @@
-import { FlatCard } from "@/interfaces/Cards";
+import { FlatCard as FlatCardInterface } from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,7 +8,7 @@ function FlatCard({
   thumbnail,
   title,
   className,
-}: Omit<FlatCard, "slug"> & {
+}: Omit<FlatCardInterface, "slug"> & {
   href: string;
   className?: string;
 }) {

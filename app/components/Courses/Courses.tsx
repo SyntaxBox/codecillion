@@ -1,7 +1,7 @@
-import { LargeCard as props } from "@/interfaces/Cards";
+import { LargeCard as props } from "@/interfaces/cards";
 import React from "react";
 import LargeCard from "../LargeCard/LargeCard";
-import Container from "../../UI/layout/Container";
+import { Container } from "@/app/UI";
 
 function Courses({ courses }: { courses?: props[] }) {
   if (!courses) return null;

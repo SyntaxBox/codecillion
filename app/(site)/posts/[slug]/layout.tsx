@@ -1,4 +1,4 @@
-import Container from "@/app/UI/layout/Container";
+import { Container } from "@/app/UI";
 import "../../../typography.css";
 
 export default function RootLayout({

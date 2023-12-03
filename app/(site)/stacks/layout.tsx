@@ -1,4 +1,4 @@
-import { stacksMetadata } from "@/data/meta/pages";
+import { stacksMetadata } from "@/data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = { ...stacksMetadata };

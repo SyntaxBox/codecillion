@@ -1,5 +1,5 @@
 "use client";
-import { socialIcons } from "@/data/elements/social";
+import { socialIcons } from "@/data";
 import Link from "next/link";
 import React from "react";
 

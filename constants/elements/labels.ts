@@ -1,4 +1,4 @@
-import { stroke } from "./icons";
+import { iconStroke } from "./icons";
 
 export const IconWithTextLabelSize = 32;
-export const IconWithTextLabelStroke = stroke;
+export const IconWithTextLabelStroke = iconStroke;

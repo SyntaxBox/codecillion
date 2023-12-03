@@ -1,7 +1,7 @@
 "use client";
-import { size, stroke } from "@/constants/elements/icons";
-import { CourseAccordion, CourseAccordionLink } from "@/interfaces/queries";
-import { findSlugIndex } from "@/logic/accordion";
+import { iconSize, iconStroke } from "@/constants";
+import { CourseAccordion, CourseAccordionLink } from "@/interfaces";
+import { findSlugIndex } from "@/logic";
 import { IconChevronDown } from "@tabler/icons-react";
 import React, { MouseEventHandler, useEffect, useState } from "react";
 
@@ -35,8 +35,8 @@ function CurrentLesson({
         {currentLessonTitle}
       </p>
       <IconChevronDown
-        size={size - 4}
-        stroke={stroke}
+        size={iconSize - 4}
+        stroke={iconStroke}
         className={`${rotateChevron ? "rotate-180" : ""}`}
       />
     </button>

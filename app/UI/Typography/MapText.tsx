@@ -2,7 +2,7 @@ import { CourseMapType } from "@/interfaces/queries";
 import Link from "next/link";
 import React from "react";
 
-function MapText({
+export function MapText({
   children,
   className,
   type,
@@ -29,5 +29,3 @@ function MapText({
     </>
   );
 }
-
-export default MapText;

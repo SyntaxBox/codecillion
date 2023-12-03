@@ -1,5 +1,5 @@
-import Accordion from "@/app/UI/Typography/Accordion";
-import { CourseAccordion } from "@/interfaces/queries";
+import { Accordion } from "@/app/UI";
+import { CourseAccordion } from "@/interfaces";
 import React from "react";
 function Sidebar({
   courseAccordion,

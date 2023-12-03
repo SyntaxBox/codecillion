@@ -1,9 +1,8 @@
 "use client";
 import Sidebar from "./SideBar";
-import Accordion from "@/app/UI/Typography/Accordion";
-import { CourseAccordion, CourseContentMap } from "@/interfaces/queries";
-import { transformToAccordion } from "@/logic/transform";
-import { getCourseContentBySlug } from "@/sanity/utils";
+import { CourseAccordion, CourseContentMap } from "@/interfaces";
+import { transformToAccordion } from "@/logic";
+import { getCourseContentBySlug } from "@/sanity";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import CurrentLesson from "./CurrentLesson";

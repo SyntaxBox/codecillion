@@ -1,10 +1,8 @@
-import Container from "@/app/UI/layout/Container";
+import { Container, IconWithTextLabel, IconButton } from "@/app/UI";
 import React from "react";
 import DarkMode from "../DarkMode/DarkMode";
 import Logo from "../Logo/Logo";
-import IconWithTextLabel from "@/app/UI/labels/IconWithTextLabel";
 import { IconBrandGithub, IconBrandYoutube } from "@tabler/icons-react";
-import IconButton from "@/app/UI/buttons/IconButton";
 
 function CourseNavbar({
   title,

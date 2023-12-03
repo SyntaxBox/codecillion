@@ -1,6 +1,6 @@
 "use client";
-import { CourseQuery, PostQuery } from "@/interfaces/queries";
-import { getAllCourses } from "@/sanity/utils";
+import { CourseQuery } from "@/interfaces";
+import { getAllCourses } from "@/sanity";
 import React, { useState } from "react";
 import LoadMoreButton from "../LoadMoreButton/LoadMoreButton";
 import Courses from "../Courses/Courses";

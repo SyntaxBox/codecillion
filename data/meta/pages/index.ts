@@ -1,15 +1,8 @@
-import { metadata as homeMetadata } from "./indexPage";
-import { metadata as coursesMetadata } from "./courses";
-import { metadata as courseMetadata } from "./course";
-import { metadata as stacksMetadata } from "./stacks";
-import { metadata as projectsMetadata } from "./projects";
-import { metadata as postsMetadata } from "./posts";
-
-export {
-  homeMetadata,
-  coursesMetadata,
-  courseMetadata,
-  stacksMetadata,
-  projectsMetadata,
-  postsMetadata,
-};
+export { metadata as homeMetadata } from "./indexPage";
+export { metadata as coursesMetadata } from "./courses";
+export { metadata as courseMetadata } from "./course";
+export { metadata as stacksMetadata } from "./stacks";
+export { metadata as projectsMetadata } from "./projects";
+export { metadata as postsMetadata } from "./posts";
+export { metadata as postMetadata } from "./post";
+export { metadata as lessonMetadata } from "./lesson";

@@ -1,9 +1,9 @@
 import React from "react";
-import { coursesMetadata } from "@/data/meta/pages";
+import { coursesMetadata } from "@/data";
 import Courses from "@/app/components/Courses/Courses";
 import Header from "@/app/components/Header/Header";
 import BigCard from "@/app/components/BigCard/BigCard";
-import { getAllCourses } from "@/sanity/utils";
+import { getAllCourses } from "@/sanity";
 import LoadMore from "@/app/components/LoadMore/LoadMore";
 import { Metadata } from "next";
 import Navbar from "@/app/components/Navbar/Navbar";

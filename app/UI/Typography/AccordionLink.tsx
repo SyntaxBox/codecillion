@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { ReactNode } from "react";
 
-function AccordionLink({
+export function AccordionLink({
   children,
   slug,
   className,
@@ -21,5 +21,3 @@ function AccordionLink({
     </li>
   );
 }
-
-export default AccordionLink;

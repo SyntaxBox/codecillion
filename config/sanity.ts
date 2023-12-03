@@ -18,7 +18,7 @@ export const config = {
   schema,
 };
 
-export const clientConfig = {
+export const sanityClientConfig = {
   projectId,
   apiVersion,
   dataset,

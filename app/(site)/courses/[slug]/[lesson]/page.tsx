@@ -1,6 +1,9 @@
 import { H1 } from "@/app/UI";
+import BigLink from "@/app/UI/buttons/BigLink";
 import PostContent from "@/app/components/PostContent/PostContent";
 import { getLessonBySlug } from "@/sanity";
+import { fetchWebsiteMetadata } from "@/utils";
+import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -21,6 +24,11 @@ export default async function page({ params }: Props) {
           {description}
         </p>
       </div>
+      <BigLink
+        text="What on:"
+        link={lesson.youtubeUrl}
+        icon={<IconBrandYoutubeFilled />}
+      />{" "}
       <PostContent content={content} />
     </section>
   );

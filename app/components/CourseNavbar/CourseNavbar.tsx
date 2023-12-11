@@ -1,4 +1,4 @@
-import { Container, IconWithTextLabel, IconButton } from "@/app/UI";
+import { Container, IconButton } from "@/app/UI";
 import React from "react";
 import DarkMode from "../DarkMode/DarkMode";
 import Logo from "../Logo/Logo";

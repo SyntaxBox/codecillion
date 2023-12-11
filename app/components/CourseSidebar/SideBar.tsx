@@ -1,4 +1,4 @@
-import { Accordion } from "@/app/UI";
+import { Accordion } from "@/app/UI/typography/Accordion";
 import { CourseAccordion } from "@/interfaces";
 import React from "react";
 function Sidebar({

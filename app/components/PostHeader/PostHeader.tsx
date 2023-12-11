@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { H1 } from "@/app/UI";
+import { H1 } from "@/app/UI/typography/H1";
 
 function PostHeader({
   thumbnail,

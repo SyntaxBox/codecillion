@@ -4,7 +4,8 @@ import Image from "next/image";
 import { Container } from "@/app/UI";
 import { Card } from "@/interfaces";
 import LessonsCount from "../LessonsCount/LessonsCount";
-import { Badge, H3 } from "@/app/UI/typography";
+import { Badge } from "@/app/UI/typography/Badge";
+import { H3 } from "@/app/UI/typography/H3";
 
 function BigCard({
   thumbnail,

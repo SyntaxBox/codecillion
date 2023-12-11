@@ -1,4 +1,4 @@
-import { Container, BigTitle } from "@/app/UI";
+import { Container } from "@/app/UI";
 import { TITLE } from "@/constants";
 import Image from "next/image";
 import React from "react";

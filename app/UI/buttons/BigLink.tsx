@@ -1,7 +1,6 @@
 import { fetchWebsiteMetadata } from "@/utils";
 import Link from "next/link";
 import React from "react";
-import { P } from "../typography";
 
 async function BigLink({
   link,

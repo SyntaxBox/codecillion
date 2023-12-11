@@ -8,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <main className="flex flex-col items-center justify-center gap-6 max-w-3xl mx-auto">
-      <Container>{children}</Container>;
+      <Container>{children}</Container>
     </main>
   );
 }

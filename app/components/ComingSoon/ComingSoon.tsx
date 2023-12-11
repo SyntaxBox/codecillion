@@ -1,6 +1,5 @@
 "use client";
-import { Container } from "@/app/UI";
-import { A } from "@/app/UI/typography/A";
+import { Container, A } from "@/app/UI";
 import React from "react";
 
 function ComingSoon({ description }: { description: string }) {

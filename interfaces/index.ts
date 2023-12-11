@@ -1,4 +1,4 @@
-export * from "./cards";
+export * from "./Cards";
 export * from "./labels";
 export * from "./navbar";
 export * from "./queries";

@@ -1,4 +1,4 @@
-import { LargeCard as props } from "@/interfaces/cards";
+import { LargeCard as props } from "@/interfaces/Cards";
 import React from "react";
 import LargeCard from "../LargeCard/LargeCard";
 import { Container } from "@/app/UI";

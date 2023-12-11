@@ -1,10 +1,8 @@
 import React from "react";
-import { Container } from "@/app/UI";
+import { Container, BigTitle, P } from "@/app/UI";
 import { FeaturedCard } from "@/interfaces";
 import Link from "next/link";
 import Image from "next/image";
-import { BigTitle } from "@/app/UI/typography/BigTitle";
-import { P } from "@/app/UI/typography/P";
 
 function Featured({
   thumbnail,

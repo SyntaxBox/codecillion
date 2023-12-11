@@ -1,5 +1,4 @@
-import { H1 } from "@/app/UI/typography/H1";
-import BigLink from "@/app/UI/buttons/BigLink";
+import { H1, BigLink } from "@/app/UI";
 import PostContent from "@/app/components/PostContent/PostContent";
 import { getLessonBySlug } from "@/sanity";
 import { IconBrandYoutubeFilled } from "@tabler/icons-react";
@@ -23,11 +22,11 @@ export default async function page({ params }: Props) {
           {description}
         </p>
       </div>
-      <BigLink
+      {/* <BigLink
         text="What on:"
         link={lesson.youtubeUrl}
         icon={<IconBrandYoutubeFilled />}
-      />{" "}
+      />{" "} */}
       <PostContent content={content} />
     </section>
   );

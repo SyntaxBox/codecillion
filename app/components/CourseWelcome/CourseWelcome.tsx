@@ -1,6 +1,4 @@
-import { DefaultButton } from "@/app/UI";
-import { H1 } from "@/app/UI/typography/H1";
-import { P } from "@/app/UI/typography/P";
+import { DefaultButton, H1, P } from "@/app/UI";
 import Image from "next/image";
 import React from "react";
 

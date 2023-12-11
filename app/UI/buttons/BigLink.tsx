@@ -1,8 +1,7 @@
 import { fetchWebsiteMetadata } from "@/utils";
 import Link from "next/link";
 import React from "react";
-
-async function BigLink({
+export async function BigLink({
   link,
   icon,
   text,
@@ -26,5 +25,3 @@ async function BigLink({
     </Link>
   );
 }
-
-export default BigLink;

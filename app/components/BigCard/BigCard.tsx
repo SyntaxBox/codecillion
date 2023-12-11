@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Badge, H3, Container } from "@/app/UI";
+import { Container } from "@/app/UI";
 import { Card } from "@/interfaces";
 import LessonsCount from "../LessonsCount/LessonsCount";
+import { Badge, H3 } from "@/app/UI/typography";
 
 function BigCard({
   thumbnail,

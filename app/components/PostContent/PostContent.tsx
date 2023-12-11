@@ -18,7 +18,7 @@ const components = {
         return <br />;
       }
       return (
-        <p className="text-slate-800 text-justify dark:text-slate-200  my-2">
+        <p className="text-slate-800 md:text-justify dark:text-slate-200  my-2">
           {children}
         </p>
       );

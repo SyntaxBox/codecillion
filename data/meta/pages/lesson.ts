@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import {
   manifestMetadata,
   openGraphMetadata,
-  themeColorMetadata,
   twitterMetadata,
 } from "../global";
 import { LessonQuery } from "@/interfaces/queries";
@@ -18,9 +17,8 @@ export function metadata(
     title,
     description,
     keywords: [...lessonPage, ...tags, ...keywords],
-    ...twitterMetadata(title, description, thumbnail, `@${TWITTER}`),
+    ...twitterMetadata(title, description, thumbnail, TWITTER),
     ...openGraphMetadata(title, description, thumbnail, URL),
     ...manifestMetadata,
-    ...themeColorMetadata,
   };
 }

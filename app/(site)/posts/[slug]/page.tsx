@@ -9,7 +9,6 @@ import {
   iconsMetadata,
   manifestMetadata,
   openGraphMetadata,
-  themeColorMetadata,
   twitterMetadata,
   postMetadata as dynamicMetadata,
 } from "@/data";
@@ -31,7 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ...dynamicMetadata(postMetadata),
       ...twitterMetadata(title, description, thumbnail, TWITTER),
       ...openGraphMetadata(title, description, thumbnail, `${URL}/${slug}`),
-      ...themeColorMetadata,
       ...manifestMetadata,
       ...iconsMetadata,
     };

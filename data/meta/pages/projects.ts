@@ -6,14 +6,13 @@ import {
   twitterMetadata,
   openGraphMetadata,
   manifestMetadata,
-  themeColorMetadata,
 } from "../global";
 
 export const metadata: Metadata = {
   robots: "noindex",
   title: "Coming Soon",
   description: "Coming Soon",
-  ...twitterMetadata("Coming Soon", "Coming Soon", THUMBNAIL, `@${TWITTER}`),
+  ...twitterMetadata("Coming Soon", "Coming Soon", THUMBNAIL, TWITTER),
   ...openGraphMetadata(
     "Coming Soon",
     "Coming Soon",
@@ -21,5 +20,4 @@ export const metadata: Metadata = {
     `${URL}/projects`
   ),
   ...manifestMetadata,
-  ...themeColorMetadata,
 };

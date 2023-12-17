@@ -5,7 +5,6 @@ import { Metadata } from "next";
 import {
   manifestMetadata,
   openGraphMetadata,
-  themeColorMetadata,
   twitterMetadata,
 } from "../global";
 import { CourseQuery } from "@/interfaces/queries";
@@ -15,10 +14,9 @@ export const comingCourseMetaData: Metadata = {
   robots: "noindex",
   title: "Coming Soon",
   description: "Coming Soon",
-  ...twitterMetadata("Coming Soon", "Coming Soon", THUMBNAIL, `@${TWITTER}`),
+  ...twitterMetadata("Coming Soon", "Coming Soon", THUMBNAIL, TWITTER),
   ...openGraphMetadata("Coming Soon", "Coming Soon", THUMBNAIL, URL),
   ...manifestMetadata,
-  ...themeColorMetadata,
 };
 
 export function metadata(
@@ -29,9 +27,8 @@ export function metadata(
     title,
     description,
     keywords: [...coursePage, ...tags, ...keywords],
-    ...twitterMetadata(title, description, thumbnail, `@${TWITTER}`),
+    ...twitterMetadata(title, description, thumbnail, TWITTER),
     ...openGraphMetadata(title, description, thumbnail, URL),
     ...manifestMetadata,
-    ...themeColorMetadata,
   };
 }

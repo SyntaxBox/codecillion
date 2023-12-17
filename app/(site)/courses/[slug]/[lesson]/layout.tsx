@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import {
   twitterMetadata,
   openGraphMetadata,
-  themeColorMetadata,
   manifestMetadata,
   iconsMetadata,
   lessonMetadata,
@@ -31,7 +30,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ...lessonMetadata(lessonMetaData),
       ...twitterMetadata(title, description, thumbnail, TWITTER),
       ...openGraphMetadata(title, description, thumbnail, `${URL}/${lesson}`),
-      ...themeColorMetadata,
       ...manifestMetadata,
       ...iconsMetadata,
     };

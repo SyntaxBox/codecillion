@@ -12,14 +12,13 @@ import {
   twitterMetadata,
   openGraphMetadata,
   manifestMetadata,
-  themeColorMetadata,
 } from "../global";
 
 export const metadata: Metadata = {
   title: POSTS_TITLE,
   description: POSTS_DESCRIPTION,
   keywords: postsPage,
-  ...twitterMetadata(POSTS_TITLE, POSTS_DESCRIPTION, THUMBNAIL, `@${TWITTER}`),
+  ...twitterMetadata(POSTS_TITLE, POSTS_DESCRIPTION, THUMBNAIL, TWITTER),
   ...openGraphMetadata(
     POSTS_TITLE,
     POSTS_DESCRIPTION,
@@ -27,5 +26,4 @@ export const metadata: Metadata = {
     `${URL}/posts`
   ),
   ...manifestMetadata,
-  ...themeColorMetadata,
 };

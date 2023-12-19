@@ -3,6 +3,7 @@ import "../globals.css";
 import { Barlow } from "next/font/google";
 import Footer from "../components/Footer/Footer";
 import { Viewport } from "next";
+import { metadataBase } from "@/data/meta/global/metadataBase";
 
 const font = Barlow({
   weight: ["400", "700", "300"],
@@ -20,6 +21,10 @@ export const viewport: Viewport = {
       media: "(prefers-color-scheme: dark)",
     },
   ],
+};
+
+export const metadata = {
+  metadataBase,
 };
 export default function RootLayout({
   children,

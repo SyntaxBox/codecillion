@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../Logo/Logo";
-import { Container } from "../../UI";
+import { Container } from "@/app/UI";
 import { navbarButtons } from "@/data";
 import SocialIcons from "../SocialIcons/SocialIcons";
 import DarkMode from "../DarkMode/DarkMode";

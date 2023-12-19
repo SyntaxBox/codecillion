@@ -6,7 +6,8 @@ import ExploreMore from "@/app/components/ExploreMore/ExploreMore";
 import SocialBanner from "@/app/components/SocialBanner/SocialBanner";
 import { Container } from "@/app/UI";
 import FlatCard from "@/app/components/FlatCard/FlatCard";
-import BigCard from "../components/BigCard/BigCard";
+import BigCard from "@/app/components/BigCard/BigCard";
+import Navbar from "@/app/components/Navbar/Navbar";
 import { homeMetadata } from "@/data";
 import {
   getAllPosts,
@@ -14,7 +15,6 @@ import {
   getFeaturedCourse,
   getAllStacks,
 } from "@/sanity";
-import Navbar from "../components/Navbar/Navbar";
 
 export const metadata: Metadata = {
   ...homeMetadata,

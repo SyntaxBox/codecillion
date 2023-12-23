@@ -5,7 +5,6 @@ export async function fetchWebsiteMetadata(
   url: string
 ): Promise<{ title: string } | null> {
   try {
-    console.log(url);
     // Fetch the HTML content of the website using axios
     const response = await axios.get(url);
     const html = response.data;

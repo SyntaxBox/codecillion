@@ -22,11 +22,7 @@ export default async function page({ params }: Props) {
           {description}
         </p>
       </div>
-      <BigLink
-        text="What on:"
-        link={lesson.youtubeUrl}
-        icon={<IconBrandYoutubeFilled />}
-      />{" "}
+      <BigLink text="Watch on YouTube:" link={lesson.youtubeUrl} />{" "}
       <PostContent content={content} />
     </section>
   );

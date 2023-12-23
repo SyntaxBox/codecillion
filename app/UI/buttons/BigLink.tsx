@@ -1,15 +1,7 @@
 import { fetchWebsiteMetadata } from "@/utils";
 import Link from "next/link";
 import React from "react";
-export async function BigLink({
-  link,
-  icon,
-  text,
-}: {
-  link: string;
-  icon: React.ReactNode;
-  text?: string;
-}) {
+export async function BigLink({ link, text }: { link: string; text?: string }) {
   const linkInfo = await fetchWebsiteMetadata(link);
   if (!linkInfo?.title) return <></>;
   return (
@@ -19,9 +11,10 @@ export async function BigLink({
       target="_blank"
       title={linkInfo.title}
     >
-      {text && <p className="font-bold">{text} </p>}
-      {icon}
-      {linkInfo.title}
+      <p>
+        <span className="font-bold inline">{text} </span>
+        {linkInfo.title}
+      </p>
     </Link>
   );
 }

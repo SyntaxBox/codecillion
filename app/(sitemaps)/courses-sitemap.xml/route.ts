@@ -14,7 +14,6 @@ export async function GET(request: Request) {
           (value) => value !== null && value !== undefined
         )
       );
-      console.log(lessons, slug);
       const courseUrl = `${URL}/courses/${slug}`;
 
       // Include the course itself in the sitemap

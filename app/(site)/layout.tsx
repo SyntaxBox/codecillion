@@ -4,6 +4,8 @@ import { Barlow } from "next/font/google";
 import Footer from "../components/Footer/Footer";
 import { Viewport } from "next";
 import { metadataBase } from "@/data/meta/global/metadataBase";
+import CookiesConsent from "../components/CookiesConsent/CookiesConsent";
+import GoogleAnalytics from "../components/GoogleAnalytics/GoogleAnalytics";
 
 const font = Barlow({
   weight: ["400", "700", "300"],
@@ -38,6 +40,8 @@ export default function RootLayout({
           <>
             {children}
             <Footer className="mt-5" />
+            <CookiesConsent />
+            <GoogleAnalytics />
           </>
         </Providers>
       </body>

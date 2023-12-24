@@ -6,13 +6,13 @@ const useCookieConsent = () => {
 
   const setCookieConsent = (value: "granted" | "denied") => {
     setStatus(value);
-    localStorage.setItem("cookieConsent", JSON.stringify(value));
+    localStorage.setItem("cookieConsent", value);
   };
 
   useEffect(() => {
     const initStatus = () => {
-      const storedValue = localStorage.getItem("cookieConsent");
-      setStatus(storedValue ? JSON.parse(storedValue) : "denied");
+      const storedValue = localStorage.getItem("cookieConsent") as "granted" | "denied" | null;
+      setStatus(storedValue ?? "denied");
     };
 
     initStatus();

@@ -2,8 +2,8 @@ import Providers from "./Providers";
 import "../globals.css";
 import { Barlow } from "next/font/google";
 import Footer from "../components/Footer/Footer";
-import { Viewport } from "next";
-import { metadataBase } from "@/data/meta/global/metadataBase";
+import { Metadata, Viewport } from "next";
+import { metadataBase, manifest, icons } from "@/data";
 import CookiesConsent from "../components/CookiesConsent/CookiesConsent";
 import GoogleAnalytics from "../components/GoogleAnalytics/GoogleAnalytics";
 
@@ -25,8 +25,10 @@ export const viewport: Viewport = {
   ],
 };
 
-export const metadata = {
+export const metadata:Metadata = {
   metadataBase,
+  manifest,
+  icons,
 };
 export default function RootLayout({
   children,

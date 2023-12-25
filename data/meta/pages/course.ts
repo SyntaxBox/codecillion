@@ -2,11 +2,7 @@
 import { THUMBNAIL, TWITTER, URL } from "@/constants/other";
 import {} from "@/constants/other";
 import { Metadata } from "next";
-import {
-  manifestMetadata,
-  openGraphMetadata,
-  twitterMetadata,
-} from "../global";
+import { openGraphMetadata, twitterMetadata } from "../global";
 import { CourseQuery } from "@/interfaces/queries";
 import { coursePage } from "@/constants/keywords/pages";
 
@@ -16,7 +12,6 @@ export const comingCourseMetaData: Metadata = {
   description: "Coming Soon",
   ...twitterMetadata("Coming Soon", "Coming Soon", THUMBNAIL, TWITTER),
   ...openGraphMetadata("Coming Soon", "Coming Soon", THUMBNAIL, URL),
-  ...manifestMetadata,
 };
 
 export function metadata(
@@ -29,6 +24,5 @@ export function metadata(
     keywords: [...coursePage, ...tags, ...keywords],
     ...twitterMetadata(title, description, thumbnail, TWITTER),
     ...openGraphMetadata(title, description, thumbnail, URL),
-    ...manifestMetadata,
   };
 }

@@ -8,11 +8,7 @@ import {
 } from "@/constants/other";
 import {} from "@/constants/other";
 import { Metadata } from "next";
-import {
-  twitterMetadata,
-  openGraphMetadata,
-  manifestMetadata,
-} from "../global";
+import { twitterMetadata, openGraphMetadata } from "../global";
 
 export const metadata: Metadata = {
   title: POSTS_TITLE,
@@ -25,5 +21,4 @@ export const metadata: Metadata = {
     THUMBNAIL,
     `${URL}/posts`
   ),
-  ...manifestMetadata,
 };

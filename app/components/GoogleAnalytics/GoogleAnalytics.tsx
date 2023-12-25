@@ -4,6 +4,7 @@ import React from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { pageView } from "@/lib";
+import useCookieConsent from "@/app/hooks/useCookiesConsent";
 
 function GoogleAnalytics({
   GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID,
@@ -12,6 +13,7 @@ function GoogleAnalytics({
 }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [status, _] = useCookieConsent()
   useEffect(() => {
     if (searchParams !== null && GA_MEASUREMENT_ID) {
       const url = pathname + searchParams.toString();
@@ -35,7 +37,7 @@ function GoogleAnalytics({
                 gtag('js', new Date());
 
                 gtag('consent', 'default', {
-                    'analytics_storage': 'denied'
+                    'analytics_storage': ${status}
                 });
 
                 gtag('config', '${GA_MEASUREMENT_ID}', {

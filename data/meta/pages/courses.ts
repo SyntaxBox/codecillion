@@ -5,13 +5,9 @@ import {
   THUMBNAIL,
   URL,
   TWITTER,
-} from "@/constants/other";
+} from "@/constants";
 import { Metadata } from "next";
-import {
-  manifestMetadata,
-  openGraphMetadata,
-  twitterMetadata,
-} from "../global";
+import { openGraphMetadata, twitterMetadata } from "../global";
 
 export const metadata: Metadata = {
   title: COURSES_TITLE,
@@ -24,5 +20,4 @@ export const metadata: Metadata = {
     THUMBNAIL,
     `${URL}/courses`
   ),
-  ...manifestMetadata,
 };

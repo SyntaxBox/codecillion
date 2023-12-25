@@ -2,11 +2,7 @@
 import { THUMBNAIL, TWITTER, URL } from "@/constants/other";
 import {} from "@/constants/other";
 import { Metadata } from "next";
-import {
-  twitterMetadata,
-  openGraphMetadata,
-  manifestMetadata,
-} from "../global";
+import { twitterMetadata, openGraphMetadata } from "../global";
 
 export const metadata: Metadata = {
   robots: "noindex",
@@ -19,5 +15,4 @@ export const metadata: Metadata = {
     THUMBNAIL,
     `${URL}/stacks`
   ),
-  ...manifestMetadata,
 };

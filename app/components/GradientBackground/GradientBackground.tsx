@@ -1,5 +1,5 @@
 import { cn } from "@/utils";
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 
 function GradientBackground({
   children,

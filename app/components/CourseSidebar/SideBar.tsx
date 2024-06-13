@@ -1,5 +1,6 @@
 import { Accordion } from "@/app/UI";
 import { CourseAccordion } from "@/interfaces";
+import { cn } from "@/utils";
 import React from "react";
 function Sidebar({
   courseAccordion,
@@ -13,7 +14,10 @@ function Sidebar({
   return (
     <aside
       style={{ maxHeight: "calc(100vh - 64px)" }}
-      className={`h-fit overflow-y-scroll overflow-x-hidden auto-hide-scrollbar z-40  bg-white dark:bg-slate-900 ${className}`}
+      className={cn(
+        "h-fit overflow-y-scroll overflow-x-hidden auto-hide-scrollbar z-40  bg-white dark:bg-slate-900",
+        className
+      )}
     >
       {courseAccordion &&
         courseAccordion.map(({ title, links }, i) => {

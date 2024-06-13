@@ -3,6 +3,7 @@ import Image from "next/image";
 import Title from "./Title";
 import { TITLE, PRIMARY_COLOR_ALT, PRIMARY_COLOR } from "@/constants";
 import Link from "next/link";
+import { cn } from "@/utils";
 
 function Logo({
   width,
@@ -16,10 +17,10 @@ function Logo({
   includeTitle?: boolean;
   href?: string;
   className?: string;
-}): React.ReactElement {
+}) {
   if (href)
     return (
-      <Link href={href} className={`flex items-center gap-3 ${className}`}>
+      <Link href={href} className={cn("flex items-center gap-3 ", className)}>
         {width && height ? (
           <Image
             src="/svg/logo.svg"

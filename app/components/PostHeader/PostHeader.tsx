@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { H1 } from "@/app/UI";
+import { cn } from "@/utils";
 
 function PostHeader({
   thumbnail,
@@ -15,7 +16,10 @@ function PostHeader({
 }) {
   return (
     <header
-      className={`justify-center flex items-center flex-col gap-3 w-full ${className}`}
+      className={cn(
+        "justify-center flex items-center flex-col gap-3 w-full ",
+        className
+      )}
     >
       <Image
         src={thumbnail}

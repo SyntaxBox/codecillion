@@ -1,16 +1,14 @@
-import React, { ReactNode } from "react";
+import { cn } from "@/utils";
+import React from "react";
 
-export function Title({
-  children,
-  className,
-  ...rest
-}: { children: ReactNode } & JSX.IntrinsicElements["h3"]) {
+export function Title({ className, ...rest }: JSX.IntrinsicElements["h3"]) {
   return (
     <h3
       {...rest}
-      className={`text-2xl font-bold text-sky-900 dark:text-white ${className}`}
-    >
-      {children}
-    </h3>
+      className={cn(
+        "text-2xl font-bold text-sky-900 dark:text-white",
+        className
+      )}
+    />
   );
 }

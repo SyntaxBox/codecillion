@@ -6,14 +6,9 @@ import {
   IconWithTextLabelStroke as stroke,
 } from "@/constants";
 
-export function IconButton({ href, title, Icon, ...rest }: props) {
+export function IconButton({ Icon, ...rest }: props) {
   return (
-    <Link
-      href={href}
-      title={title}
-      {...rest}
-      className="text-white hover:text-primary-alt-600"
-    >
+    <Link {...rest} className="text-white hover:text-primary-alt-600">
       <Icon stroke={stroke} size={size - 6} />
     </Link>
   );

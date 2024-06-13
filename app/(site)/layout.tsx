@@ -6,6 +6,7 @@ import { Viewport } from "next";
 import { metadataBase } from "@/data/meta/global/metadataBase";
 import CookiesConsent from "../components/CookiesConsent/CookiesConsent";
 import GoogleAnalytics from "../components/GoogleAnalytics/GoogleAnalytics";
+import { cn } from "@/utils";
 
 const font = Barlow({
   weight: ["400", "700", "300"],
@@ -35,7 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${font.className} dark:bg-slate-900`}>
+      <body className={cn(font.className, "dark:bg-slate-900")}>
         <Providers>
           <>
             {children}

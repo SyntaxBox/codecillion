@@ -1,3 +1,4 @@
+import { cn } from "@/utils";
 import Link from "next/link";
 import React, { ReactNode } from "react";
 
@@ -13,7 +14,7 @@ export function AccordionLink({
   return (
     <li>
       <Link
-        className={`text-slate-600 dark:text-slate-300 ${className}`}
+        className={cn("text-slate-600 dark:text-slate-300", className)}
         href={slug}
       >
         {children}

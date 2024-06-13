@@ -3,6 +3,7 @@ import { LargeCard as LargeCardInterface } from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 import LessonsCount from "../LessonsCount/LessonsCount";
+import { cn } from "@/utils";
 
 function LargeCard({
   thumbnail,
@@ -15,7 +16,10 @@ function LargeCard({
   return (
     <Link
       href={slug}
-      className={`bg-white dark:bg-slate-900 hover:grayscale-[0.7] w-full ${className}`}
+      className={cn(
+        "bg-white dark:bg-slate-900 hover:grayscale-[0.7] w-full",
+        className
+      )}
     >
       <div className="w-full h-full flex-col flex gap-3">
         <Image

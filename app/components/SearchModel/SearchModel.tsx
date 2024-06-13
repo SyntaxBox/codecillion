@@ -3,6 +3,7 @@ import { SearchCard } from "@/interfaces";
 import { search } from "@/logic";
 import React from "react";
 import SearchResult from "../SearchResult/SearchResult";
+import { cn } from "@/utils";
 
 function SearchModel({
   data,
@@ -16,8 +17,10 @@ function SearchModel({
   return (
     <div
       {...rest}
-      className="w-full min-h-[40px] max-h-96 bg-slate-200
-   dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-800 shadow-slate-100 dark:shadow-slate-800"
+      className={cn(
+        "w-full min-h-[40px] max-h-96 bg-slate-200 dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-800 shadow-slate-100 dark:shadow-slate-800",
+        rest.className
+      )}
     >
       {searchResult.length === 0 && (
         <div className="flex pt-3 items-center justify-center w-full h-full">

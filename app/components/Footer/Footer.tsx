@@ -5,6 +5,7 @@ import { TITLE } from "@/constants";
 import Logo from "../Logo/Logo";
 import NavButtons from "../NavButtons/NavButtons";
 import SocialIcons from "../SocialIcons/SocialIcons";
+import { cn } from "@/utils";
 function Footer({ className }: { className?: string }) {
   const owner = [
     ...navbarButtons,
@@ -16,7 +17,10 @@ function Footer({ className }: { className?: string }) {
   ];
   return (
     <div
-      className={`border-t dark:border-slate-800 border-slate-200 py-4 w-full ${className}`}
+      className={cn(
+        "border-t dark:border-slate-800 border-slate-200 py-4 w-full",
+        className
+      )}
     >
       <Container className="flex flex-col items-center justify-between gap-6 pb-4">
         <Logo width={48} height={48} includeTitle href="/" />

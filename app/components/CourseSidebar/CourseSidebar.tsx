@@ -6,6 +6,7 @@ import { getCourseContentBySlug } from "@/sanity";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import CurrentLesson from "./CurrentLesson";
+import { cn } from "@/utils";
 
 function CourseSidebar() {
   const params = useParams();
@@ -51,9 +52,10 @@ function CourseSidebar() {
         rotateChevron={showSidebarOnSmallScreen}
       />
       <Sidebar
-        className={`w-full pr-8 pl-2 pb-10 top-24 md:w-72 md:min-w-[200px] md:top-[66px] fixed md:sticky md:p-0 ${
+        className={cn(
+          "w-full pr-8 pl-2 pb-10 top-24 md:w-72 md:min-w-[200px] md:top-[66px] fixed md:sticky md:p-0",
           showSidebarOnSmallScreen ? "block" : "hidden md:block"
-        }`}
+        )}
         courseAccordion={courseAccordion}
         currentLesson={
           Array.isArray(params.lesson) ? params.lesson[0] : params.lesson

@@ -1,7 +1,6 @@
 import { H1, BigLink } from "@/app/UI";
 import PostContent from "@/app/components/PostContent/PostContent";
 import { getLessonBySlug } from "@/sanity";
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import { notFound } from "next/navigation";
 import React from "react";
 

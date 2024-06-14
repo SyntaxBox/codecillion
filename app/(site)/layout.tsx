@@ -40,8 +40,8 @@ export default function RootLayout({
           <>
             {children}
             <Footer className="mt-5" />
-            <CookiesConsent />
-            <GoogleAnalytics />
+            {/* <CookiesConsent /> */}
+            {/* <GoogleAnalytics /> */}
           </>
         </Providers>
       </body>

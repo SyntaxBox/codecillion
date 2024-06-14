@@ -46,15 +46,24 @@ To get a local copy up and running, follow these steps.
 
    Use your information on `./constants/other/sanity.ts` to set up Sanity
 
-5. Run the development server:
+5. Set up environment variables:
+
+   Create a `.env.local` file in the root directory and add the following variables:
+
+   ```bash
+   GA_MEASUREMENT_ID=Google_analytics_measurment_id
+   SANITY_WEBHOOK_SECRET=your_sanity_webhook_secret
+   ```
+
+6. Run the development server:
 
    ```bash
    npm run dev
    ```
 
-6. Open your browser and visit:
+7. Open your browser and visit:
 
-`http://localhost:3000`
+   `http://localhost:3000`
 
 ## Usage
 

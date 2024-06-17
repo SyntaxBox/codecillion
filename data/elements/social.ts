@@ -5,10 +5,12 @@ import {
   YOUTUBE_LINK,
   socialIconStroke,
   socialIconSize,
+  GITHUB_LINK,
 } from "@/constants";
 import { SocialIcon } from "@/interfaces";
 import {
   IconBrandFacebook,
+  IconBrandGithub,
   IconBrandInstagram,
   IconBrandTiktok,
   IconBrandYoutube,
@@ -40,6 +42,12 @@ export const socialIcons: SocialIcon[] = [
     title: "instagram page",
     href: INSTAGRAM_LINK,
     Icon: IconBrandInstagram,
+    stroke: socialIconStroke,
+    size: socialIconSize,
+  }, {
+    title: "github repository",
+    href: GITHUB_LINK,
+    Icon: IconBrandGithub,
     stroke: socialIconStroke,
     size: socialIconSize,
   },

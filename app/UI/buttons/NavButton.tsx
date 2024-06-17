@@ -1,3 +1,4 @@
+import { cn } from "@/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -6,7 +7,6 @@ export function NavButton({
   children,
   active,
   className,
-  ...other
 }: {
   href: string;
   children: React.ReactNode;
@@ -16,12 +16,13 @@ export function NavButton({
   return (
     <Link
       href={`/${href}`}
-      {...other}
-      className={`rounded-lg px-4 py-2 ${className} ${
+      className={cn(
+        "rounded-lg px-4 py-2",
+        className,
         active
           ? "text-primary-600 bg-primary-50 dark:text-primary-alt-500 dark:bg-primary-alt-950"
           : "hover:bg-[#5465813a]"
-      }`}
+      )}
     >
       {children}
     </Link>

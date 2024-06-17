@@ -1,5 +1,6 @@
 "use client";
 import { socialIconSize, socialIconStroke } from "@/constants";
+import { cn } from "@/utils";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
@@ -21,9 +22,11 @@ function DarkMode({ whiteMoon }: { whiteMoon?: boolean }) {
   return (
     <div
       title="toggle dark mode"
-      className={`cursor-pointer social-icon-container ${
-        isRotated && "rotate"
-      } ${whiteMoon ? "text-white" : ""}`}
+      className={cn(
+        "cursor-pointer social-icon-container",
+        isRotated && "rotate",
+        whiteMoon ? "text-white" : ""
+      )}
       onClick={handelToggle}
     >
       {resolvedTheme === "dark" ? (

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container, Badge, H3 } from "@/app/UI";
 import { Card } from "@/interfaces";
 import LessonsCount from "../LessonsCount/LessonsCount";
+import { cn } from "@/utils";
 
 function BigCard({
   thumbnail,
@@ -22,9 +23,10 @@ function BigCard({
     <Container className="hover:grayscale">
       <Link
         href={slug}
-        className={`flex flex-col lg:flex-row w-full gap-3 ${
+        className={cn(
+          "flex flex-col lg:flex-row w-full gap-3",
           reduced ? "xl:h-[302px]" : "xl:h-[360px]"
-        }`}
+        )}
       >
         <div className="relative aspect-video h-full">
           <Image

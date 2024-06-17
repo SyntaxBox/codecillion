@@ -2,6 +2,7 @@
 import { iconSize, iconStroke } from "@/constants";
 import { CourseAccordion, CourseAccordionLink } from "@/interfaces";
 import { findSlugIndex } from "@/logic";
+import { cn } from "@/utils";
 import { IconChevronDown } from "@tabler/icons-react";
 import React, { MouseEventHandler, useEffect, useState } from "react";
 
@@ -28,7 +29,10 @@ function CurrentLesson({
   const currentLessonTitle = links[findSlugIndex(links, currentLesson)]?.title;
   return (
     <button
-      className={`bg-white dark:bg-slate-900 z-50 p-2 flex items-center justify-between w-full sticky top-14 -mt-3 ${className}`}
+      className={cn(
+        "bg-white dark:bg-slate-900 z-50 p-2 flex items-center justify-between w-full sticky top-14 -mt-3",
+        className
+      )}
       onClick={onClick}
     >
       <p className="text-start font-bold text-lg line-clamp-1 text-ellipsis overflow-hidden">
@@ -37,7 +41,7 @@ function CurrentLesson({
       <IconChevronDown
         size={iconSize - 4}
         stroke={iconStroke}
-        className={`${rotateChevron ? "rotate-180" : ""}`}
+        className={cn(rotateChevron ? "rotate-180" : "")}
       />
     </button>
   );

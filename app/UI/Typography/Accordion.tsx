@@ -5,6 +5,7 @@ import { AccordionTitle, AccordionLink } from ".";
 import { CourseAccordion } from "@/interfaces/queries";
 import { iconSize, iconStroke } from "@/constants/elements/icons";
 import { findSlugIndex } from "@/logic/accordion";
+import { cn } from "@/utils";
 
 export function Accordion({
   links,
@@ -28,20 +29,20 @@ export function Accordion({
           <IconChevronRight
             size={iconSize - 4}
             stroke={iconStroke}
-            className={`${show ? "rotate-90" : ""}`}
+            className={cn(show ? "rotate-90" : "")}
           />
         </button>
       </span>
-      <div className={`${show ? "scale-y-100 " : "hidden"}`}>
+      <div className={cn(show ? "scale-y-100 " : "hidden")}>
         <ol className="p-2 flex items-start justify-start flex-col gap-1">
           {links.map(({ title, slug }, i) => {
             return (
               <AccordionLink
-                className={`${
+                className={cn(
                   currentLessonIndex === i
                     ? "font-bold text-slate-900 dark:text-slate-100"
                     : ""
-                }`}
+                )}
                 key={i}
                 slug={slug}
               >

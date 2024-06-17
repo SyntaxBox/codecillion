@@ -1,4 +1,5 @@
 import { FlatCard as FlatCardInterface } from "@/interfaces";
+import { cn } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -16,7 +17,10 @@ function FlatCard({
     <Link
       title={title}
       href={href}
-      className={` bg-gradient-radial from-primary-400 dark:from-cyan-600 dark:to-primary-700 to-primary-alt-500 hover:grayscale-[0.7] aspect-card rounded-xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-slate-800 ${className}`}
+      className={cn(
+        "bg-gradient-radial from-primary-400 dark:from-cyan-600 dark:to-primary-700 to-primary-alt-500 hover:grayscale-[0.7] aspect-card rounded-xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-slate-800",
+        className
+      )}
     >
       <Image
         src={thumbnail}

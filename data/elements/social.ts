@@ -17,13 +17,13 @@ import {
 } from "@tabler/icons-react";
 
 export const socialIcons: SocialIcon[] = [
-  {
-    title: "facebook page",
-    href: FACEBOOK_LINK,
-    Icon: IconBrandFacebook,
-    stroke: socialIconStroke,
-    size: socialIconSize,
-  },
+  // {
+  //   title: "facebook page",
+  //   href: FACEBOOK_LINK,
+  //   Icon: IconBrandFacebook,
+  //   stroke: socialIconStroke,
+  //   size: socialIconSize,
+  // },
   {
     title: "youtube channel",
     href: YOUTUBE_LINK,
